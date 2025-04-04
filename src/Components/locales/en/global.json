@@ -1,0 +1,580 @@
+{
+  "navbar": {
+    "ourCollection": "OUR COLLECTIONS",
+    "sales": "SUMMER SALE",
+    "hello": "Hello",
+    "account": "Account",
+    "cart": "Cart",
+    "arabic": "العربية"
+   
+  },
+  "homePage":{
+    "ourBrands":"OUR BRANDS STANDS FOR ALL UNIQUE WOMEN WITH A STRONG SENSE OF IDENTITY WHO IS FUNNY, ADVENTUROUS, ROMANTIC AND DO NOT WANT TO CONFORM TO THE TRADITIONAL.",
+    "ourCollection": "OUR COLLECTIONS",
+    "shopNow":"SHOP NOW",
+    "characteristics":{
+       "luxury":"LUXURY FOR THE COSMOPOLITAN WOMAN",
+       "designed":"DESIGNED & PRODUCED IN LEBANON",
+       "worldwide":"WORLDWIDE SHIPPING"
+    },
+    "footer":{
+      "btn":" Send",
+      "copyRights":"Copyright © 2024 Cosmo. All rights reserved ",
+      "siteManager":"SITEMANAGER V3.1",
+      "placeholder":"Enter your email"
+    },
+
+    "banners":{
+       "viewCollection":" VIEW COLLECTION",
+        "first":{
+          "title":"FASHION AS UNIQUE",
+          "desc":"as you are",
+          "coll":" PRELUDE / SS24"
+        },
+        "second":{
+          "title":"COSMO",
+          "desc":"YOUR LIFESTYLE",
+          "title2":"Partner",
+          "coll":" PRELUDE / SS24"
+        },
+        "third":{
+          "title":"A SYMPHONIC",
+          "desc":"Signature",
+          "coll":" PRELUDE / SS24"
+        }
+    }
+
+  },
+  "salesPage":{
+  "title":"SUMMER SALE"
+  },
+
+  "collectionPage":{
+    "title":"COLLECTION",
+    "p1":"FIND YOUR INNER DIVA",
+    "p2":"COLLECTION-FW 23-24",
+    "p3":"Elevate your wardrobe with our curated collection, blending chic styles and comfort seamlessly. Embrace confidence and sophistication with every purchase at Cosmo – where fashion meets individuality"
+
+      },
+
+      "soldOut":"Sold Out",
+       "singleProductPage":{
+        "size":"SIZE",
+        "country":"COUNTRY",
+        "designer":"DESIGN",
+        "fabric":"FABRIC",
+        "washing":"WASHING INSTRUCTIONS",
+        "color":"COLOR",
+        "sizeChart":"To fit you well, kindly refer to our <a href=\"/size-chart\"> <strong class=\"text-[#1e335a] hover:text-[#ea9e7e]\">SIZE CHART</strong></a>",
+        "shipping": "For more info about the shipping process, kindly refer to the <a href=\"/shipping-policy\"> <strong class=\"text-[#1e335a] hover:text-[#ea9e7e]\"> SHIPPING POLICY. </strong></a>",
+        "wearing":"WEARING",
+        "cart": "ADD TO CART",
+        "maxQuantity":" You have reached maximum quantity! ",
+        "selectSize":"Select a size before adding to cart",
+        "quantity":"QUANTITY",
+        "only":"Only",
+        "availableSize":" item(s) left!"
+  },
+
+  "allProducts":"ALL PRODUCTS",
+  "search":"Search...",
+
+  "cart":{
+"empty":"You have no items in your Shopping Cart",
+"cartTitle":"SHOPPING CART",
+"emptyCart":"Empty Cart",
+"orderSummary":"ORDER SUMMARY",
+"subtotal":"Subtotal:",
+"total":"Total:",
+"shippingTo":"Shipping To:",
+"shippingFee":"Shipping Fee:",
+"tax":"Tax:",
+"checkout":"CHECKOUT",
+"shopNow":"SHOP NOW",
+"remove":" Please remove sold-out items to proceed.",
+"desc":" 100% Satisfaction Guaranteed.  If for any reason you were not completely satisfied with your purchase, ",
+
+"anchor":"Click here to check our exchange policy"
+  },
+
+  "footer":{
+    "about-title":"About Us & More",
+    "customer-title":"Customer Care",
+    "follow-title":"Follow Us",
+    "shipping":"Shipping Policy",
+    "size":"Size Chart",
+    "payment":"Payment Policy",
+    "exchange":"Exchange and Return Policy",
+    "privacy":"Privacy Policy",
+    "terms":"Terms & Conditions",
+    "faq":"FAQ",
+    "aboutUs":"About Us",
+    "contactUs":"Contact Us",
+    "subscribe":"Subscribe now & Stay up to date with our latest news!"
+  },
+  "announcementBar":"Use Promo Code Summer 15 for 15% Off Your Order",
+
+
+  "aboutUs":{
+    "firstSection":{
+      "title":"ESSENCE OF COSMO",
+      "desc1":"COSMO is a Lebanese Designer Brand curated under the visionary expertise of designer Ziad Ghanem since 1996. Here, the threads of tradition intertwine seamlessly with modern aesthetics, resulting in an exquisite harmony of timeless elegance. Our philosophy is elegantly simple yet profoundly impactful – to create a style that stands as a testament to enduring beauty, whispering elegance in every meticulously crafted stitch.",
+      "desc2":"With meticulous attention to detail and a devotion to impeccable tailoring, we at COSMO craft garments that transcend mere fabric and form – they are an artful expression of individuality. Ziad Ghanem's design philosophy breathes life into every piece, infusing them with a touch of his visionary creativity."
+    },
+    "secondSection":{
+      "title":"FEARLESS DISTINCTION",
+      "desc1":"At COSMO, we take pride in our unconventional approach, embracing the power of distinctive designs that effortlessly captivate the eye and stir the soul. Our dedication to sourcing remarkable fabrics ensures that each piece feels as luxurious as it looks, embodying our commitment to your unparalleled comfort and confidence.",
+      "desc2":"In the world of COSMO, every collection is a celebration of the audacity of bold design. Each creation stands as a testament to Ziad Ghanem's unique vision, encapsulating the essence of our brand. We understand that fashion is a deeply personal statement, and our designs empower modern women to embrace their distinct identity with grace and flair."
+    },
+    "ThirdSection":{
+      "title":"Lasting Impressions",
+      "desc1":"Each piece from COSMO is an exquisite embodiment of exclusivity, exuding its own narrative and character. Our designs reflect the diversity of those who wear them, providing a canvas for self-expression.",
+      "desc2":"As we curate for modern businesswomen, and for those who aspire to leave a lasting impression at events and special occasions, COSMO stands as a trusted companion in your pursuit of elegance. Join us on a journey where heritage meets innovation, and where every garment bears witness to a unique story. Explore the captivating world of COSMO and experience the seamless fusion of tradition and contemporary allure, where the pursuit of elegance knows no bounds."
+    }
+
+  },
+  "shipping":{
+    "titleMain":"SHIPPING & DELIVERY",
+    "title":"We ship worldwide",
+    "p1":"Our shipping methods through <strong>The Net</strong> are fast and easy",
+    "shipmentMethod":"Shipment Method",
+    "leb":"Lebanon - The Net",
+    "international":"International - The Net (Sky Net)",
+    "estimated":"Estimated Delivery Time",
+    "lebDays":"1-7 business days",
+    "intDays":"5-15 business days",
+    "cost":"Shipment Cost",
+    "costLeb":"4.00 USD",
+    "costInt":"Calculated on Checkout",
+    "lebanonOrder":{
+      "title":"1-Lebanon Orders:",
+      "desc":"Delivery period goes from 1 to 7 business days after processing your order with a Charge of USD 4.00"
+    },
+    "intOrder":{
+      "title":"2-International Orders:",
+      "section1Title":"DELIVERY",
+      "sec1p1":"Delivery period goes from 5 to15 business days after processing your order. For a better service, please provide us with a detailed address to avoid any conflict.",
+      "sec1p2":"Once your order has been processed and shipped with The Net (SKY NET), you will receive a confirmation e-mail with the tracking number of your package.",
+      "sec1p3":"This will enable you to track your shipment on",
+      "sec1p4":"International shipping tariffs are calculated according to the total package weight,  volumetric weight and shipping location.",
+      "sec1p5":"Payment for shipping will be collected with the purchase and it will be the final price for shipping cost to the customer.",
+      "sec1p6":"We try our best to get deliveries out to you on time, but sometimes international deliveries can take longer than expected.",
+      "sec1p7":"However, feel free to contact us at any time. Our customer care is always ready to help.",
+      "sec1p8":"In some very rare case of unavailability of the products, we undertake to notify you within 24 hours from the purchase date.",
+      "sec1p9":"Under this circumstance, you will be entitled to a full refund.",
+     "section2Title":"CUSTOMS, DUTIES AND TAXES",
+      "sec2p1":"COSMO is not responsible for any customs or import taxes applied to your order. All fees imposed during or after shipping are of the responsibility of the customer (tariffs, taxes, etc.)",
+      "sec2p2":"They will be charged upon the package reaching the destination country and they vary widely depending on the country you are situated in.",
+      "sec2p3":"Payment of these fees is necessary to release your order from customs.",
+      "section3Title":"DAMAGES",
+      "sec3p1": "COSMO is not liable for any products damaged or lost during shipping. If you received your order damaged, please contact The Net on <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>+ 961 1 593 400</a> to file a claim.",
+      "sec3p2":"Please save all packaging materials and damaged goods before filing a claim."
+     
+   
+    }
+  },
+
+  "paymentPolicyPage":{
+    "mainTitle":"ORDER & PAYMENTS",
+    "section1":{
+      "title":"ORDERS",
+      "sec1p1":"Choose the items you would like to purchase and then choose the size and color (if needed).",
+      "sec1p2":"Click the “ADD TO CART” button on the product page.",
+      "sec1p3":"Review the shopping cart by clicking the “CART” link at the top of the page. Once you are inside your cart, you can edit the color, size and quantity, or even remove one of the items chosen.",
+      "sec1p4":"Click on the “PROCEED TO CHECKOUT” button, once you have finished, then you’ll be asked to either create a new account by   simply filling the info needed in the “Account” section, or login to your existing account."
+
+    },
+    "section2":{
+      "title":"PAYMENTS",
+      "COD":{
+        "title":"1-Cash on delivery (COD)",
+        "sec2p1":"Once you fill your info, you can choose the simple Cash on Delivery (COD) option if you reside in Lebanon."
+      },
+      "DebitCard":{
+        "title":"2-Debit/Credit Cards:",
+        "sec2p1":"Once you fill your info, you can choose the Debit/Credit Card option through our International secure payment gateway.",
+        "sec2p2":"With COSMO, the safety of our customers is primordial. We have devoted our time and efforts to ensure all transactions are 100% secure with  <span class='text-[#E79E7F]'>NetCommerce</span> secure e-payment gateway.",
+        "sec2p3":"<span class='text-[#E79E7F]'>NetCommerce</span> is a leading e-commerce company specializing in cashless transactions. The order form is located on a secure server and all transactions are processed via the  <span class='text-[#E79E7F]'>NetCommerce</span> protocol ensuring that your private data remains safe and confidential",
+        "sec2p4":" <span class='text-[#E79E7F]'>NetCommerce</span> accepts all major debit/credit cards (Visa & MasterCard). ",
+        "sec2p5":"Only one card may be used per transaction.",
+        "sec2p6":"In submitting an order, you agree that this immediately authorizes COSMO to debit your card with the order payment.",
+        "sec2p7":"The payment will be debited and cleared from your account immediately at the time of your order.",
+        "sec2p8":"Once your order is processed, you will immediately receive an e-mail with your invoice.",
+         "sec2p9": "If you are having any trouble proceeding with payment please contact us on: <a href=\"mailto:customercare@cosmoleb.com\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmoleb.com</a>"
+      },
+      "WireTransfer":{
+        "title":"3-Wire transfer:",
+        "sec3p1":"You can also pay by wire transfer either through Western Union or bank transfer. For more details about the wire transfer please contact us on: <a href=\"mailto:customercare@cosmoleb.com\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmoleb.com</a>",
+        "sec3p2":"Do not hesitate to chat with us through WhatsApp on:<a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>+961 71 660 774</a> or e-mail us on: <a href=\"mailto:customercare@cosmoleb.com\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmoleb.com</a>  for more info."
+      }
+
+    }
+   
+  },
+  "exchangePolicy":{
+    "titleMain":"EXCHANGE POLICY",
+    "p1":"We accept to exchange unopened items within 15 days of delivery, or return them for a store credit voucher of the purchased amount.",
+    "p2":"The item must be returned unworn, undamaged and unused, with all tags attached and the original packaging included.",
+    "p3":"If you need to exchange an item, please contact us on <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>+961 71 660 774</a> with your order number and details.",
+    "p4":"If you need to return an item, please contact us on <a href=\"mailto:customercare@cosmoleb.com\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmoleb.com</a> with your order number and details about the product you would like to return. We will respond by informing you with instructions on how to return your item and get your credit voucher.",
+    "p5":"Unfortunately we don't have a REFUND policy but exchange is all yours.",
+  
+  "section1":{
+   "section1Title":"1-Lebanon Orders:",
+   "sec1p1":"Residents of Lebanon will be responsible for delivery costs when exchanging or returning any item. However you can always exchange or return your online order for free at our COSMO store located in Kaslik, within 15 days of your purchase, upon presentation of your digital invoice. "
+   },
+  "section2":{
+    "section2Title":"2-International Orders:",
+    "sec2p1":"Kindly note that ALL INTERNATIONAL SALES ARE FINAL. Due to the nature of our business, for shipping-related reasons, we maintain a No Return/No Exchange Policy.",
+    "sec2p2":"It is advised to check for your size requirements before you make a purchase order.",
+    "sec2p3":"Only in rare occasions where the mistake is on our end, we will make an exception to exchange the item. Please contact us within 48 hours of receiving the package via email:<a href=\"mailto:customercare@cosmoleb.com\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmoleb.com</a> or via WhatsApp: <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>+961 71 660 774</a>"
+  }
+},
+"privacyPolicy":{
+  "titleMain":" Privacy Policy",
+  "p1":" “COSMO” respects your privacy and is committed to protecting your privacy.",
+  "p2":"Our aim is to provide you a safe and secure surfing experience whenever you visit our website.",
+  "p3":"This Privacy Policy is created in order to demonstrate our firm commitment to your privacy.",
+  "p4":"This privacy notice describes our online information practices to inform you about what information we collect, why we collect such information and how we use the information that we collect from our customers.",
+  "p5":"By visiting our Website, you are accepting the practices described in this Privacy Policy.",
+  "p6":" “COSMO” may amend this policy at any time by posting a revised version on our website. We encourage you to periodically review this page, to be informed of how we are committed to protecting your privacy.",
+  "p7":"You can find the last updated date on the top of this page.",
+"Intro":{
+  "title":"1. Introduction.",
+  "p1":" 1.1. In general, you can browse our Website without telling us who you are or revealing any personally identifiable information about yourself. We collect your personally identifiable information at the time of your Account registration, Contact Us and any place any Cookies or Web Beacons or record any Web Log information at the time of your site visit."
+},
+"infoCollected":{
+  "title":"2. Information We Collect.",
+  "p1":" 2.1. We collect the following information through the Website: Information You Provide.",
+  "p2":" 2.2. We collect the Personal Information and other types of information that you submit when you use the Website. Registration Information.",
+  "p3":"2.3. To create an Account, you may need to provide Personal Information, such as your full legal name, current address, phone number, email address, and any other information indicated as required. You will need to provide us information about yourself when you register for our services or register for email newsletters and alerts. Personal Information.",
+  "p4":"2.4. Personal identifiable information means any information that may be used to identify an individual, including but not limited to first and last name, physical address, email address, phone number, or other contact information that may be used to identify an individual. If you do not want to provide us with your Personal Information, you may still access the Website but certain areas may not be accessible to you.",
+  "p5":"2.5. If you choose to submit content to any public area of the Website, your content will be considered “public” and will not be subject to the privacy protections set forth herein or any applicable law, rule or regulation. We encourage you to exercise caution when making decisions about what information you disclose in such public areas. Furthermore, except as otherwise described in this Policy, any content you post to a public area of the Website may be used by us for any purpose. Non-Personal Information.",
+  "p6":"2.6. Certain non-personally identifiable information about you may be collected by the standard operation of our servers and through the use of “cookies”. We reserve the right to disclose or utilize any of this information in aggregate form, for any purpose, in our sole judgment.",
+  "p7":" 2.7. The web servers we use may automatically collect information sometimes referred to as “clickstream data,” such as the domain name of the service providing you with Internet access, the Internet Protocol (IP) address used to connect your computer to the Internet, your browser type and version, operating system and Website, the average time spend on the Website, pages viewed, information searched for, access times and other relevant statistics. User Communications.",
+  "p8":"2.8. When you send an email or other communication to ”COSMO“, we may retain those emails and other communications in order to process your inquiries, to respond to your requests, and to improve our services. Financial Information. 2.9. If you pay for the services in and through the Website, your financial information, such as your payment method (valid credit card number, type, expiration date or other financial information), is collected and stored by our third-party payment processing company (the “Payment Processor”), and use and storage of that information is governed by the Payment Processor’s applicable terms and conditions and privacy policy. In order to facilitate your transactions, the Payment Processor collects and stores your other financial information.",
+  "p9":"2.9. If you pay for the services in and through the Website, your financial information, such as your payment method (valid credit card number, type, expiration date or other financial information), is collected and stored by our third-party payment processing company (the “Payment Processor”), and use and storage of that information is governed by the Payment Processor's applicable terms and conditions and privacy policy. In order to facilitate your transactions, the Payment Processor collects and stores your other financial information."
+},
+"otherSourceInfo":{
+  "title":"3. Information from Other Sources.",
+  "p1":"3.1. We may license and otherwise obtain non-personally identifiable information from various other companies, including research companies, data aggregation companies, and other third party companies. Data sets may include information about you or your demographic segment that such companies have licensed, purchased, or collected. We use this information for all the purposes described in this Policy, and for any other lawful purpose that we choose."
+},
+"Cookies":{
+  "title":"4. Technologies We Use. Cookies.",
+  "p1":"4.1. A cookie is a tiny file that is stored on a user's computer and issued to your computer when you enter a website. It stores a small amount of information relating specifically to the client and the website. The cookie can be accessed by both the web server and the user's computer.",
+  "p2":" 4.2. Cookies are used for a wide range of purposes, such as identifying your computer's previous visits to a website, ascertaining the most popular features of a website or enable a company to present specific information to users. Generally, cookies are used to enable us to deliver to you a better and more personalized service, assist us in tracking visits to the Website and to measure visitor patterns.",
+  "p3":" 4.3. We use cookies to recognize your device and provide you with a personalized experience.",
+  "p4":"4.4. We also use cookies to serve customized ads from Google and other third-party vendors.",
+  "p5":"4.5. We may participate in behavioral-based advertising. This means that a third party may place a cookie on your browser, or use a web beacon, to collect information about your use of our Website so that they can provide advertising about products and services tailored to your interest. That advertising may appear either on our Website or on other platforms. Our third-party advertisers use cookies to track your prior visits to our Website and elsewhere on the Internet in order to serve you customized ads.",
+  "p6":"4.6. We may participate in demographic, interest, and location-based advertising. If we do so, we will not use Personally Information in conjunction with this information Opting Out.",
+  "p7":" 4.7. You may be able to opt-out of customized and targeted ads by visiting the Google Analytics Opt-out Browser Add-on. If you use our Website without opting out, this means that you understand and agree to data collection for the purpose of providing you with remarketing ads. Web Log.",
+  "p8":"4.8. Like most standard Website servers, our servers also record information that your browser sends whenever you visit our Website. These server logs may include information such as your web request, internet protocol (IP) address, browser type, browser language, internet service provider (ISP), referring/exit pages, platform type, date and time of your request, number of clicks to analyze trends and one or more cookies that may uniquely identify your browser. Weblog information is not personally identifiable information. Social Buttons.",
+  "p9":"4.9. We have installed social buttons from third parties e.g. Facebook and Twitter on many pages of our Website. These allow our users to share pages and information that they find interesting on social networks they are registered with.",
+  "p10":"4.10. There may be scripts running from outside our domains, which we cannot control. If you click on these buttons, they may be registering the information - including the fact that you visited our Website - and in some cases could register this information, including the pages you look at, even if you do not click on the buttons but are logged in to their service. Click-Stream Data.",
+  "p11":"4.11. Click-stream data is information collected when you request pages from the Website. Click-stream data may include such information as the page served, the time, the source of the request, the type of browser making the request, the preceding page view, and other such non-personal information. This data helps us analyze how users arrive at the Website, what type of content is most popular, what type of users in the aggregate are interested in particular kinds of content and advertising, and the like. Third Parties. 4.12. We may use third parties to perform certain tasks for us, such as facilitating your payments. Such third parties will provide us the Personal Information, such as your name, address, and email address you provide to them.",
+  "p12":"4.12. We may use third parties to perform certain tasks for us, such as facilitating your payments. Such third parties will provide us the Personal Information, such as your name, address, and email address you provide to them."
+},
+"ThirdParty":{
+  "title":"5. Third-Party Account.",
+  "p1":" 5.1. The Website may allow you to log in and create an Account through your Facebook, Google, or any other non- “COSMO“ account (each a “Third Party Account”) using your third party ID. If you log in to the Website through your Third-Party Account, you are allowing the Website to access your information and you are agreeing to the Third-Party Account's terms of use in your use of the Website. We may receive information from such Third Party Accounts and that information may be imported to the Website (either as a part of your profile or otherwise). We will use all information available through a Third Party Account in accordance with the Third-Party Account's policies and your account privacy settings selected through the Third Party Account, so please consult such policies and settings.",
+  "p2":"5.2. You acknowledge and agree that you are solely responsible for your use of your Third-Party Account and that it is your responsibility to review the terms of use and privacy policy of each Third Party Account. We will not be liable for: (i) the availability or accuracy of your Third-Party Account; (ii) the content, products or Website on or available on your Third-Party Account; or (iii) your use of your Third-Party Account."
+},
+
+"useOfInfo":{
+  "title":"6. Use of Information.",
+  "p1":"6.1. The information, we collect from you, is used to process your inquiries, to respond to your requests, fulfill any orders, and to improve our stores & services. The information is solely used only for the purposes mentioned in this Policy.",
+  "p2":"6.2. Where your consent has been provided in advance, we may allow selected third parties to use your data to enable them to provide you with information regarding unrelated goods and services that we believe may interest you. You can withdraw such consent at any time.",
+  "p3":"6.3. Your information, whether public or private, will not be sold, exchanged, transferred, or given to any other company for any reason whatsoever, without your consent, other than for the express purposes stated in this Policy.",
+  "p4":"6.4. We do not and will never share, disclose, sell, rent, or otherwise provide Personal Information to other companies for the marketing of their own products or services.",
+  "p5":"6.5. We may anonymize and aggregate data collected through the Website and use it for any purpose. Internal Use of Information.",
+  "p6":" 6.6. “COSMO“ reserves the right to use your personally identifiable information internally to improve our marketing and promotional efforts, Website content, and product offerings. We can also use information gathered through cookies and weblogs for our internal research. We may use your information to conduct internal research on our users’ demographics, interests, behavior, and actions. These internal research reports and findings will not be disclosed to you. Marketing Campaigns. ",
+  "p7":" 6.7. With your consent, we may use your email address or other personally identifiable information to send commercial, marketing, or promotional messages. Legal Disclaimer. ",
+  "p8":"6.8. “COSMO“ may disclose information, including personally identifiable information, in order to comply with any applicable law, regulation, a judicial proceeding, court order, or governmental request. Fraud Protection. ",
+  "p9":" 6.9. “COSMO” may disclose information, including personally identifiable information, in order to scrutinize, prevent or take action against suspected frauds or illegal activities. We may also exchange information, including personally identifiable information, with other organizations and companies to protect online and credit frauds. Third-Party Service Providers. ",
+  "p10":" 6.10. We may employ services of authorized third parties, either companies or individuals, to perform research and other related functions.",
+  "p11":" 'COSMO' may give access to your information to such third parties and other companies to perform their research and functions. These third parties or other companies may include customer support companies, web hosting companies, payment gateways, financial institutions, shipping companies, data analysis firms, email service providers, etc.",
+  "p12":" These third parties are not authorized to use your personally identifiable information for any other purpose(s) other than the purpose(s) set forth by 'COSMO'."
+},
+"businessTrnasfer":{
+  "title":"7. Business Transfer.",
+  "p1":" 7.1. As we continue to develop our business, we might sell or buy stores, subsidiaries, or business units. In such transactions, customer information generally is one of the transferred business assets but remains subject to the promises made in any pre-existing Privacy Notice (unless, of course, the customer consents otherwise). Also, in the unlikely event that 'COSMO', or substantially all of its assets are acquired, customer information will, of course, be one of the transferred assets."
+},
+"storingInfo":{
+  "title":"8. Storing Your Information.",
+  "p1":" 8.1. Your Personal Information is kept secure. Only authorized employees, agents, and contractors (who have agreed to keep information secure and confidential) have access to this information. We limit access to personal information about you to employees who we believe reasonably need to come into contact with that information to provide products or services to you or in order to do their jobs.",
+  "p2":"8.2. We will continue to store archived copies of your Personal Information for legitimate business purposes and to comply with the law.",
+  "p3":"8.3. We will continue to store anonymous or anonymized information, such as website visits, without identifiers, in order to improve our Website."
+},
+"sharingInfo":{
+  "title":"9. Sharing of Information.",
+  "p1":"  9.1. We are always seeking to improve our business. In accomplishing these objectives, we may buy or sell a company, or one or more of the companies in our corporate family may merge with or be acquired by another company. If we sell a business, we may transfer some or all of your information as a part of the sale in order that the service being provided to you may continue or for other business purposes. Personal information may also be shared with a company that acquires our business, whether through merger, acquisition, bankruptcy, dissolution, reorganization, or other similar transaction or proceeding. If this happens, we will post a notice on our home page."
+},
+"secureInfo":{
+  "title":"10. Securing Your Information.",
+  "p1":"10.1. 'COSMO' is committed to protecting your personally identifiable information and uses all precautionary measures to offer a safe and secure online environment. We use very advanced security technologies and procedures to protect your personally identifiable information from unauthorized access, use, or disclosure. We may use Secure Sockets Layer (SSL) software, which encrypts information you input, for transmission of your credit card information. It is important for you to protect against unauthorized access to your password and to your computer. Be sure to sign out when finished using a shared computer.",
+  "p2":"10.2. No method of transmission over the Internet, or method of electronic storage, is 100% secure. Therefore, we cannot guarantee the absolute security of your Personal Information."
+},
+"transferInfo":{
+  "title":"11. Transfer of Information.",
+  "p1":"11.1. We may transmit Personal Information outside of your jurisdiction of residence. Any Personal Information transferred to a third party for data processing is subject, by law, to a comparable level of protection as that provided by 'COSMO'. A 'comparable level of protection' means a level of protection generally equivalent to that provided by 'COSMO'. By providing your information, you consent to such transfer."
+},
+"links":{
+  "title":"12. Links.",
+  "p1":" 12.1. This Privacy Policy applies to our Website only. Our Website contains links to other sites and we are not responsible for the privacy practices of such other sites. We encourage our users to be aware by reading the privacy statements of each and every website that collects personally identifiable information. These other sites may place their own cookies or other files on your computer, collect data or solicit personal information from you."
+},
+"access":{
+  "title":"13. Access to Your Personal Information.",
+  "p1":" 13.1. You retain all rights to your Personal Information and can access it anytime. In addition, 'COSMO' takes reasonable steps to allow you to correct, amend or delete personal information that is shown to be inaccurate or incomplete.",
+  "p2":" 13.2. Upon request, we provide Website visitors with access to all information (including proprietary information) that we maintain about them. If you have any questions about your Personal Information or this Policy, please contact us through the information found at the end of this document."
+},
+"yourChoice":{
+  "title":"14. Your Choices.",
+  "p1":" 14.1. You can use some of the features of the Website without registering for an Account, thereby limiting the type of information that we collect.",
+  "p2":" 14.2. You can always opt not to disclose certain information to us, even though it may be needed to take advantage of some of our features.",
+  "p3":"14.3. You can delete your account. Please note that we will need to verify that you have the authority to delete the Account and activity generated prior to deletion will remain stored by us and may be publicly accessible."
+},
+"logalDisputes":{
+  "title":"15. Legal Disputes.",
+  "p1":"15.1.  If a dispute arises between you and us, our goal is to provide you with a neutral and cost-effective means of resolving the dispute quickly. Accordingly, you and we agree that we will resolve any claim or controversy at law or equity that arises out of this Policy and our services. Before resorting to these alternatives, we strongly encourage you to first contact us directly to seek a resolution by reaching out to us. We will consider reasonable requests to resolve the dispute through alternative dispute resolution procedures, such as mediation or arbitration, as alternatives to litigation."
+},
+"law":{
+  "title":"16. Governing Law and Jurisdiction.",
+  "p1":" 16.1.  This Privacy Policy and our legal obligations hereunder are subject to the laws of Lebanon regardless of your location. You hereby consent to the exclusive jurisdiction of and venue in the courts located in Lebanon in all disputes arising."
+
+}
+
+
+
+},
+"terms":{
+  "title":"TERMS & CONDITIONS",
+  "p1":"Welcome to the world of COSMO.",
+  "p2":"This website is owned and operated by COSMO.",
+  "p3":"Your use of the website is governed by the Terms and Conditions (the 'Agreement') stated below. Please read this agreement carefully before using this website.",
+  "p4":"By using this website, you signify that you agree to this agreement. If you do not agree with these terms and conditions, you must discontinue use of this website.",
+
+"eligibility":{
+  "title":"ELIGIBILITY",
+  "p1":"By using or purchasing products on the website, you represent that you are eighteen (18) years of age or older. Your Account. You can register for COSMO Account (the “Account”) by providing your full legal name, current address, phone number, email address, and any other information indicated as required.",
+  "p2":"You will provide correct, accurate, current, and complete information about you as requested in the registration form, and will update the information to keep it current. You are responsible for keeping your password secure.",
+  "p3":"We cannot and will not be liable for any loss or damage from your failure to maintain the security of your Account and password.",
+  "p4":"You are responsible for all activity and content such as data, graphics, photos, and links uploaded under your Account. We may reject your registration or cancel an existing Account, for any reason, in our sole discretion."
+},
+
+"payments":{
+  "title":"PAYMENTS",
+  "p1":"You are responsible for all charges incurred under your Account, whether made by you or another person using your Account.",
+  "p2":"If for any reason we do not receive payment for a purchase, or if payment is found to be fraudulent, we may exercise our rights in law and equity, including (a) immediately suspending or terminating your Account; (b) seeking collection of the outstanding amount owed; and/or (c) seeking legal action against you for the breach of this agreement.",
+  "p3":"You are also responsible for paying any governmental taxes imposed in connection with the use of the website or the purchase of any products, including sales, use, or excise taxes.",
+  "p4":"To the extent that we are obligated to collect such taxes, the applicable tax will be added to your payment. All sales on the website are final."
+},
+"changes":{
+  "title":"AVAILABILITY, CHANGES AND INACCURACIES",
+  "p1":"We reserve the right at any time, and from time to time, to modify or discontinue the website (or any part thereof) with or without notice.",
+  "p2":"We are constantly updating our products and services on the website. We make every attempt to ensure that our online catalog of products is as accurate and complete as possible.",
+  "p3":"Unfortunately, it is not possible to ensure that any website is completely free of human or technological errors. The products or services available on our website may be mispriced, described inaccurately, or unavailable, and we may experience delays in updating information on the website and in our advertising on other websites. Prices and descriptive information or imagery are subject to change without notice. We reserve the right to correct any errors, inaccuracies or omissions including after an order has been submitted, and to change or update information at any time without prior notice. In cases where the price of the product you purchased as shown on the website is different from the price on the Order Confirmation you receive, the price on such an email will be the correct and final price. If a product's listed price is lower than its actual price, we will contact you prior to processing the order to confirm the new price. Should you not want to continue with your order at this time, it will be canceled. We will not honor inaccurate or incorrect pricing. We do not negotiate the prices of our products. We cannot and do not guarantee the accuracy or completeness of any information, including prices, product images, specifications, availability, and services. We reserve the right to change or update information and to correct errors, inaccuracies, or omissions at any time without prior notice"
+},
+"unauthorized":{
+  "title":"UNAUTHORIZED ACTIVITIES",
+  "p1":"You agree that you will not use the website for (a) any illegal or unauthorized purposes that violate any local, national, or international laws (including but not limited to import, export, copyright, and trademark laws); (b) modifying, copying, distributing, displaying, performing, reproducing, publishing, licensing, creating derivative works from, transferring, selling any of the website Materials, unless otherwise authorized by this agreement or in a separate written agreement with us; (c) attempting to gain unauthorized access to our computer system or engaging in any activity that interferes with the performance of, or impairs the functionality of the website or any services provided through the website; (d) any resale or commercial use of the website; (e) any downloading or copying of the Website Materials for any reason other then your personal use, or any use of data mining, robots or similar data gathering and extraction tools; (f) using the website to access or collect any personally identifiable information, including any names, email addresses or other such information for any purpose, including, without limitation, commercial purposes; or (g) removing, circumventing, disabling, damaging or otherwise interfering in any way with any security-related features of the website aimed at preventing or restricting the unauthorized use of the website or any of the website Materials.",
+  "p2":"You may use the website and the website Materials consistently with this agreement. Any other use of the website or website Materials, including but not limited to the aforementioned unauthorized uses, without our prior written permission is strictly prohibited.",
+  "p3":"You acknowledge and agree that the unauthorized use of the website or the Website Materials could cause irreparable harm to us and that in the event of such unauthorized use, we shall be entitled to an injunction in addition to any other remedies available at law or in equity."
+},
+"internet":{
+  "title":"INTERNET SECURITY",
+  "p1":"We use reasonable efforts to ensure that the website is generally available. However, there will be occasions when access to the website is interrupted or unavailable. You agree that we shall not be liable to you for any modification, suspension, or discontinuance of the website.",
+  "p2":"You understand that the technical processing and transmission of any website content may be transferred unencrypted and involve (a) transmissions over various networks; and (b) changes to conform and adapt to technical requirements of connecting networks or devices.",
+  "p3":"Please be advised that we do not guarantee that any information sent from our website will be secure during transmission, nor can we guarantee the confidentiality of any communication or material transmitted to the website or the Internet, including, for example, personal information such as your name or address."
+},
+"term":{
+  "title":"TERM AND TERMINATION",
+  "p1":"We may terminate the agreement or the website at any time with or without cause, and with or without notice. We will have no liability to you or any third party because of such termination. Upon termination or expiration of this agreement by either party for any reason, we may delete your archived data within 30 days after the date of termination.",
+  "p2":"Termination shall not affect our rights to recover from you our losses, damages, indemnity, defense costs, expert costs, collection costs and/or attorney's fees or expert witnesses' costs or other costs of any kind under this agreement"
+},
+"rights":{
+  "title":"RESERVATION OF RIGHTS",
+  "p1":"Except for the rights expressly granted to you pursuant to this agreement, you acknowledge that you have no right, title or interest in or to this website, the website, or Proprietary Rights. All rights not expressly granted by us in this agreement are hereby reserved by us. There are no implied rights."
+},
+"internationalUsers":{
+  "title":"INTERNATIONAL USERS",
+  "p1":"The website is controlled and operated from within Lebanon. Without limiting anything else, we make no representation that the website, website Materials, User Content, services, products, information or other materials available on, in, or through the website are appropriate or available for use in other locations and access to them from territories where they are illegal is prohibited.",
+  "p2":"Those who choose to access the website from other locations do so on their own volition and are responsible for compliance with applicable laws. Our waiver or failure of to exercise in any respect any right provided hereunder shall not be deemed a waiver of such right in the future or a waiver of any of other rights established under this agreement."
+}
+
+
+
+
+},
+"cotactUs":{
+  "mainTitle":"CONTACT US",
+  "call":{
+    "callUs":"Call To Us",
+    "p1":"You can contact us on",
+    "p2":"Phone: <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>+961 71 660 774</a>"
+  },
+  "email":{
+    "writeUs":"Write To Us",
+    "p1":"Send us a message on",
+    "p2":"Email: <a href=\"mailto:customercare@cosmoleb.com\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmoleb.com</a>"
+
+  }
+},
+
+"Authentication":{
+  "login": {
+    "title": "HAVE AN ACCOUNT?",
+    "desc": "Please login with your credentials below.",
+    "email": "Email Address",
+    "pass": "Password",
+    "forgot": "Forgot Password?",
+    "loginBtn": "Login",
+    "noAccnt": " Don't have an account?",
+    "sign": " Sign Up"
+  },
+  "ForgotPass":{
+    "title":"FORGOT PASSWORD?",
+    "desc":" Please enter your email below. You will receive a link to reset your password.",
+    "resetbtn":"Reset Password"
+  },
+  "signUp":{
+    "title":"SIGN UP",
+    "desc":"Please enter the following information to create your account.",
+    "phone":"Phone Number",
+    "gender":"Gender",
+    "select":"Select Gender",
+    "female":"Female",
+    "male":"Male",
+    "required":"Required Fields",
+    "haveAccount":"Already have an account?",
+    "lastName":"Last Name",
+    "firstName":"First Name",
+    "address":"Address",
+    "addressTitle":"ADDRESS",
+    "addressDesc":"Please enter your address below to complete your account creation",
+    "country":"Country",
+    "region":"Region/State/Province",
+    "city":"City",
+    "zipCode":"Zip Code",
+    "apartment":"Apartment",
+    "next":"Next"
+  }
+ 
+},
+"checkout":{
+  "billing": "Billing address same as shipping",
+  "redirectTitle": " Please do not close this tab, we are processing your order.",
+  "thankYou": "Thank you for your patience.",
+  "sameAddress": "Same As Address",
+  "shippingAddress": " SHIPPING ADDRESS",
+  "notes": "Notes",
+  "cartItems": "CART ITEMS",
+  "cartNote": "All international sales are final. No returns or exchanges will be accepted.",
+  "cod": "CASH ON DELIVERY",
+  "onlinePayment": "ONLINE PAYMENT",
+  "billingFirstName": "First Name (billing)",
+  "billingLastName": "Last Name (billing)",
+  "billingEmail": "Email (billing)",
+  "billingPhone": "Phone Number (billing)",
+  "billingAddress": "Address (billing)",
+  "billingCountry": "Country (billing)",
+  "billingRegion": "Region (billing)",
+  "billingCity": "City (billing)",
+  "billingZipCode": "Zip Code (billing)",
+  "billingApartment": "Apartment (billing)"
+},
+
+"popUps":{
+  "signupSuccess":{
+    "title":"Sign Up Successful",
+    "p1":"Log in and enjoy your shopping experience.",
+    "btn":"Back to Login"
+},
+"orderPlaced":{
+  "title":"Order Placed Successfully",
+  "p1":"Your order is being processed",
+  "btn":"Back to Home"
+
+}
+},
+"dashboard":{
+  "personalInfo":{
+    "myProfile":"Edit Your Profile",
+    "personalInfo":"Personal Information",
+    "manageAddress":"Manage Address",
+    "orders":"My Orders",
+    "logout":"Logout",
+    "title":"MY PROFILE",
+    "save":"Save Changes"
+  },
+  "orders":{
+    "ongoing":"Ongoing",
+    "delivered":"Delivered",
+    "orderId":"Order Id:",
+    "orderDate":"Order Date:",
+    "noOrders":"You have no orders yet."
+  },
+  "editAddress":"Edit Your Address"
+},
+
+
+  "faq": {
+    "title": "FAQ",
+    "questions": [
+      {
+        "question": "1-How do I order and Pay?",
+        "answer1": "Please refer to the section <Link className='text-[#E79E7F] cursor-pointer' to='/payment-policy'>Orders & Payments</Link> for information."
+      },
+      {
+        "question": "2-DO I NEED TO SET UP AN ACCOUNT TO PLACE AN ORDER?",
+        "answer1": "No, you don't need to create an account to be able to shop on the official <Link className='text-[#E79E7F] cursor-pointer' to='/'>cosmoleb.com</Link> website.",
+        "answer2": "You just enter the website; add an item/several items to your bag; click on the bag icon on the upper-right corner of the page; verify your pick(s); proceed to checkout; enter your shipping details; proceed to payment details; confirm your order and you're done!"
+      },
+      {
+        "question": "3-IS MY PERSONAL INFORMATION KEPT PRIVATE?",
+        "answer1": "Please be assured that your personal information is kept private and confidential and at no point will we sell it to a third party for marketing purposes. For more information, please read our <Link className='text-[#E79E7F] cursor-pointer' to='/privacy-policy'>Privacy Policy</Link> published on our website in full."
+      },
+      {
+        "question": "4-I FORGOT MY PASSWORD - WHAT SHOULD I DO?",
+        "answer1": "To re-set your password, follow the “FORGOT YOUR PASSWORD” instructions on the “SIGN IN” page. Please note, for security reasons we are unable to send your old password via email."
+      },
+      {
+        "question": "5-WHAT IS THE SHIPPING & DELIVERY POLICY?",
+        "answer1": "Please refer to section Shipping & Delivery for information."
+      },
+      {
+        "question": "6-WHICH COUNTRIES DOES COSMO SHIP TO?",
+        "answer1": "We ship our products worldwide. If you have any concern regarding a shipping destination, please contact customercare@cosmoleb.com"
+      },
+      {
+        "question": "7-DOES COSMO SHIP TO MULTIPLE ADDRESSES?",
+        "answer1": "We are only able to deliver to one address per order. If you would like to send your purchases to multiple addresses, we suggest that you place a separate order for each destination. Once your order has been dispatched, we are unable to redirect your delivery to another address."
+      },
+      {
+        "question": "8-CAN I AMEND MY ORDER ONCE IT HAS BEEN PLACED?",
+        "answer1": "We can amend your order or change your billing and shipping details only before your purchase has been prepared for dispatch. However, we are unable to combine orders or add new pieces to an existing order; once it has been placed, you will need to place a new order to add changes. If you need to make any amendments, please call customer care on +961 71 660774 or contact us on costumercare@cosmoleb.com"
+      },
+      {
+        "question": "9-WHAT IS THE EXCHANGES & RETURNS POLICY?",
+        "answer1": "Please refer to section Exchanges & Returns for information."
+      },
+      {
+        "question": "10-WHAT DO I DO IF I RECEIVE A FAULTY ITEM IN MY ORDER?",
+        "answer1": "As soon as you discover a fault, please contact us at customercare@cosmoleb.com so we can get this sorted for you."
+      },
+      {
+        "question": "11-WHAT HAPPENS IF A TRANSACTION ERROR OCCURS?",
+        "answer1": "In the event that transaction error has occurred while making the payment, a refund in most cases will be issued to the same credit card you used for the original purchase."
+      },
+      {
+        "question": "12-DO I HAVE TO PAY CUSTOMS?",
+        "answer1": "That depends on your countries' policies and regulations. Our shipping rates exclude custom fees."
+      }
+    ]
+  },
+  "addedToCart":"Added to the cart",
+  "continue":"Continue Shopping",
+  "viewCart":"View Cart"
+  
+
+
+}

@@ -1,0 +1,373 @@
+@font-face {
+  font-family: FrutigerLTCom-Roman;
+  src: url('./fonts/FrutigerLTCom-Roman.ttf');
+
+}
+@font-face {
+  font-family: FahKwang;
+  src: url('./fonts/FahKwang.ttc')
+
+}
+@font-face {
+  font-family: FrutigerLTCom-Black;
+  src: url('./fonts/FrutigerLTCom-Black.ttf')
+
+}
+@font-face {
+  font-family: FrutigerLTCom-Bold;
+  src: url('./fonts/FrutigerLTCom-Bold.ttf')
+
+}
+@font-face {
+  font-family: Playball-Regular;
+  src: url('./fonts/Playball-Regular.ttf')
+
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.popup {
+  animation: slideInRight 0.2s ease-out;
+}
+
+
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* FOR ADVERTISING BANNER */
+
+
+.slide {
+  animation: slides 1500s linear infinite;
+}
+
+@keyframes slides {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Circular Loader */
+.circular-loader {
+  width: 3.25em;
+  transform-origin: center;
+  animation: rotate4 2s linear infinite;
+ }
+ 
+ circle {
+  fill: none;
+  stroke: #E79E7F;
+  stroke-width: 2;
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: dash4 1.5s ease-in-out infinite;
+ }
+ 
+ @keyframes rotate4 {
+  100% {
+   transform: rotate(360deg);
+  }
+ }
+ 
+ @keyframes dash4 {
+  0% {
+   stroke-dasharray: 1, 200;
+   stroke-dashoffset: 0;
+  }
+ 
+  50% {
+   stroke-dasharray: 90, 200;
+   stroke-dashoffset: -35px;
+  }
+ 
+  100% {
+   stroke-dashoffset: -125px;
+  }
+ }
+ /* Circular Loader */
+
+
+
+ 
+ 
+
+/* FOR ADVERTISING BANNER */
+
+
+
+
+input[type="radio"]:checked {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 0.9em;
+  height: 0.9em;
+  background-color: #ea9e7e;
+  border-radius: 50%;
+  border: 3.5px solid #dedede;
+  outline: none;
+}
+
+
+
+.swiper {
+  width: 100%;
+ 
+  
+}
+
+.swiperTrial{
+  width: 170px;
+  margin: 0 !important;
+
+}
+.slidersImage{
+  object-fit: contain !important;
+  display: flex !important;
+  
+}
+
+/* .swiper-slide {
+ 
+  width: 20px !important;
+  padding: 0 !important;
+}
+.single-slide{
+  width: 20px !important;
+} */
+
+
+/* Checkbox for the billing address */
+.custom-checkbox-label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+}
+
+.custom-checkbox-label::before {
+  content: "";
+  position: absolute;
+  left: -0.9px;
+  top: 5px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #082252;
+  background-color: transparent;
+  border-radius: 3px;
+}
+
+input[type="checkbox"]:checked + .custom-checkbox-label::before {
+  background-color: #082252;
+  border-color: #082252;
+}
+
+.custom-checkbox-label::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  opacity: 0;
+  transform: rotate(45deg);
+}
+
+input[type="checkbox"]:checked + .custom-checkbox-label::after {
+  opacity: 1;
+}
+
+/* Checkbox forthe billing address */
+
+
+@media (max-width: 950px) {
+  .swiperTrial{
+    width: 100% !important;
+   
+  }
+  
+  .single-slide img{
+ height: 500px !important;
+   object-fit: contain !important;
+    
+  }
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+ 
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+}
+
+.single-slide{
+  width: 100% !important;
+}
+
+.PhoneInputCountryIcon{
+  border-radius: 100px;
+  width: 20px !important;
+  height: 20px !important;
+}
+.PhoneInputCountryIconImg{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 500px !important;
+}
+
+.PhoneInputInput{
+  background-color: #F1F5FF !important;
+  
+}
+
+.countryCode{
+
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+height: 40px !important;
+
+}
+
+
+.PhoneInputCountrySelectArrow{
+  color: white !important;
+  display: none !important;
+}
+
+
+.custom-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0.5px solid black;
+  width: 100%;
+ 
+  font-size: 0.8vw;
+  font-size: 15px;
+  position: relative;
+  padding-right: 2rem;
+}
+
+.custom-select-register{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+ 
+
+}
+
+.custom-select::-ms-expand {
+  display: none; 
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+
+.dropdown-container::after {
+  content: '\2335'; 
+  position: absolute;
+  right: 0rem;
+  top: 50%;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+  height: 100%;
+  pointer-events: none;
+  font-size: 1.8rem;
+  padding-bottom: 2%;
+  font-weight: 200;
+  border-left:0.5px solid black;
+  color:#E79E7F;
+}
+.swiper-button-next,
+.swiper-button-prev {
+ 
+ color: rgb(191, 191, 191) !important;
+
+}
+
+/* FOR SINGLE PRODUCTS ARROW POSITION */
+@media (min-width: 950px) {
+  
+.swiper-button-next,
+.swiper-button-prev {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 20px;
+  height: 20px; 
+ color: white !important;
+
+}
+
+.swiper-button-next {
+  left: 48% !important;
+  top: 100% !important;
+}
+
+.swiper-button-prev {
+  left: 48% !important;
+  top: 5% !important; 
+}
+
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  transform: rotate(90deg); 
+}
+
+
+}

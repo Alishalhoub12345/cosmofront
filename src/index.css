@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply block text-[2em] font-bold;
+  }
+  h2 {
+    @apply text-[1em] block font-bold;
+  }
+  h3 {
+    @apply text-[12px] block font-bold;
+  }
+ 
+}
