@@ -9,6 +9,7 @@ const fetchCurrencies = async () => {
     "http://localhost:8000/api/exchange-rates/USD"
   );
   return response.data;
+  console.log(response.data)
 };
 
 const getUserLocation = async () => {
@@ -16,7 +17,7 @@ const getUserLocation = async () => {
     // const ipResponse = await axios.get("https://api.ipify.org?format=json");
     // const userIP = ipResponse.data.ip;
     const locationResponse = await axios.get(
-      `https://api.getgeoapi.com/v2/ip/check?api_key=06d321c862bb04cf759e29b5f5adc30d2c857aba`
+      `https://api.getgeoapi.com/v2/ip/check?api_key=be20858ad6fdbcf2df362ab431d8469e730ac578`
     );
     localStorage.setItem("location", JSON.stringify(locationResponse.data));
     return locationResponse.data;
