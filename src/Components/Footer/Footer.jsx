@@ -104,7 +104,7 @@ function Footer() {
               <Link to="/contact-us" className="lg:w-[100%]  hover:font-[900]">
                 {t("footer.contactUs")}
               </Link>
-                    <Link to="/store-locator" className="lg:w-[100%]  hover:font-[900]">
+                    <Link to="/store-locator" className=" w-[100px]   hover:font-[900]">
                     
                 {t("footer.storeLocator")}
               </Link>

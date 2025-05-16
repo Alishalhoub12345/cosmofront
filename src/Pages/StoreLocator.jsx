@@ -32,11 +32,11 @@
 //           Store Locator
 //         </h1>
 
-//         <div className="flex flex-wrap gap-6 justify-center">
+//         <div className="flex flex-wrap gap-5 justify-center">
 //           {stores.map((store, index) => (
 //             <div
 //               key={index}
-//               className="bg-white w-[300px] p-6 rounded-lg shadow-md border-l-[6px] border-[#E79E7F]"
+//               className="bg-white w-[750px] p-6 rounded-lg shadow-md border-l-[6px] border-[#E79E7F]"
 //             >
 //               <h2 className="text-2xl font-semibold text-[#082252] mb-3">
 //                 {store.name}
