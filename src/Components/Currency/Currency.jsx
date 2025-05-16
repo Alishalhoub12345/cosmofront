@@ -17,7 +17,7 @@ const getUserLocation = async () => {
     // const ipResponse = await axios.get("https://api.ipify.org?format=json");
     // const userIP = ipResponse.data.ip;
     const locationResponse = await axios.get(
-      `https://api.getgeoapi.com/v2/ip/check?api_key=be20858ad6fdbcf2df362ab431d8469e730ac578`
+      `https://api.getgeoapi.com/v2/ip/check?api_key=37830d889838c285b3e3f3dc82ef2378ce964826`
     );
     localStorage.setItem("location", JSON.stringify(locationResponse.data));
     return locationResponse.data;

@@ -110,6 +110,8 @@
     "faq":"FAQ",
     "aboutUs":"About Us",
     "contactUs":"Contact Us",
+    "storeLocator":"Store Locator",
+
     "subscribe":"Subscribe now & Stay up to date with our latest news!"
   },
   "announcementBar":"Use Promo Code Summer 15 for 15% Off Your Order",
@@ -133,6 +135,7 @@
     }
 
   },
+  
   "shipping":{
     "titleMain":"SHIPPING & DELIVERY",
     "title":"We ship worldwide",
@@ -408,7 +411,7 @@
 "cotactUs":{
   "mainTitle":"CONTACT US",
   "call":{
-    "callUs":"Call To Us",
+    "callUs":"Call Us",
     "p1":"You can contact us on",
     "p2":"Phone: <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>+961 71 660 774</a>"
   },

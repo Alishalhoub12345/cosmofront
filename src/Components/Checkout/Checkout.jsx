@@ -89,7 +89,7 @@ function Checkout() {
           params: { locale: selectedLang },
         }
       );
-     
+     console.log(res)
       setCartItems(res.data);
       setTotal(res.data.total);
       setSubtotal(res.data.subtotal);

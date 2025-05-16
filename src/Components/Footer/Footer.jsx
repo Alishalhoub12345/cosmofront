@@ -6,6 +6,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import in2info from "../../images/AboutUs/in2info-logo.png";
 import { useTranslation } from "react-i18next";
 
+
 function Footer() {
   const [emailSub, setEmailSub] = useState("");
   const [t, i18n] = useTranslation("global");
@@ -102,6 +103,10 @@ function Footer() {
               </Link>
               <Link to="/contact-us" className="lg:w-[100%]  hover:font-[900]">
                 {t("footer.contactUs")}
+              </Link>
+                    <Link to="/store-locator" className="lg:w-[100%]  hover:font-[900]">
+                    
+                {t("footer.storeLocator")}
               </Link>
             </div>
           </div>

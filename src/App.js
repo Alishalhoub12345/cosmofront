@@ -37,6 +37,8 @@ import ProductsPerDepartmentPage from './Pages/ProductsPerDepartmentPage';
 import AllProductsPerCollectionPage from './Pages/AllProductsPerCollectionPage';
 import AllProductsOnSale from './Components/ProductsOnSale/AllProductsOnSale';
 import AllProductsOnSalePage from './Pages/AllProductsOnSalePage';
+import StoreLocator from "../src/Pages/StoreLocator.jsx";
+
 
 
 
@@ -108,7 +110,9 @@ function App() {
           />
           <Route path="/error-404" Component={DoesntExistPage} />
           <Route path="/manage-address" Component={ManageAddressPage} />
-        </Routes>
+            <Route path="/store-locator" element={<StoreLocator />} />
+            {/* add more routes here */}
+          </Routes>
       </CartProvider>
     </div>
   );
