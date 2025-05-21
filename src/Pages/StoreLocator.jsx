@@ -93,93 +93,88 @@ const StoreLocator = () => {
   }, [i18n]);
 
   const isArabic = lang === "ar";
+const stores = [
+  {
+    name: "COSMO Beirut",
+    address: [
+      "Verdun 2000 Center, Ground Floor",
+      "Verdun Main Street, Beirut",
+    ],
+    phone: "+96181117733",
+    mapLink: "https://maps.app.goo.gl/fUYHAswreeDXvaBv9",
+  },
+  {
+    name: "COSMO Kaslik",
+    address: [
+      "Fahd Center, Ground Floor",
+      "Kaslik Main Street, Kaslik",
+    ],
+    phone: "+96171017011",
+    mapLink: "https://maps.app.goo.gl/dSNX4SQ9xmmksFaz6",
+  },
+];
 
-  const stores = [
-    {
-      name: "COSMO Beirut",
-      address: [
-        "Verdun 2000 Center, Ground Floor",
-        "Verdun Main Street, Beirut",
-      ],
-      phone: "+96181117733",
-      mapLink: "https://maps.app.goo.gl/fUYHAswreeDXvaBv9",
-    },
-    {
-      name: "COSMO Kaslik",
-      address: [
-        "Fahd Center, Ground Floor",
-        "Kaslik Main Street, Kaslik",
-      ],
-      phone: "+96171017011",
-      mapLink: "https://maps.app.goo.gl/dSNX4SQ9xmmksFaz6",
-    },
-  ];
+return (
+  <>
+    <Navbar />
+    <div
+      className={`w-[100%] min-h-[80vh] px-[5%] lg:h-auto lg:py-[2%] pt-[2%] font-[FrutigerLTCom-Roman] ${
+        isArabic ? "text-right" : ""
+      }`}
+    >
+      <h1 className="text-[40px] font-[FahKwang] px-[2%] lg:text-[40px] md:text-[25px] mb-[3%]">
+        Store Locator
+      </h1>
 
-  return (
-    <>
-      <Navbar />
-      <div
-        className={`w-[100%] min-h-[80vh] px-[5%] lg:h-auto lg:py-[2%] pt-[2%] font-[FrutigerLTCom-Roman] ${
-          isArabic ? "text-right" : ""
-        }`}
-      >
-        <h1 className="text-[40px] font-[FahKwang] px-[2%] lg:text-[40px] md:text-[25px] mb-[3%]">
-          Store Locator
-        </h1>
+      <div className="flex flex-wrap justify-between gap-[2%] px-[2%]">
+        {stores.map((store, index) => (
+          <div
+            key={index}
+            className="w-[48%] lg:w-[100%] p-[2%] bg-white rounded-[5px] flex flex-col justify-between shadow-md mb-[2%]"
+          >
+            <h2 className="text-[#082252] font-[FahKwang] font-[800] text-xl mb-3">
+              {store.name}
+            </h2>
 
-        <div className="flex flex-wrap justify-between gap-[2%] px-[2%]">
-          {stores.map((store, index) => (
+<a
+  href={store.mapLink}
+  target="_blank"
+  rel="noopener noreferrer"
+  className={`flex items-center gap-[1%] mb-2 hover:underline ${isArabic ? "flex-row-reverse" : ""}`}
+>
+  <div className="flex justify-center bg-[#676F98] text-white rounded-full items-center w-[30px] h-[30px]">
+    <LuMapPin className="w-[20px] h-[20px]" />
+  </div>
+  <div className="text-[#3e3e3e]">
+    <p>{store.address[0]}</p>
+    <p>{store.address[1]}</p>
+  </div>
+</a>
+
+
             <div
-              key={index}
-              className="w-[48%] lg:w-[100%] p-[2%] bg-white rounded-[5px] flex flex-col justify-between shadow-md mb-[2%]"
+              className={`flex items-center gap-[1%] mb-2 ${
+                isArabic ? "flex-row-reverse" : ""
+              }`}
             >
-              <h2 className="text-[#082252] font-[FahKwang] font-[800] text-xl mb-3">
-                {store.name}
-              </h2>
-
-              <div
-                className={`flex items-center gap-[1%] mb-2 ${
-                  isArabic ? "flex-row-reverse" : ""
-                }`}
-              >
-                <LuMapPin className="text-[#676F98] w-[25px] h-[25px]" />
-                <div className="text-[#3e3e3e]">
-                  <p>{store.address[0]}</p>
-                  <p>{store.address[1]}</p>
-                </div>
+              <div className="flex justify-center bg-[#676F98] text-white rounded-full items-center w-[30px] h-[30px]">
+                <LuPhone className="w-[27px] h-[20px]" />
               </div>
-
-              <div
-                className={`flex items-center gap-[1%] mb-2 ${
-                  isArabic ? "flex-row-reverse" : ""
-                }`}
-              >
-                <div className="flex justify-center bg-[#676F98] text-white rounded-full items-center w-[35px] h-[35px]">
-                  <LuPhone className="w-[30px] h-[20px]" />
-                </div>
-                <a
-                  href={`tel:${store.phone}`}
-                  className="text-[#E79E7F] hover:underline font-[FahKwang] font-[800]"
-                >
-                  {store.phone}
-                </a>
-              </div>
-
               <a
-                href={store.mapLink}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`tel:${store.phone}`}
                 className="text-[#E79E7F] hover:underline font-[FahKwang] font-[800]"
               >
-                Google Maps Location
+                {store.phone}
               </a>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-      <Footer />
-    </>
-  );
+    </div>
+    <Footer/>
+  </>
+);
+
 };
 
 export default StoreLocator;

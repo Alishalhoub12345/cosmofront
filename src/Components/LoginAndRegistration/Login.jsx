@@ -78,103 +78,116 @@ function Login() {
     setLoader(false);
   };
 
-  const handleLogin = (event) => {
-    event.preventDefault();
-    if (!email || !password) {
-      setError("Please fill in both email and password fields.");
-    } else {
-      setError("");
-      setLoading(true);
-      axios
-        .post("http://localhost:8000/api/login-user-check", {
-          email: email,
-          Password: password,
-        })
+ const handleLogin = (event) => {
+  event.preventDefault();
 
-        .then((response) => {
-          if (response.status === 200 && response.data && response.data.user) {
-            const obfuscatedUserId = obfuscateUserId(response.data.user.id);
-            localStorage.setItem("clientInfo", obfuscatedUserId);
-            localStorage.setItem("firstName", response.data.user.FirstName);
-            localStorage.removeItem("cartInfo");
-            localStorage.removeItem("cart");
-            localStorage.removeItem("cartLength");
-            axios
-              .get(
-                `http://localhost:8000/api/cart/${response.data.user.id}/latest-cart`
-              )
-              .then((cartResponse) => {
-                if (
-                  cartResponse.data &&
-                  cartResponse.data.cart &&
-                  Array.isArray(cartResponse.data.cart.product)
-                ) {
-                  const formattedCart = cartResponse.data.cart.product.map(
-                    (product) => ({
-                      productId: String(product.id),
-                      selectedSize: String(product.sizeDetails.id),
-                      quantity: product.pivot.quantity,
-                    })
-                  );
-                  const totalQuantities = formattedCart.reduce(
-                    (total, item) => total + item.quantity,
-                    0
-                  );
-                  localStorage.setItem(
-                    "cartLength",
-                    totalQuantities.toString()
-                  );
-                  window.dispatchEvent(new Event("storage"));
-                  localStorage.setItem("cart", JSON.stringify(formattedCart));
+  if (!email || !password) {
+    setError("Please fill in both email and password fields.");
+    return;
+  }
 
-                  const obfuscatedCartId = obfuscateCartId(
-                    cartResponse.data.cart.id.toString()
-                  );
-                  localStorage.setItem("cartInfo", obfuscatedCartId);
-                  localStorage.setItem(
-                    "cartNumber",
-                    cartResponse.data.cart.uniqueCartId
-                  );
+  setError("");
+  setLoading(true);
 
-                  navigate("/");
-                } else {
-                  console.error(
-                    "Cart data is not in the expected format:",
-                    cartResponse.data
-                  );
-                  localStorage.setItem("cart", JSON.stringify([]));
-                  navigate("/");
-                }
-              })
-              .catch((cartError) => {
-                console.error("Failed to fetch cart:", cartError);
-                setError("Failed to fetch cart data. Please try again.");
-                navigate("/");
-              });
-          } else {
-            setError("Error in login process.");
-          }
-        })
-        .catch((error) => {
-          let errorMessage = "An error occurred during login.";
-          if (error.response && error.response.data.error) {
-            errorMessage = error.response.data.error;
-          } else if (
-            error.response &&
-            (error.response.status === 401 || error.response.status === 400)
-          ) {
-            errorMessage = "Invalid email or password.";
-          } else if (error.response && error.response.status === 405) {
-            errorMessage =
-              "For security reasons, you should reset the password.";
-          } else {
-            errorMessage = "An unexpected error occurred. Please try again.";
-          }
-          setError(errorMessage);
+  axios
+    .post("http://localhost:8000/api/login-user-check", {
+      email: email,
+      Password: password,
+    })
+    .then((response) => {
+      const user = response.data.user;
+
+      // Check if user exists and response is successful
+      if (response.status === 200 && user) {
+        // ✅ Check status first
+        if (user.status.toLowerCase() !== "active") {
+          setError("Your account is not active.");
           setLoading(false);
-        });
-    }
-  };
+          return;
+        }
+
+        // Proceed only if user is active
+        const obfuscatedUserId = obfuscateUserId(user.id);
+        localStorage.setItem("clientInfo", obfuscatedUserId);
+        localStorage.setItem("firstName", user.FirstName);
+        localStorage.removeItem("cartInfo");
+        localStorage.removeItem("cart");
+        localStorage.removeItem("cartLength");
+
+        axios
+          .get(`http://localhost:8000/api/cart/${user.id}/latest-cart`)
+          .then((cartResponse) => {
+            if (
+              cartResponse.data &&
+              cartResponse.data.cart &&
+              Array.isArray(cartResponse.data.cart.product)
+            ) {
+              const formattedCart = cartResponse.data.cart.product.map(
+                (product) => ({
+                  productId: String(product.id),
+                  selectedSize: String(product.sizeDetails.id),
+                  quantity: product.pivot.quantity,
+                })
+              );
+
+              const totalQuantities = formattedCart.reduce(
+                (total, item) => total + item.quantity,
+                0
+              );
+
+              localStorage.setItem("cartLength", totalQuantities.toString());
+              localStorage.setItem("cart", JSON.stringify(formattedCart));
+
+              const obfuscatedCartId = obfuscateCartId(
+                cartResponse.data.cart.id.toString()
+              );
+              localStorage.setItem("cartInfo", obfuscatedCartId);
+              localStorage.setItem(
+                "cartNumber",
+                cartResponse.data.cart.uniqueCartId
+              );
+              window.dispatchEvent(new Event("storage"));
+
+              navigate("/");
+            } else {
+              // Cart data is missing or invalid
+              localStorage.setItem("cart", JSON.stringify([]));
+              navigate("/");
+            }
+          })
+          .catch((cartError) => {
+            console.error("Failed to fetch cart:", cartError);
+            setError("Failed to fetch cart data. Please try again.");
+            navigate("/");
+          });
+      } else {
+        setError("Error in login process.");
+        setLoading(false);
+      }
+    })
+    .catch((error) => {
+      let errorMessage = "An error occurred during login.";
+
+      if (error.response && error.response.data.error) {
+        errorMessage = error.response.data.error;
+      } else if (
+        error.response &&
+        (error.response.status === 401 || error.response.status === 400)
+      ) {
+        errorMessage = "Invalid email or password.";
+      } else if (error.response && error.response.status === 405) {
+        errorMessage =
+          "For security reasons, you should reset the password.";
+      } else {
+        errorMessage = "An unexpected error occurred. Please try again.";
+      }
+
+      setError(errorMessage);
+      setLoading(false);
+    });
+};
+
+
 
   return (
     <>

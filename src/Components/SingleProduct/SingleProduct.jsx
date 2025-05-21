@@ -35,7 +35,8 @@ function SingleProduct() {
   const isArabic = localStorage.getItem("lang") === "ar";
   const [loadAddToCart, setLoadAddToCart] = useState(false);
   const [loadingSizeType, setLoadingSizeType] = useState(false);
-  const location = JSON.parse(localStorage.getItem("location"));
+const rawLocation = localStorage.getItem("location");
+const location = rawLocation ? JSON.parse(rawLocation) : null;
   const handleSizeClick = (sizeId) => {
     const size = productData.sizes.find((prodSize) => prodSize.id === sizeId);
     setSelectedSize(sizeId);
@@ -190,31 +191,33 @@ function SingleProduct() {
 
     // Store in the user's cart if authenticated
 
-    const userId = {
-      user_auth_id: user,
-      status: "Added To Cart",
-      cartId: cartNumber,
-      ipAddress: location.ip,
-      region: location.country.name,
-      city: location.city.name,
-      products: [
-        {
-          product_id: productId,
-          quantity: quantity,
-          size_id:
-            quantityForAcc == null ? selectedSize : productData.sizes[0].id,
-          productPrice: productDetails
-            ? productDetails.data.product.productSale &&
-              productDetails.data.product.productSale !== 0
-              ? (
-                  productDetails.data.product.productPrice *
-                  (1 - productDetails.data.product.productSale / 100)
-                ).toFixed(2)
-              : productDetails.data.product.productPrice
-            : 0,
-        },
-      ],
-    };
+const userId = {
+  user_auth_id: user,
+  status: "Added To Cart",
+  cartId: cartNumber,
+  ipAddress: location?.ip || "unknown",
+  region: location?.country?.name || "unknown",
+  city: location?.city?.name || "unknown",
+  products: [
+    {
+      product_id: productId,
+      quantity: quantity,
+      size_id:
+        quantityForAcc == null ? selectedSize : productData.sizes[0].id,
+      productPrice: productDetails
+        ? productDetails.data.product.productSale &&
+          productDetails.data.product.productSale !== 0
+          ? (
+              productDetails.data.product.productPrice *
+              (1 - productDetails.data.product.productSale / 100)
+            ).toFixed(2)
+          : productDetails.data.product.productPrice
+        : 0,
+    },
+  ],
+};
+
+
    
     const res = await axios.post(
       "http://localhost:8000/api/add-cart-for-all",
