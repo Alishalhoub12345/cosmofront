@@ -128,7 +128,10 @@ function Checkout() {
   // Function to handle form submission for COD and online payment
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+ if (!Array.isArray(cartItems?.product) || cartItems.product.length === 0) {
+    alert("Your cart is empty. Please add products before placing an order.");
+    return;
+  }
     const data = {
       firstName,
       lastName,
@@ -202,54 +205,43 @@ function Checkout() {
   };
 
   // Function to send confirmation email
-  const sendConfirmationEmail = async (orderId, cartId) => {
-    const emailInfo = {
-      orderId,
-      cartId,
-      email,
-      subtotal,
-      shippingFee,
-      total,
-      note: notes,
-      billing_firstName: billingFirstName,
-      billing_lastName: billingLastName,
-      billing_email: billingEmail,
-      billing_country: billingCountry,
-      billing_address: billingAddress,
-      billing_apartment: billingApartment,
-      billing_city: billingCity,
-      billing_region: billingRegion,
-      billing_zipCode: billingZipCode,
-      billing_phoneNumber: billingPhoneNumber,
-      address,
-      firstName,
-      lastName,
-      phoneNumber,
-      region,
-      city,
-      countryName: getCountry.name,
-      zipCode,
-      currencyRate: currencyValue,
-      currency: currencyUsed,
-      apartment,
-      product: cartItems.product?.map((item) => ({
-        productName: item.productName,
-        size: item.pivot.size.size,
-        quantity: item.pivot.quantity,
-        price: item.pivot.productPrice,
-        productSKU: item.productSKU,
-        media1: item.media1,
-      })),
-    };
-    try {
-      await axios.post(
-        "http://localhost:8000/api/orderConfirmation",
-        emailInfo
-      );
-    } catch (error) {
-      console.error("Error sending confirmation email:", error);
-    }
+const sendConfirmationEmail = async (orderId, cartId) => {
+  const user = {
+    name: `${firstName} ${lastName}`,
+    email: email,
+    address: address || '',
   };
+
+  // Use different variable name here, do NOT redeclare `cartItems`
+const formattedCartItems = Array.isArray(cartItems?.product) 
+  ? cartItems.product.map((item) => ({
+      productName: item.productName,
+      size: item.pivot.size.size,
+      quantity: item.pivot.quantity,
+      price: item.pivot.productPrice,
+      productSKU: item.productSKU,
+      media1: item.media1,  // include media1 here if you want images
+    })) 
+  : [];
+
+  const payload = {
+    user,
+    cartItems: formattedCartItems, // use the renamed variable here
+    total: total,
+  };
+
+  try {
+    const res = await axios.post("http://localhost:8000/api/orderConfirmation", payload);
+    if (res.data?.error) {
+      alert("Email confirmation failed: " + res.data.error);
+    }
+  } catch (error) {
+    console.error("Error sending confirmation email:", error);
+    alert("There was an issue sending the confirmation email. Please contact support.");
+  }
+};
+
+
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
