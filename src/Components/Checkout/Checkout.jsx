@@ -205,29 +205,77 @@ function Checkout() {
   };
 
   // Function to send confirmation email
+// Function to send confirmation email
 const sendConfirmationEmail = async (orderId, cartId) => {
-  const user = {
-    name: `${firstName} ${lastName}`,
-    email: email,
-    address: address || '',
+  // SHIPPING INFO (always required)
+  const shippingInfo = {
+    shipping_firstName: firstName,
+    shipping_lastName: lastName,
+    shipping_email: email,
+    shipping_phoneNumber: phoneNumber,
+    shipping_address: address || '',
+    shipping_apartment: apartment || '',
+    shipping_city: city || '',
+    shipping_region: region || '',
+    shipping_country: getCountry?.name || '',
+    shipping_zipCode: zipCode || '',
   };
 
-  // Use different variable name here, do NOT redeclare `cartItems`
-const formattedCartItems = Array.isArray(cartItems?.product) 
-  ? cartItems.product.map((item) => ({
-      productName: item.productName,
-      size: item.pivot.size.size,
-      quantity: item.pivot.quantity,
-      price: item.pivot.productPrice,
-      productSKU: item.productSKU,
-      media1: item.media1,  // include media1 here if you want images
-    })) 
-  : [];
+  // BILLING INFO
+  const billingInfo = isChecked
+    ? {
+        billing_firstName: firstName,
+        billing_lastName: lastName,
+        billing_email: email,
+        billing_phoneNumber: phoneNumber,
+        billing_address: address || '',
+        billing_apartment: apartment || '',
+        billing_city: city || '',
+        billing_region: region || '',
+        billing_country: getCountry?.name || '',
+        billing_zipCode: zipCode || '',
+      }
+    : {
+        billing_firstName: billingFirstName,
+        billing_lastName: billingLastName,
+        billing_email: billingEmail,
+        billing_phoneNumber: billingPhoneNumber,
+        billing_address: billingAddress,
+        billing_apartment: billingApartment,
+        billing_city: billingCity,
+        billing_region: billingRegion,
+        billing_country: billingCountry,
+        billing_zipCode: billingZipCode,
+      };
+
+  // Combine shipping + billing into one user object
+  const user = {
+    ...shippingInfo,
+    ...billingInfo,
+    email: email, // general email for fallback
+    firstName: firstName,
+    lastName: lastName,
+    phone: phoneNumber,
+    address: address,
+    city: city,
+  };
+
+  const formattedCartItems = Array.isArray(cartItems?.product)
+    ? cartItems.product.map((item) => ({
+        productName: item.productName,
+        size: item.pivot?.size?.size || '',
+        quantity: item.pivot?.quantity || 0,
+        price: item.pivot?.productPrice || 0,
+        productSKU: item.productSKU || '',
+        media1: item.media1 || '',
+      }))
+    : [];
 
   const payload = {
     user,
-    cartItems: formattedCartItems, // use the renamed variable here
+    cartItems: formattedCartItems,
     total: total,
+    orderId: orderId,
   };
 
   try {
