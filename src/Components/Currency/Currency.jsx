@@ -6,7 +6,7 @@ import { useEffect } from "react";
 // Fetch currencies from the API
 const fetchCurrencies = async () => {
   const response = await axios.get(
-    "http://localhost:8000/api/exchange-rates/USD"
+    "https://www.cosmo.global/laravel/api/exchange-rates/USD"
   );
   return response.data;
   console.log(response.data)

@@ -28,11 +28,11 @@ function Footer() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/email-subscription",
+        "https://www.cosmo.global/laravel/api/email-subscription",
         { email: emailSub }
       );
       if (res.status === 200) {
-        await axios.post("http://localhost:8000/api/mailing-list-email", {
+        await axios.post("https://www.cosmo.global/laravel/api/mailing-list-email", {
           email: emailSub,
         });
       }

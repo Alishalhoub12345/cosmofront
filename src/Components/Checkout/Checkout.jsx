@@ -84,7 +84,7 @@ function Checkout() {
     setLoadCartItems(true);
     try {
       const res = await axios.get(
-        `http://localhost:8000/api/cartItems-checkout/${cartRefNumber}`,
+        `https://www.cosmo.global/laravel/api/cartItems-checkout/${cartRefNumber}`,
         {
           params: { locale: selectedLang },
         }
@@ -110,7 +110,7 @@ function Checkout() {
     const fetchCurrencyValue = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:8000/api/currency-name",
+          "https://www.cosmo.global/laravel/api/currency-name",
           {
             currency_name: currencyUsed,
           }
@@ -171,19 +171,19 @@ function Checkout() {
       try {
         setOrderLoading(true);
 
-        const res = await axios.post("http://localhost:8000/api/order", data);
+        const res = await axios.post("https://www.cosmo.global/laravel/api/order", data);
         const orderId = res.data.order.id;
         const cartId = res.data.order.cart.id;
         const cartRefNumber = res.data.order.cart.uniqueCartId;
 
-        await axios.post("http://localhost:8000/api/payment", {
+        await axios.post("https://www.cosmo.global/laravel/api/payment", {
           paymentMethod: "COD",
           status: "Upcoming",
           total,
           order_id: orderId,
         });
         await axios.post(
-          `http://localhost:8000/api/order-status-update/${orderId}`,
+          `https://www.cosmo.global/laravel/api/order-status-update/${orderId}`,
           {
             status: "Open order",
             itemStatus: "Allocated",
@@ -191,7 +191,7 @@ function Checkout() {
         );
 
         await axios.post(
-          `http://localhost:8000/api/decreaseProduct/${orderId}`
+          `https://www.cosmo.global/laravel/api/decreaseProduct/${orderId}`
         );
 
         await sendConfirmationEmail(orderId, cartId);
@@ -279,7 +279,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
   };
 
   try {
-    const res = await axios.post("http://localhost:8000/api/orderConfirmation", payload);
+    const res = await axios.post("https://www.cosmo.global/laravel/api/orderConfirmation", payload);
     if (res.data?.error) {
       alert("Email confirmation failed: " + res.data.error);
     }
@@ -335,7 +335,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
 
   const getCountries = async () => {
     const res = await axios.get(
-      "http://localhost:8000/api/shipping-countries",
+      "https://www.cosmo.global/laravel/api/shipping-countries",
       { params: { locale: selectedLang } }
     );
     setCountry(res.data.message);
@@ -362,7 +362,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
     try {
       setLoadingUserInfo(true);
       const res = await axios.get(
-        `http://localhost:8000/api/user-address/${user}`
+        `https://www.cosmo.global/laravel/api/user-address/${user}`
       );
       setUserAddress(res.data.user);
 
@@ -426,9 +426,9 @@ const sendConfirmationEmail = async (orderId, cartId) => {
       shipping_country_id: getCountry.id,
       user_auth_id: user,
     };
-    const res = await axios.post("http://localhost:8000/api/order", data);
+    const res = await axios.post("https://www.cosmo.global/laravel/api/order", data);
     const orderId = res.data.order.id;
-    const apiUrl = "http://localhost:8000/api/initiate-checkout";
+    const apiUrl = "https://www.cosmo.global/laravel/api/initiate-checkout";
     const requestData = {
       orderId,
       email,
@@ -493,7 +493,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
 
     try {
       const res = await axios.post(
-        `http://localhost:8000/api/cart/${carthidden}/apply-promo`,
+        `https://www.cosmo.global/laravel/api/cart/${carthidden}/apply-promo`,
         {
           promo_code: promoCode, // Correct key-value pairing for the promo code
         }
@@ -1073,7 +1073,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                           >
                             <div className="w-[80px] h-[100px]">
                               <img
-                                src={`http://localhost:8000/api/storage/${prodInfo.media1}`}
+                                src={`https://www.cosmo.global/laravel/api/storage/${prodInfo.media1}`}
                                 className="h-[100%] w-[100%] object-contain"
                                 alt=""
                               />

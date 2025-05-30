@@ -23,7 +23,7 @@ function ProductsOnSale() {
     const currencyUsed = localStorage.getItem("currencyUsed");
     if (currencyUsed) {
       axios
-        .post("http://localhost:8000/api/currency-name", {
+        .post("https://www.cosmo.global/laravel/api/currency-name", {
           currency_name: currencyUsed,
         })
         .then((response) => {
@@ -38,7 +38,7 @@ function ProductsOnSale() {
 
   const getSaleName = async () => {
     const saleRes = await axios.get(
-      `http://localhost:8000/api/sale/${saleLink}`,
+      `https://www.cosmo.global/laravel/api/sale/${saleLink}`,
       {
         params: { locale: selectedLang },
       }
@@ -53,8 +53,8 @@ function ProductsOnSale() {
     let response;
     try {
       response = await axios.get(
-        // `http://localhost:8000/api/sales/${saleLink}/products/${page}?productVisible=1`,
-        `http://localhost:8000/api/products-in-collection-for-sale/${saleLink}/${page}`,
+        // `https://www.cosmo.global/laravel/api/sales/${saleLink}/products/${page}?productVisible=1`,
+        `https://www.cosmo.global/laravel/api/products-in-collection-for-sale/${saleLink}/${page}`,
         {
           params: { locale: selectedLang },
         }
@@ -160,7 +160,7 @@ function ProductsOnSale() {
                       <div className="min-h-[20rem] xl:min-h-[15rem] lg:min-h-[10rem] sm:min-h-[5rem] mt-[0.1%] md:mt-[0.5%] ">
                         <img
                           className=" w-[100%] h-[100%] object-cover "
-                          src={`http://localhost:8000/api/storage/${singleProdSale.media1}`}
+                          src={`https://www.cosmo.global/laravel/api/storage/${singleProdSale.media1}`}
                           alt={`${singleProdSale.id}`}
                           onError={(e) => {
                             e.target.src = fallout;
@@ -237,7 +237,7 @@ function ProductsOnSale() {
               </div>
               <img
                 className=" w-[100%] h-[100%] object-cover relative z-0"
-                src={`http://localhost:8000/api/storage/${singleProdSale.media1}`}
+                src={`https://www.cosmo.global/laravel/api/storage/${singleProdSale.media1}`}
                 alt={`${singleProdSale.id}`}
               /> */}
               </div>

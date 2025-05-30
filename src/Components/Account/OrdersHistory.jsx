@@ -43,7 +43,7 @@ function OrdersHistory() {
     isError,
   } = useQuery("orders", async () => {
     const res = await axios.get(
-      `http://localhost:8000/api/user-orders/${userId}`,
+      `https://www.cosmo.global/laravel/api/user-orders/${userId}`,
       {
         params: { locale: selectedLang },
       }
@@ -221,7 +221,7 @@ function OrdersHistory() {
                         }`}
                       >
                         <img
-                          src={`http://localhost:8000/api/storage/${product.media1}`}
+                          src={`https://www.cosmo.global/laravel/api/storage/${product.media1}`}
                           alt={product.productName}
                           className="h-[100px] w-[70px] object-contain "
                         />

@@ -36,7 +36,7 @@ function Address() {
 
   const getCountriesReg = async () => {
     const res = await axios.get(
-      "http://localhost:8000/api/shipping-countries",
+      "https://www.cosmo.global/laravel/api/shipping-countries",
       { params: { locale: selectedLang } }
     );
     setCountriesReg(res.data.message);
@@ -68,14 +68,14 @@ function Address() {
 
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/user-signup",
+        "https://www.cosmo.global/laravel/api/user-signup",
         account
       );
       setSignUpResult(res.data.message);
 
       if (res.data.message === "User Registered Successfully") {
         setRegisterResponse(true);
-        await axios.post(`http://localhost:8000/api/email-after-singup`, {
+        await axios.post(`https://www.cosmo.global/laravel/api/email-after-singup`, {
           email: res.data.user.Email,
         });
         localStorage.removeItem("clientReg");

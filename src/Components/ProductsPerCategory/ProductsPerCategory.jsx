@@ -26,7 +26,7 @@ function ProductsPerCategory() {
     const currencyUsed = localStorage.getItem("currencyUsed");
     if (currencyUsed) {
       axios
-        .post("http://localhost:8000/api/currency-name", {
+        .post("https://www.cosmo.global/laravel/api/currency-name", {
           currency_name: currencyUsed,
         })
         .then((response) => {
@@ -41,7 +41,7 @@ function ProductsPerCategory() {
 
   const getCategoryName = async () => {
     const res = await axios.get(
-      `http://localhost:8000/api/CategoryCorrespondingDepand/${categoryLink}`,
+      `https://www.cosmo.global/laravel/api/CategoryCorrespondingDepand/${categoryLink}`,
       {
         params: { locale: selectedLang },
       }
@@ -61,7 +61,7 @@ function ProductsPerCategory() {
     let response;
     try {
       response = await axios.get(
-        `http://localhost:8000/api/categories/${categoryLink}/products/${page}?productVisible=1`,
+        `https://www.cosmo.global/laravel/api/categories/${categoryLink}/products/${page}?productVisible=1`,
         {
           params: { locale: selectedLang },
         }
@@ -164,7 +164,7 @@ function ProductsPerCategory() {
                       <div className="min-h-[20rem] xl:min-h-[15rem] lg:min-h-[10rem] sm:min-h-[5rem] mt-[0.1%] md:mt-[0.5%] ">
                         <img
                           className=" w-[100%] h-[100%] object-cover "
-                          src={`http://localhost:8000/api/storage/${singleColl.media1}`}
+                          src={`https://www.cosmo.global/laravel/api/storage/${singleColl.media1}`}
                           alt={`${singleColl.id}`}
                           onError={(e) => {
                             e.target.src = fallout;

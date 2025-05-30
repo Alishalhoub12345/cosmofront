@@ -47,7 +47,7 @@ function OrderSuccessful() {
   const updateCartStatus = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8000/api/cart-status-update/${cartRefNumber}`
+        `https://www.cosmo.global/laravel/api/cart-status-update/${cartRefNumber}`
       );
       return res.data;
     } catch (error) {

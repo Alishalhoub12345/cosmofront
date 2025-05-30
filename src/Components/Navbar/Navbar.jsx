@@ -34,7 +34,7 @@ function Navbar() {
   const handleSearch = async (searchQuery) => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/search-products`,
+        `https://www.cosmo.global/laravel/api/search-products`,
         {
           params: { query: searchQuery, locale: selectedLang },
         }
@@ -97,7 +97,7 @@ function Navbar() {
   const getDepartmentName = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:8000/api/all-departments?visibleForAll=1",
+        "https://www.cosmo.global/laravel/api/all-departments?visibleForAll=1",
         {
           params: { locale: selectedLang },
         }

@@ -30,7 +30,7 @@ function OrderCanceled() {
 
   const updateOrderStatusToCanceled = async () => {
     const res = await axios.post(
-      `http://localhost:8000/api/order-status-canceled/${orderId}`
+      `https://www.cosmo.global/laravel/api/order-status-canceled/${orderId}`
     );
     return res.data;
   };
