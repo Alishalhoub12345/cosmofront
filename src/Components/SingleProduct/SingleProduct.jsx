@@ -42,12 +42,13 @@ const location = rawLocation ? JSON.parse(rawLocation) : null;
     setSelectedSize(sizeId);
     setSelectedQuantity(size?.quantity);
   };
+  
 
   useEffect(() => {
     const currencyUsed = localStorage.getItem("currencyUsed");
     if (currencyUsed) {
       axios
-        .post("https://www.cosmo.global/laravel/api/currency-name", {
+        .post("http://127.0.0.1:8000/api/currency-name", {
           currency_name: currencyUsed,
         })
         .then((response) => {
@@ -100,27 +101,50 @@ const location = rawLocation ? JSON.parse(rawLocation) : null;
   const obfuscatedCart = localStorage.getItem("cartInfo");
   const carthidden = obfuscatedCart ? extractCartId(obfuscatedCart) : null;
 
-  const {
-    data: productData,
-    isLoading,
-    isError,
-  } = useQuery(["product", productSKU], async () => {
-    const res = await axios.get(
-      `https://www.cosmo.global/laravel/api/getAllproductInfo/${productSKU}`,
-      {
-        params: { locale: selectedLang },
-      }
-    );
+const {
+  data: productData,
+  isLoading,
+  isError,
+} = useQuery(["product", productSKU], async () => {
+  const res = await axios.get(
+    `http://127.0.0.1:8000/api/getAllproductInfo/${productSKU}`,
+    {
+      params: { locale: selectedLang },
+    }
+  );
 
-    setQuantity(res.data.product.productQuantity);
-    setSizes(res.data.product.sizes);
-    return res.data.product;
-  });
+  setQuantity(res.data.product.productQuantity);
+  setSizes(res.data.product.sizes);
+
+  // ⬇️ Debug here
+  console.log("Selected Lang:", selectedLang);
+  console.log("Product Data:", res.data.product);
+
+  return res.data.product;
+});
+
+
 
   const setImageChange = (imageUrl) => {
     setImageUrl(imageUrl);
   };
+console.log("Departments:", productData?.departments);
 
+const isInDepartment3 = productData?.departments?.some(
+  (dept) => dept.id === 3 || dept.id === "3"
+);
+
+const hideSections = isInDepartment3 === true;
+
+const fabricLabel = hideSections
+  ? isArabic
+    ? "الخامة"
+    : t("MATERIAL")
+  : isArabic
+    ? "قماش"
+    : t("FABRIC");
+
+  
   const handleStoreInLS = async () => {
     setLoadAddToCart(true);
     const quantity = 1;
@@ -149,7 +173,7 @@ const location = rawLocation ? JSON.parse(rawLocation) : null;
 
     // Fetch product details for pop-up display
     const productDetails = await axios.get(
-      `https://www.cosmo.global/laravel/api/getAllproductInfo/${productSKU}`,
+      `http://127.0.0.1:8000/api/getAllproductInfo/${productSKU}`,
       { params: { locale: selectedLang } }
     );
 
@@ -220,7 +244,7 @@ const userId = {
 
    
     const res = await axios.post(
-      "https://www.cosmo.global/laravel/api/add-cart-for-all",
+      "http://127.0.0.1:8000/api/add-cart-for-all",
       userId
     );
     setPopUpInfo(productDetails.data.product);
@@ -347,7 +371,7 @@ const userId = {
               </div>
               <div className=" w-[80px] flex justify-center items-center">
                 <img
-                  src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.media1}`}
+                  src={`http://127.0.0.1:8000/api/storage/${popUpInfo.media1}`}
                   alt={`${popUpInfo.id}`}
                   className="w-[100%] h-[100%]"
                 />
@@ -429,7 +453,7 @@ const userId = {
                     >
                       <img
                         className="cursor-pointer slidersImage "
-                        src={`https://www.cosmo.global/laravel/api/storage/${prodImages.ImageURL}`}
+                        src={`http://127.0.0.1:8000/api/storage/${prodImages.ImageURL}`}
                         alt={`${prodImages.id}`}
                       />
                     </div>
@@ -463,7 +487,7 @@ const userId = {
                     <img
                       id="productImage"
                       className="w-[100%] h-[100%] object-cover transition-transform duration-500 ease-in-out cursor-zoom-in"
-                      src={`https://www.cosmo.global/laravel/api/storage/${
+                      src={`http://127.0.0.1:8000/api/storage/${
                         imageUrl || productData.images[0]?.ImageURL
                       }`}
                       alt={`${productData.id}`}
@@ -477,22 +501,25 @@ const userId = {
             <div className="h-[100%] w-[400px] xl:w-[350px] lg:w-[75%] md:w-[80%] sm:w-[95%] flex justify-between flex-col">
               <div className=" flex flex-col h-[100%] gap-[5px]">
                 <div className={`w-[100%] ${isArabic ? "  text-right" : ""}`}>
-                  <h1
-                    className={`leading-[1]   text-[20px] pb-[2%] sm:text-[19px] ${
-                      isArabic
-                        ? " flex flex-row-reverse items-center gap-[1%] text-[25px]"
-                        : ""
-                    }`}
-                  >
-                    {productData.productName}{" "}
-                    <span className="text-[11px] text-[gray] px-[2%]">
-                      {productData.productSKU}
-                    </span>
-                  </h1>
+                 <h1
+  className={`leading-[1] text-[20px] pb-[2%] sm:text-[19px] ${
+    isArabic ? "flex flex-row-reverse items-center gap-[1%] text-[25px]" : ""
+  }`}
+>
+  {isArabic
+    ? productData.productName_ar ?? productData.productName
+    : productData.productName}{" "}
+  <span className="text-[11px] text-[gray] px-[2%]">
+    {productData.productSKU}
+  </span>
+</h1>
 
-                  <p className=" text-[18px] leading-[1] w-[100%] sm:text-[19px]">
-                    {productData.productTitle}
-                  </p>
+<p className="text-[18px] leading-[1] w-[100%] sm:text-[19px]">
+  {isArabic
+    ? productData.productTitle_ar ?? productData.productTitle
+    : productData.productTitle}
+</p>
+
                   {productData.productSale !== 0 &&
                   productData.productSale !== null ? (
                     <div
@@ -525,23 +552,27 @@ const userId = {
                 </div>
 
                 <div className="">
-                  <h2
-                    className={`text-[12px] xl:text-[12px] text-[#1e335a] ${
-                      isArabic ? " text-[18px] text-right w-[100%]" : ""
-                    }`}
-                  >
-                    {t("singleProductPage.color")}
-                  </h2>
-                  <div
-                    className={`flex items-center gap-[1%]  ${
-                      isArabic ? "flex-row-reverse " : ""
-                    }`}
-                  >
-                    <input type="radio" id="colorRadio" checked></input>
-                    <label for="colorRadio">
-                      {productData.productColor ?? "---"}
-                    </label>
-                  </div>
+              <h2
+  className={`text-[12px] xl:text-[12px] text-[#1e335a] ${
+    isArabic ? "text-[18px] text-right w-[100%]" : ""
+  }`}
+>
+  {t("singleProductPage.color")}
+</h2>
+<div
+  className={`flex items-center gap-[1%] ${
+    isArabic ? "flex-row-reverse" : ""
+  }`}
+>
+  <input type="radio" id="colorRadio" checked readOnly />
+  <label htmlFor="colorRadio">
+    {isArabic
+      ? productData.productColor_ar ?? productData.productColor
+      : productData.productColor ?? "---"}
+  </label>
+</div>
+
+
                 </div>
                 {loadingSizeType && (
                   <div className="bg-[#cfcfcf] h-[50px]"></div>
@@ -652,151 +683,193 @@ const userId = {
                     </button>
                   )}
                 </div>
-                {productData.importantNote == null ? (
-                  <></>
-                ) : (
-                  <p className="text-[red] text-[10px]">
-                    {productData.importantNote}
-                  </p>
-                )}
+         {(productData.importantNote || productData.importantNote_ar) && (
+  <p className="text-[red] text-[10px]">
+    {isArabic
+      ? productData.importantNote_ar ?? productData.importantNote
+      : productData.importantNote}
+  </p>
+)}
 
-                {productData.productDescription == null ? (
-                  <div className="flex flex-col items-start justify-evenly h-[55%]  mt-[5px] bg-[#e6e5e5]">
-                    <div className="   px-[3%]  w-[100%] leading-[1.2] flex justify-center items-start flex-col">
-                      <div className="border-b-[0.5px] md:py-[3%] border-white h-[100%] w-[100%] p-[3%] flex items-start flex-col justify-center">
-                        <h2
-                          className={`text-[12px] xl:text-[12px] text-[#1e335a] ${
-                            isArabic ? " text-[18px] text-right w-[100%]" : ""
-                          }`}
-                        >
-                          {t("singleProductPage.designer")}
-                        </h2>
-                        <p
-                          className={`text-[12px] xl:text-[12px] text-[#7d7d7d] ${
-                            isArabic ? " w-[100%] text-right " : ""
-                          }`}
-                        >
-                          {productData.productDesign}
-                        </p>
-                      </div>
-                    </div>
 
-                    <div className="   px-[3%]  w-[100%]  leading-[1.2] flex justify-center items-start flex-col">
-                      <div className="border-b-[0.5px] border-white md:py-[3%] h-[100%] w-[100%] p-[3%] flex items-start flex-col justify-center">
-                        <h2
-                          className={`text-[12px] xl:text-[12px] text-[#1e335a] ${
-                            isArabic ? " text-[18px] text-right w-[100%]" : ""
-                          }`}
-                        >
-                          {t("singleProductPage.country")}
-                        </h2>
-                        <p
-                          className={`text-[12px] xl:text-[12px] text-[#7d7d7d] ${
-                            isArabic ? " w-[100%] text-right " : ""
-                          }`}
-                        >
-                          {productData.productCountry}
-                        </p>
-                      </div>
-                    </div>
+          <div className="flex flex-col items-start justify-evenly mt-[5px] bg-[#e6e5e5]">
 
-                    <div className="   px-[3%]  w-[100%]  leading-[1.2] flex justify-center items-start flex-col">
-                      <div className="border-b-[0.5px] border-white md:py-[3%] h-[100%] w-[100%] p-[3%] flex items-start flex-col justify-center">
-                        <h2
-                          className={`text-[12px] xl:text-[12px] text-[#1e335a] ${
-                            isArabic ? " text-[18px] text-right w-[100%]" : ""
-                          }`}
-                        >
-                          {t("singleProductPage.fabric")}
-                        </h2>
-                        <p
-                          className={`text-[12px] xl:text-[12px] text-[#7d7d7d] ${
-                            isArabic ? " w-[100%] text-right" : ""
-                          }`}
-                        >
-                          {productData.productFabric}
-                        </p>
-                      </div>
-                    </div>
 
-                    <div className="   px-[3%]  w-[100%]  leading-[1.2] flex justify-center items-start flex-col">
-                      <div className="border-b-[0.5px] border-white md:py-[3%] h-[100%] w-[100%] p-[3%] flex items-start flex-col justify-center">
-                        <h2
-                          className={`text-[12px] xl:text-[12px] text-[#1e335a] ${
-                            isArabic ? " text-[18px] text-right w-[100%]" : ""
-                          }`}
-                        >
-                          {t("singleProductPage.washing")}
-                        </h2>
-                        <p
-                          className={`text-[12px] xl:text-[12px] text-[#7d7d7d] ${
-                            isArabic ? " w-[100%] text-right" : ""
-                          }`}
-                        >
-                          {productData.productWashing}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="   px-[3%]  w-[100%]  leading-[1.2] flex justify-center items-start flex-col">
-                      <div className="border-b-[0.5px] border-white md:py-[3%] h-[100%] w-[100%] p-[3%] flex items-start flex-col justify-center">
-                        <h2
-                          className={`text-[12px] xl:text-[12px] text-[#1e335a] ${
-                            isArabic ? " text-[18px] text-right w-[100%]" : ""
-                          }`}
-                        >
-                          {t("singleProductPage.wearing")}
-                        </h2>
-                        <p
-                          className={`text-[12px] xl:text-[12px] text-[#7d7d7d] ${
-                            isArabic ? " w-[100%] text-right" : ""
-                          }`}
-                        >
-                          {productData.productWearing}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="   px-[3%]  w-[100%]  leading-[1.2] flex justify-center items-start flex-col">
-                      <div className="border-b-[0.5px] border-white md:py-[3%] h-[100%] w-[100%] p-[3%] flex items-start flex-col justify-center">
-                        <p
-                          className={`text-[12px] xl:text-[12px] xl:w-[100%]   text-[#7d7d7d] ${
-                            isArabic ? " w-[100%] text-right" : "w-[200px]"
-                          }`}
-                          dangerouslySetInnerHTML={{
-                            __html: t("singleProductPage.sizeChart"),
-                          }}
-                        />
-                      </div>
-                    </div>
-                    <div className=" h-[15%]  px-[3%]  w-[100%]  leading-[1.2] flex justify-center items-center flex-col">
-                      <div className=" h-[100%] w-[100%]  p-[3%] md:py-[3%] flex items-start flex-col justify-center">
-                        <p
-                          className={`text-[12px] xl:text-[12px] xl:w-[100%]   text-[#7d7d7d] ${
-                            isArabic ? " w-[100%] text-right" : "w-[290px]"
-                          }`}
-                          dangerouslySetInnerHTML={{
-                            __html: t("singleProductPage.shipping"),
-                          }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <>
-                    {isArabic ? (
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: productData.productDescription_ar,
-                        }}
-                      />
-                    ) : (
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: productData.productDescription,
-                        }}
-                      />
-                    )}
-                  </>
-                )}
+  {/* Designer */}
+{(productData.productDesign || productData.productDesign_ar) && (
+  <div className="px-[3%] w-full leading-[1.2] flex justify-center items-start flex-col">
+    <div className="border-b-[0.5px] md:py-[3%] border-white w-full p-[3%] flex items-start flex-col justify-center">
+      <h2
+        className={`text-[12px] xl:text-[12px] text-[#1e335a] ${
+          isArabic ? "text-[18px] text-right w-full" : ""
+        }`}
+      >
+        {t("singleProductPage.designer")}
+      </h2>
+      <p
+        className={`text-[12px] xl:text-[12px] text-[#7d7d7d] ${
+          isArabic ? "w-full text-right" : ""
+        }`}
+      >
+        {isArabic
+          ? productData.productDesign_ar ?? productData.productDesign
+          : productData.productDesign}
+      </p>
+    </div>
+  </div>
+)}
+
+
+  {/* Country */}
+{(productData.productCountry || productData.productCountry_ar) && (
+  <div className="px-[3%] w-full leading-[1.2] flex justify-center items-start flex-col">
+    <div className="border-b-[0.5px] md:py-[3%] border-white w-full p-[3%] flex items-start flex-col justify-center">
+      <h2
+        className={`text-[12px] xl:text-[12px] text-[#1e335a] ${
+          isArabic ? "text-[18px] text-right w-full" : ""
+        }`}
+      >
+        {t("singleProductPage.country")}
+      </h2>
+      <p
+        className={`text-[12px] xl:text-[12px] text-[#7d7d7d] ${
+          isArabic ? "w-full text-right" : ""
+        }`}
+      >
+        {isArabic
+          ? productData.productCountry_ar ?? productData.productCountry
+          : productData.productCountry}
+      </p>
+    </div>
+  </div>
+)}
+
+
+  {/* Fabric */}
+{(productData.productFabric || productData.productFabric_ar) && (
+  <div className="px-[3%] w-full leading-[1.2] flex justify-center items-start flex-col">
+    <div className="border-b-[0.5px] md:py-[3%] border-white w-full p-[3%] flex items-start flex-col justify-center">
+      <h2
+        className={`text-[12px] xl:text-[12px] text-[#1e335a] ${
+          isArabic ? "text-[18px] text-right w-full" : ""
+        }`}
+      >
+        {fabricLabel}
+      </h2>
+      <p
+        className={`text-[12px] xl:text-[12px] text-[#7d7d7d] ${
+          isArabic ? "w-full text-right" : ""
+        }`}
+      >
+        {isArabic
+          ? productData.productFabric_ar ?? productData.productFabric
+          : productData.productFabric}
+      </p>
+    </div>
+  </div>
+)}
+
+{(productData.productDescription || productData.productDescription_ar) && (
+  <div className="px-[0] w-full leading-[1.2] flex justify-center items-start flex-col">
+    <div className="border-b-[0px] md:py-[0] w-full p-[0%] flex items-start flex-col justify-center">
+<p
+  className={`text-[12px] xl:text-[12px] text-[#7d7d7d] w-full ${
+    isArabic ? "w-full text-right" : ""
+  }`}
+  dir={isArabic ? "rtl" : "ltr"}
+  dangerouslySetInnerHTML={{
+    __html: isArabic
+      ? productData.productDescription_ar ?? productData.productDescription
+      : productData.productDescription,
+  }}
+/>
+
+    </div>
+  </div>
+)}
+
+
+
+
+
+  {/* Washing */}
+{!hideSections && productData.productWashing && (
+  <div className="px-[3%] w-full leading-[1.2] flex justify-center items-start flex-col">
+    <div className="border-b-[0.5px] md:py-[3%] border-white w-full p-[3%] flex items-start flex-col justify-center">
+      <h2
+        className={`text-[12px] xl:text-[12px] text-[#1e335a] ${
+          isArabic ? "text-[18px] text-right w-full" : ""
+        }`}
+      >
+        {t("singleProductPage.washing")}
+      </h2>
+      <p
+        className={`text-[12px] xl:text-[12px] text-[#7d7d7d] ${
+          isArabic ? "w-full text-right" : ""
+        }`}
+      >
+        {productData.productWashing}
+      </p>
+    </div>
+  </div>
+)}
+
+
+  {/* Wearing */}
+ {!hideSections && productData.productWearing && (
+  <div className="px-[3%] w-full leading-[1.2] flex justify-center items-start flex-col">
+    <div className="border-b-[0.5px] md:py-[3%] border-white w-full p-[3%] flex items-start flex-col justify-center">
+      <h2
+        className={`text-[12px] xl:text-[12px] text-[#1e335a] ${
+          isArabic ? "text-[18px] text-right w-full" : ""
+        }`}
+      >
+        {t("singleProductPage.wearing")}
+      </h2>
+      <p
+        className={`text-[12px] xl:text-[12px] text-[#7d7d7d] ${
+          isArabic ? "w-full text-right" : ""
+        }`}
+      >
+        {productData.productWearing}
+      </p>
+    </div>
+  </div>
+)}
+
+  {/* Size chart */}
+ {!hideSections && (
+  <div className="px-[3%] w-full leading-[1.2] flex justify-center items-start flex-col">
+    <div className="border-b-[0.5px] border-white md:py-[3%] w-full p-[3%] flex items-start flex-col justify-center">
+      <p
+        className={`text-[12px] xl:text-[12px] text-[#7d7d7d] ${
+          isArabic ? "w-full text-right" : "w-[200px]"
+        }`}
+        dangerouslySetInnerHTML={{
+          __html: t("singleProductPage.sizeChart"),
+        }}
+      />
+    </div>
+  </div>
+)}
+
+
+  {/* Shipping */}
+  <div className="h-[15%] px-[3%] w-full leading-[1.2] flex justify-center items-center flex-col">
+    <div className="h-full w-full p-[3%] md:py-[3%] flex items-start flex-col justify-center">
+      <p
+        className={`text-[12px] xl:text-[12px] text-[#7d7d7d] ${
+          isArabic ? "w-full text-right" : "w-[290px]"
+        }`}
+        dangerouslySetInnerHTML={{
+          __html: t("singleProductPage.shipping"),
+        }}
+      />
+    </div>
+  </div>
+</div>
+
+
               </div>
             </div>
           </div>

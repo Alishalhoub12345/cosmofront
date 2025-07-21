@@ -49,7 +49,7 @@ function PersonalInformation() {
 
   const fetchUserAccount = async () => {
     const res = await axios.get(
-      `https://www.cosmo.global/laravel/api/user-account/${user}`
+      `http://127.0.0.1:8000/api/user-account/${user}`
     );
     return res.data.user;
   };
@@ -57,7 +57,7 @@ function PersonalInformation() {
   const mutation = useMutation(
     (updatedUser) =>
       axios.post(
-        `https://www.cosmo.global/laravel/api/update-user-account/${user}`,
+        `http://127.0.0.1:8000/api/update-user-account/${user}`,
         updatedUser
       ),
     {

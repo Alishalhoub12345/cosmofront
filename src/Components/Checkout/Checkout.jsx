@@ -13,6 +13,9 @@ function Checkout() {
   const [total, setTotal] = useState("");
   const [subtotal, setSubtotal] = useState("");
   const [shippingFee, setShippingFee] = useState("");
+  const [tax, setTax] = useState("");
+  const [discount, setDiscount] = useState("");
+
   const [currencyValue, setCurrencyValue] = useState(1);
   const currencyUsed = localStorage.getItem("currencyUsed") || "";
   const [promoCode, setPromoCode] = useState("");
@@ -84,7 +87,7 @@ function Checkout() {
     setLoadCartItems(true);
     try {
       const res = await axios.get(
-        `https://www.cosmo.global/laravel/api/cartItems-checkout/${cartRefNumber}`,
+        `http://127.0.0.1:8000/api/cartItems-checkout/${cartRefNumber}`,
         {
           params: { locale: selectedLang },
         }
@@ -110,7 +113,7 @@ function Checkout() {
     const fetchCurrencyValue = async () => {
       try {
         const response = await axios.post(
-          "https://www.cosmo.global/laravel/api/currency-name",
+          "http://127.0.0.1:8000/api/currency-name",
           {
             currency_name: currencyUsed,
           }
@@ -157,6 +160,8 @@ function Checkout() {
       status: "Open order",
       totalAmount: total,
       currency: currencyUsed,
+      tax:tax,
+      discount:discount,
       currencyRate: currencyValue,
       cart_id: cartRefNumber,
       shipping_country_id: getCountry.id,
@@ -171,19 +176,19 @@ function Checkout() {
       try {
         setOrderLoading(true);
 
-        const res = await axios.post("https://www.cosmo.global/laravel/api/order", data);
+        const res = await axios.post("http://127.0.0.1:8000/api/order", data);
         const orderId = res.data.order.id;
         const cartId = res.data.order.cart.id;
         const cartRefNumber = res.data.order.cart.uniqueCartId;
 
-        await axios.post("https://www.cosmo.global/laravel/api/payment", {
+        await axios.post("http://127.0.0.1:8000/api/payment", {
           paymentMethod: "COD",
           status: "Upcoming",
           total,
           order_id: orderId,
         });
         await axios.post(
-          `https://www.cosmo.global/laravel/api/order-status-update/${orderId}`,
+          `http://127.0.0.1:8000/api/order-status-update/${orderId}`,
           {
             status: "Open order",
             itemStatus: "Allocated",
@@ -191,7 +196,7 @@ function Checkout() {
         );
 
         await axios.post(
-          `https://www.cosmo.global/laravel/api/decreaseProduct/${orderId}`
+          `http://127.0.0.1:8000/api/decreaseProduct/${orderId}`
         );
 
         await sendConfirmationEmail(orderId, cartId);
@@ -204,7 +209,6 @@ function Checkout() {
     }
   };
 
-  // Function to send confirmation email
 // Function to send confirmation email
 const sendConfirmationEmail = async (orderId, cartId) => {
   // SHIPPING INFO (always required)
@@ -249,10 +253,10 @@ const sendConfirmationEmail = async (orderId, cartId) => {
       };
 
   // Combine shipping + billing into one user object
-  const user = {
+  const userInfo = {
     ...shippingInfo,
     ...billingInfo,
-    email: email, // general email for fallback
+    email: email,
     firstName: firstName,
     lastName: lastName,
     phone: phoneNumber,
@@ -272,14 +276,18 @@ const sendConfirmationEmail = async (orderId, cartId) => {
     : [];
 
   const payload = {
-    user,
+    user: userInfo,
     cartItems: formattedCartItems,
     total: total,
     orderId: orderId,
+    shippingFee: shippingFee || 0,
+    tax: tax||0,             // Add logic if you calculate tax elsewhere
+    discount:discount|| 0,        // Add logic if you apply discounts
+    currency: currencyUsed || "USD"
   };
 
   try {
-    const res = await axios.post("https://www.cosmo.global/laravel/api/orderConfirmation", payload);
+    const res = await axios.post("http://127.0.0.1:8000/api/orderConfirmation", payload);
     if (res.data?.error) {
       alert("Email confirmation failed: " + res.data.error);
     }
@@ -288,6 +296,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
     alert("There was an issue sending the confirmation email. Please contact support.");
   }
 };
+
 
 
 
@@ -335,7 +344,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
 
   const getCountries = async () => {
     const res = await axios.get(
-      "https://www.cosmo.global/laravel/api/shipping-countries",
+      "http://127.0.0.1:8000/api/shipping-countries",
       { params: { locale: selectedLang } }
     );
     setCountry(res.data.message);
@@ -362,7 +371,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
     try {
       setLoadingUserInfo(true);
       const res = await axios.get(
-        `https://www.cosmo.global/laravel/api/user-address/${user}`
+        `http://127.0.0.1:8000/api/user-address/${user}`
       );
       setUserAddress(res.data.user);
 
@@ -426,9 +435,9 @@ const sendConfirmationEmail = async (orderId, cartId) => {
       shipping_country_id: getCountry.id,
       user_auth_id: user,
     };
-    const res = await axios.post("https://www.cosmo.global/laravel/api/order", data);
+    const res = await axios.post("http://127.0.0.1:8000/api/order", data);
     const orderId = res.data.order.id;
-    const apiUrl = "https://www.cosmo.global/laravel/api/initiate-checkout";
+    const apiUrl = "http://127.0.0.1:8000/api/initiate-checkout";
     const requestData = {
       orderId,
       email,
@@ -493,7 +502,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
 
     try {
       const res = await axios.post(
-        `https://www.cosmo.global/laravel/api/cart/${carthidden}/apply-promo`,
+        `http://127.0.0.1:8000/api/cart/${carthidden}/apply-promo`,
         {
           promo_code: promoCode, // Correct key-value pairing for the promo code
         }
@@ -1073,7 +1082,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                           >
                             <div className="w-[80px] h-[100px]">
                               <img
-                                src={`https://www.cosmo.global/laravel/api/storage/${prodInfo.media1}`}
+                                src={`http://127.0.0.1:8000/api/storage/${prodInfo.media1}`}
                                 className="h-[100%] w-[100%] object-contain"
                                 alt=""
                               />
@@ -1153,29 +1162,38 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                       </p>
                     </div>
                   </div>
-                  <div className="w-[100%] h-[50px]  flex justify-between items-end">
-                    {cartItems.shipping_country_id === 109 ? (
-                      <button
-                        className="w-[100%] h-[100%]  hover:bg-[#2f4672] bg-[#676f98] font-[FahKwang] hover:text-[#E79E7F] text-white text-[1vw] xl:text-[15px]"
-                        type="submit"
-                        value="COD"
-                        disabled={orderloading || onlineLoading}
-                      >
-                        {orderloading ? "Loading..." : t("checkout.cod")}
-                      </button>
-                    ) : (
-                      <button
-                        className="w-[100%] h-[100%]  hover:bg-[#2f4672] bg-[#676f98] font-[FahKwang] hover:text-[#E79E7F] text-white text-[1vw] xl:text-[15px]"
-                        type="submit"
-                        value="online"
-                        disabled={orderloading || onlineLoading}
-                      >
-                        {onlineLoading
-                          ? "Loading..."
-                          : t("checkout.onlinePayment")}
-                      </button>
-                    )}
-                  </div>
+<div className="w-full h-[50px] flex justify-between items-end gap-2">
+  {cartItems.shipping_country_id === 109 ? (
+    <>
+      <button
+        className="w-full h-full flex-1 hover:bg-[#2f4672] bg-[#676f98] font-[FahKwang] hover:text-[#E79E7F] text-white text-[1vw] xl:text-[15px]"
+        type="submit"
+        value="COD"
+        disabled={orderloading || onlineLoading}
+      >
+        {orderloading ? "Loading..." : t("checkout.cod")}
+      </button>
+      <button
+        className="w-full h-full flex-1 hover:bg-[#2f4672] bg-[#676f98] font-[FahKwang] hover:text-[#E79E7F] text-white text-[1vw] xl:text-[15px]"
+        type="submit"
+        value="online"
+        disabled={orderloading || onlineLoading}
+      >
+        {onlineLoading ? "Loading..." : t("checkout.onlinePayment")}
+      </button>
+    </>
+  ) : (
+    <button
+      className="w-full h-full hover:bg-[#2f4672] bg-[#676f98] font-[FahKwang] hover:text-[#E79E7F] text-white text-[1vw] xl:text-[15px]"
+      type="submit"
+      value="online"
+      disabled={orderloading || onlineLoading}
+    >
+      {onlineLoading ? "Loading..." : t("checkout.onlinePayment")}
+    </button>
+  )}
+</div>
+
                 </div>
               </div>
             </form>

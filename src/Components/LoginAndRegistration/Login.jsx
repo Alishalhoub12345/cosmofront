@@ -69,7 +69,7 @@ function Login() {
     e.preventDefault();
     setLoader(true);
     const res = await axios.post(
-      "https://www.cosmo.global/laravel/api/reset-password-email",
+      "http://127.0.0.1:8000/api/reset-password-email",
       {
         email: forgotPasswordEmail,
       }
@@ -90,7 +90,7 @@ function Login() {
   setLoading(true);
 
   axios
-    .post("https://www.cosmo.global/laravel/api/login-user-check", {
+    .post("http://127.0.0.1:8000/api/login-user-check", {
       email: email,
       Password: password,
     })
@@ -115,7 +115,7 @@ function Login() {
         localStorage.removeItem("cartLength");
 
         axios
-          .get(`https://www.cosmo.global/laravel/api/cart/${user.id}/latest-cart`)
+          .get(`http://127.0.0.1:8000/api/cart/${user.id}/latest-cart`)
           .then((cartResponse) => {
             if (
               cartResponse.data &&

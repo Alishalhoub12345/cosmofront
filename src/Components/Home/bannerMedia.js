@@ -1,5 +1,5 @@
 const bannerMedia = {
-    src: "JK-Catena-Blk-banner.jpg"
+    src: "verdun-banner-1.jpg"
   };
 
 // const bannerMedia = {
