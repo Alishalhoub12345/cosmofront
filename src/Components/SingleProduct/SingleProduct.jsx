@@ -42,7 +42,12 @@ const location = rawLocation ? JSON.parse(rawLocation) : null;
     setSelectedSize(sizeId);
     setSelectedQuantity(size?.quantity);
   };
-  
+  const [customQuantity, setCustomQuantity] = useState(1);
+
+  useEffect(() => {
+  setCustomQuantity(1);
+}, [productSKU]);
+
 
   useEffect(() => {
     const currencyUsed = localStorage.getItem("currencyUsed");
@@ -147,7 +152,7 @@ const fabricLabel = hideSections
   
   const handleStoreInLS = async () => {
     setLoadAddToCart(true);
-    const quantity = 1;
+const quantity = isInDepartment3 ? customQuantity : 1;
     const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
     const cartNumber = localStorage.getItem("cartNumber") || [];
     const productId = productData.id;
@@ -577,68 +582,116 @@ const userId = {
                 {loadingSizeType && (
                   <div className="bg-[#cfcfcf] h-[50px]"></div>
                 )}
+{isInDepartment3 ? (
+  // 👞👜 Department 3 (Shoes & Bags): Quantity selector
+<div className="mt-[20px]">
+  <h2
+    className={`text-[12px] xl:text-[12px] text-[#1e335a] ${
+      isArabic ? " text-[18px] text-right w-[100%]" : ""
+    }`}
+  >
+    {t("singleProductPage.quantity")}
+  </h2>
 
-                {productData.productQuantity == null ? (
-                  <div className="">
-                    <h2
-                      className={`text-[12px] xl:text-[12px] text-[#1e335a] ${
-                        isArabic ? " text-[18px] text-right w-[100%]" : ""
-                      }`}
-                    >
-                      {t("singleProductPage.size")}
-                    </h2>
-                    <div
-                      className={`w-[100%] h-[auto] py-[1%] flex gap-[3%] flex-wrap ${
-                        isArabic ? " flex-row-reverse" : ""
-                      }`}
-                    >
-                      {productData.sizes?.map((prodSize) => (
-                        <button
-                          key={prodSize.id}
-                          onClick={() => handleSizeClick(prodSize.id)}
-                          className={`mt-[2%] border-[1px] flex text-[#7d7d7d] justify-center items-center border-[#2f4672] w-[40px] h-[40px] ${
-                            selectedSize === prodSize.id
-                              ? "text-[white] bg-[#ea9e7e]"
-                              : "hover:text-white hover:bg-[#ea9e7e]"
-                          }`}
-                        >
-                          <p className="text-[0.8vw] xl:text-[13px] w-[100%] h-[100%] flex justify-center items-center">
-                            {prodSize.size}
-                          </p>
-                        </button>
-                      ))}
-                    </div>
-                    {selectedQuantity !== null && (
-                      <p
-                        className={` text-[12px] text-[#ea9e7e] py-[0.5px] ${
-                          isArabic ? "text-right" : ""
-                        }`}
-                      >
-                        {t("singleProductPage.only")}{" "}
-                        <span>{selectedQuantity}</span>{" "}
-                        {t("singleProductPage.availableSize")}
-                      </p>
-                    )}
-                  </div>
-                ) : (
-                  <div className="mt-[20px]">
-                    <h2
-                      className={`text-[12px] py-[0.5%] xl:text-[12px] text-[#1e335a]  ${
-                        isArabic ? " text-[18px] text-right w-[100%]" : ""
-                      }`}
-                    >
-                      {t("singleProductPage.quantity")}
-                    </h2>
-                    <p
-                      className={`border-[1px] py-[1%] border-[#1e335a] px-[2%] rounded-[5px] ${
-                        isArabic ? "text-right" : ""
-                      }`}
-                    >
-                      {" "}
-                      {productData.sizes[0].quantity}{" "}
-                    </p>
-                  </div>
-                )}
+  <div className={`flex items-center gap-2 mt-2 ${isArabic ? "flex-row-reverse" : ""}`}>
+    <button
+      onClick={() => setCustomQuantity((prev) => Math.max(1, prev - 1))}
+      disabled={customQuantity <= 1}
+      className={`w-[30px] h-[30px] flex justify-center items-center ${
+        customQuantity <= 1
+          ? "bg-gray-300 text-white cursor-not-allowed"
+          : "bg-[#676f98] text-white"
+      }`}
+    >
+      -
+    </button>
+
+    <p className="min-w-[30px] text-center">{customQuantity}</p>
+
+    <button
+      onClick={() => setCustomQuantity((prev) => prev + 1)}
+      disabled={customQuantity >= productData.sizes[0].quantity}
+      className={`w-[30px] h-[30px] flex justify-center items-center ${
+        customQuantity >= productData.sizes[0].quantity
+          ? "bg-gray-300 text-white cursor-not-allowed"
+          : "bg-[#676f98] text-white"
+      }`}
+    >
+      +
+    </button>
+  </div>
+
+  <p className="text-[12px] text-[#ea9e7e] mt-[5px]">
+    {t("singleProductPage.only")} {productData.sizes[0].quantity}{" item(s) available"}
+  </p>
+</div>
+
+) : productData.productQuantity == null ? (
+  // 👚 Original Clothes Size Design
+  <div className="">
+    <h2
+      className={`text-[12px] xl:text-[12px] text-[#1e335a] ${
+        isArabic ? " text-[18px] text-right w-[100%]" : ""
+      }`}
+    >
+      {t("singleProductPage.size")}
+    </h2>
+    <div
+      className={`w-[100%] h-[auto] py-[1%] flex gap-[3%] flex-wrap ${
+        isArabic ? " flex-row-reverse" : ""
+      }`}
+    >
+      {productData.sizes?.map((prodSize) => (
+        <button
+          key={prodSize.id}
+          onClick={() => handleSizeClick(prodSize.id)}
+          className={`mt-[2%] border-[1px] flex text-[#7d7d7d] justify-center items-center border-[#2f4672] w-[40px] h-[40px] ${
+            selectedSize === prodSize.id
+              ? "text-[white] bg-[#ea9e7e]"
+              : "hover:text-white hover:bg-[#ea9e7e]"
+          }`}
+        >
+          <p className="text-[0.8vw] xl:text-[13px] w-[100%] h-[100%] flex justify-center items-center">
+            {prodSize.size}
+          </p>
+        </button>
+      ))}
+    </div>
+    {selectedQuantity !== null && (
+      <p
+        className={`text-[12px] text-[#ea9e7e] py-[0.5px] ${
+          isArabic ? "text-right" : ""
+        }`}
+      >
+        {t("singleProductPage.only")}{" "}
+        <span>{selectedQuantity}</span>{" "}
+        {t("singleProductPage.availableSize")}
+      </p>
+    )}
+  </div>
+) : (
+  // 🎀 Accessories Static Quantity
+  <div className="mt-[20px]">
+    <h2
+      className={`text-[12px] py-[0.5%] xl:text-[12px] text-[#1e335a] ${
+        isArabic ? " text-[18px] text-right w-[100%]" : ""
+      }`}
+    >
+      {t("singleProductPage.quantity")}
+    </h2>
+    <p
+      className={`border-[1px] py-[1%] border-[#1e335a] px-[2%] rounded-[5px] ${
+        isArabic ? "text-right" : ""
+      }`}
+    >
+      {productData.sizes[0].quantity}
+    </p>
+  </div>
+)}
+
+
+
+
 
                 {sizetoChoose && selectedSize === "" && (
                   <div className=" w-[100%] pt-[2%]  flex items-center justify-center">

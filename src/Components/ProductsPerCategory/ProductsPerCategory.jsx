@@ -15,32 +15,50 @@ function ProductsPerCategory() {
   const [moreItems, setMoreItems] = useState(true);
   const [showMoreLoading, setShowMoreLoading] = useState(false);
   const [currencyValue, setCurrencyValue] = useState(1);
-  const currencyUsed = localStorage.getItem("currencyUsed");
+  const [currencyUsed, setCurrencyUsed] = useState(localStorage.getItem("currencyUsed") || "USD");
   const [t, i18n] = useTranslation("global");
   const selectedLang = localStorage.getItem("lang");
   const isArabic = selectedLang === "ar";
 
   // Fetch currency conversion value
-  useEffect(() => {
-    if (currencyUsed) {
-      axios
-        .post("http://127.0.0.1:8000/api/currency-name", {
-          currency_name: currencyUsed,
-        })
-        .then((res) => setCurrencyValue(res.data.currency_value))
-        .catch((err) =>
-          console.error("Error fetching currency value:", err)
-        );
+  const fetchCurrencyRate = async () => {
+    const currentCurrency = localStorage.getItem("currencyUsed") || "USD";
+    setCurrencyUsed(currentCurrency);
+
+    try {
+      const res = await axios.post("http://127.0.0.1:8000/api/currency-value", {
+        currency_name: currentCurrency,
+      });
+      setCurrencyValue(res.data.currency_value);
+    } catch (err) {
+      console.error("Error fetching currency value:", err);
+      setCurrencyValue(1);
     }
-  }, []);
+  };
+
+  // Fetch on mount + listen for localStorage changes
+useEffect(() => {
+  const currency = localStorage.getItem("currencyUsed");
+  if (currency) {
+    axios
+      .post("http://127.0.0.1:8000/api/currency-name", {
+        currency_name: currency,
+      })
+      .then((response) => {
+        setCurrencyValue(response.data.currency_value);
+      })
+      .catch((error) => {
+        console.error("Error fetching currency value:", error);
+      });
+  }
+}, []);
+
 
   // Fetch category info (departments + name)
   const getCategoryInfo = async () => {
     const response = await axios.get(
       `http://127.0.0.1:8000/api/CategoryCorrespondingDepand/${categoryLink}`,
-      {
-        params: { locale: selectedLang },
-      }
+      { params: { locale: selectedLang } }
     );
     return response.data;
   };
@@ -55,18 +73,13 @@ function ProductsPerCategory() {
     try {
       const response = await axios.get(
         `http://127.0.0.1:8000/api/categories/${categoryLink}/products/${page}?productVisible=1`,
-        {
-          params: { locale: selectedLang },
-        }
+        { params: { locale: selectedLang } }
       );
 
       if (page === 1) {
         setCategoryProducts(response.data.data);
       } else {
-        setCategoryProducts((prev) => [
-          ...prev,
-          ...response.data.data,
-        ]);
+        setCategoryProducts((prev) => [...prev, ...response.data.data]);
       }
 
       if (page > 1 && response.data.data.length === 0) {
@@ -80,7 +93,7 @@ function ProductsPerCategory() {
     }
   };
 
-  // Initial render delay to simulate loader
+  // Loader simulation
   useEffect(() => {
     const delayLoad = setTimeout(() => {
       setLoading(true);
@@ -178,32 +191,22 @@ function ProductsPerCategory() {
                     {product.productName}
                   </p>
                   {product.productSale ? (
-                    <div
-                      className={`flex gap-[2%] flex-col w-full ${
-                        isArabic ? "text-right" : ""
-                      }`}
-                    >
+                    <div className={`flex gap-[2%] flex-col w-full ${isArabic ? "text-right" : ""}`}>
                       <p className="font-[FrutigerLTCom-Roman] xl:text-[10px]">
                         {(
                           (product.productPrice -
                             product.productPrice * (product.productSale / 100)) *
                           currencyValue
-                        ).toFixed(2)}
+                        ).toFixed(2)}{" "}
                         {currencyUsed}
                       </p>
                       <p className="text-[12px] xl:text-[10px] line-through text-[#a9a9a9]">
-                        {(product.productPrice * currencyValue).toFixed(2)}
-                        {currencyUsed}
+                        {(product.productPrice * currencyValue).toFixed(2)} {currencyUsed}
                       </p>
                     </div>
                   ) : (
-                    <p
-                      className={`xl:text-[10px] font-[FrutigerLTCom-Roman] ${
-                        isArabic ? "text-right" : ""
-                      }`}
-                    >
-                      {(product.productPrice * currencyValue).toFixed(2)}
-                      {currencyUsed}
+                    <p className={`xl:text-[10px] font-[FrutigerLTCom-Roman] ${isArabic ? "text-right" : ""}`}>
+                      {(product.productPrice * currencyValue).toFixed(2)} {currencyUsed}
                     </p>
                   )}
                 </div>
@@ -225,11 +228,7 @@ function ProductsPerCategory() {
         </div>
       ) : (
         <div className="h-[80vh] flex justify-center items-center text-black">
-          <img
-            className="w-[50px] md:w-[30px] sm:w-[20px]"
-            src={loader}
-            alt="loader"
-          />
+          <img className="w-[50px] md:w-[30px] sm:w-[20px]" src={loader} alt="loader" />
         </div>
       )}
     </div>

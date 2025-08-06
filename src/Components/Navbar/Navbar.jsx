@@ -377,17 +377,20 @@ function Navbar() {
               isArabic ? "flex-row-reverse" : ""
             }`}
           >
-            <div className=" text-black flex items-center gap-[7%] xl:gap-[5%] px-[3%]">
-              <div>
-                {i18n.language === "en" && (
-                  <button onClick={() => changeLanguage("ar")}>العربية</button>
-                )}
-                {i18n.language === "ar" && (
-                  <button onClick={() => changeLanguage("en")}>English</button>
-                )}
-              </div>
-              <Currency />
-            </div>
+  <div className="text-black flex items-center gap-3 px-[3%]">
+  <div>
+    {i18n.language === "en" && (
+      <button onClick={() => changeLanguage("ar")}>العربية</button>
+    )}
+    {i18n.language === "ar" && (
+      <button onClick={() => changeLanguage("en")}>English</button>
+    )}
+  </div>
+  <div className="ml-[10%] xl:ml-[12%]">
+    <Currency />
+  </div>
+</div>
+
             <div
               className={`w-[55%] flex  items-center justify-center gap-[5%] lg:justify-center lg:w-[100%] ${
                 isArabic ? " flex-row-reverse" : ""

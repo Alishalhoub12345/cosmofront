@@ -6,7 +6,6 @@ import { AiOutlineClose } from "react-icons/ai";
 import in2info from "../../images/AboutUs/in2info-logo.png";
 import { useTranslation } from "react-i18next";
 
-
 function Footer() {
   const [emailSub, setEmailSub] = useState("");
   const [t, i18n] = useTranslation("global");
@@ -24,6 +23,7 @@ function Footer() {
       i18n.changeLanguage(selectedLang);
     }
   }, [i18n]);
+
   const emailSubscription = async (e) => {
     e.preventDefault();
     try {
@@ -51,11 +51,9 @@ function Footer() {
   return (
     <>
       {showPopUpEmail && (
-        <div
-          className={`popup flex justify-between w-[280px] bg-[white] px-[1%] fixed right-[2%] top-[15%] z-[20] h-[100px]`}
-        >
-          <div className="h-[100%] w-[50%] justify-evenly items-center flex">
-            <div className="flex justify-center items-center h-[100%]">
+        <div className="popup flex justify-between w-[280px] bg-white px-[1%] fixed right-[2%] top-[15%] z-[20] h-[100px]">
+          <div className="h-full w-[50%] justify-evenly items-center flex">
+            <div className="flex justify-center items-center h-full">
               {popUpInfoEmail.success ? (
                 <div className="w-[40px] h-[40px] flex justify-center items-center rounded-full text-white bg-[#676F98]">
                   <IoIosCheckmark className="text-[40px]" />
@@ -67,64 +65,64 @@ function Footer() {
               )}
             </div>
           </div>
-          <div className="h-[100%] w-[60%] flex justify-center flex-col">
+          <div className="h-full w-[60%] flex justify-center flex-col">
             <p className="text-left text-[12px]">{popUpInfoEmail.message}</p>
           </div>
         </div>
       )}
-      <div className="bg-[#082252] border-[white] border-[1px] lg:w-[100%] font-[FahKwang] text-white flex justify-evenly flex-row lg:flex-col">
+
+      <div className="bg-[#082252] border-[white] border-[0px] lg:w-full font-[FahKwang] text-white flex justify-evenly flex-row lg:flex-col">
         <div
-          className={`w-[65%] lg:w-[100%] xl:w-[100%] flex justify-center xl:justify-evenly gap-[2%] items-start lg:flex-col ${
-            isArabic ? " text-[15px] text-right" : ""
+          className={`w-[65%] lg:w-full xl:w-full flex justify-center xl:justify-evenly gap-[4%] items-start lg:flex-col ${
+            isArabic ? "text-[15px] text-right" : ""
           }`}
         >
+          {/* ABOUT */}
           <div
-            className={`w-[20%]  lg:px-[4%] lg:w-[100%] xl:w-[30%] flex justify-evenly items-start lg:flex-col ${
-              isArabic ? " flex-row-reverse" : ""
+            className={`w-[20%] lg:px-[0%] lg:w-full xl:w-[30%] flex items-start lg:flex-col ${
+              isArabic ? "flex-row-reverse" : ""
             }`}
           >
             <div
-              className={` lg:border-b-[1px] p-[5%] sm:h-[50px] lg:px-[0%] lg:w-[100%] border-[white] h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-[0px] ${
-                isArabic ? "border-l-[2px] lg:border-l-[0px]" : "border-r-[2px]"
+              className={` lg:border-b-[1px] pb-[2%] pt-[1%] sm:h-[50px] lg:px-0 lg:w-full border-white h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-0 ${
+                isArabic ? "border-l-[2px] lg:border-l-0" : "border-r-[2px]"
               }`}
             >
-              <p className="lg:w-[100%] text-[#E79E7F]">
-                {" "}
-                {t("footer.about-title")}
-              </p>
+              <p className="text-[#E79E7F]">{t("footer.about-title")}</p>
             </div>
             <div
-              className={` pt-[5%] lg:p-[2%] lg:w-[100%] sm:py-[5%] lg:px-[0%] flex   flex-col ${
-                isArabic ? " w-[50%]" : "items-start justify-center pl-[2%]"
+              className={`pt-[2%] pl-[5%] pb-[1%] lg:w-full flex flex-col ${
+                isArabic ? "pr-[1%]" : "pl-[1%] items-start justify-center"
               }`}
             >
-              <Link to="/about-us" className="lg:w-[100%]  hover:font-[900]">
+              <Link to="/about-us" className="hover:font-[900]">
                 {t("footer.aboutUs")}
               </Link>
-              <Link to="/contact-us" className="lg:w-[100%]  hover:font-[900]">
+              <Link to="/contact-us" className="hover:font-[900]">
                 {t("footer.contactUs")}
               </Link>
-                    <Link to="/store-locator" className=" w-[100px]   hover:font-[900]">
-                    
+              <Link to="/store-locator" className="hover:font-[900]">
                 {t("footer.storeLocator")}
               </Link>
             </div>
           </div>
+
+          {/* CUSTOMER */}
           <div
-            className={`w-[30%]  lg:px-[4%] lg:w-[100%] xl:w-[30%] flex justify-evenly items-start lg:flex-col ${
-              isArabic ? " flex-row-reverse" : ""
+            className={`w-[30%] lg:px-[4%] lg:w-full xl:w-[30%] flex items-start lg:flex-col ${
+              isArabic ? "flex-row-reverse" : ""
             }`}
           >
             <div
-              className={` lg:border-b-[1px] p-[5%] sm:h-[50px] lg:px-[0%] lg:w-[100%] border-[white] h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-[0px] ${
-                isArabic ? "border-l-[2px] lg:border-l-[0px]" : "border-r-[2px]"
+              className={`lg:border-b-[1px] pb-[2%] pt-[1%] sm:h-[50px] lg:px-0 lg:w-full border-white h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-0 ${
+                isArabic ? "border-l-[2px] lg:border-l-0" : "border-r-[2px]"
               }`}
             >
-              <p className="text-[#E79E7F]"> {t("footer.customer-title")}</p>
+              <p className="text-[#E79E7F]">{t("footer.customer-title")}</p>
             </div>
             <div
-              className={` pt-[5%] lg:p-[2%] lg:w-[100%] sm:py-[5%] lg:px-[0%] flex   flex-col ${
-                isArabic ? " w-[60%]" : "items-start justify-center pl-[2%]"
+              className={`pt-[2%] pl-[5%] pb-[1%] lg:w-full flex flex-col ${
+                isArabic ? "pr-[1%]" : "pl-[1%] items-start justify-center"
               }`}
             >
               <Link to="/shipping-policy" className="hover:font-[900]">
@@ -145,29 +143,28 @@ function Footer() {
               <Link to="/terms-policy" className="hover:font-[900]">
                 {t("footer.terms")}
               </Link>
-              <Link
-                to="/frequently-asked-questions"
-                className="hover:font-[900]"
-              >
+              <Link to="/frequently-asked-questions" className="hover:font-[900]">
                 {t("footer.faq")}
               </Link>
             </div>
           </div>
+
+          {/* FOLLOW US */}
           <div
-            className={`w-[20%]  lg:px-[4%] lg:w-[100%] xl:w-[30%] flex justify-evenly items-start lg:flex-col ${
-              isArabic ? " flex-row-reverse" : ""
+            className={`w-[20%] lg:px-[4%] lg:w-full xl:w-[30%] flex items-start lg:flex-col ${
+              isArabic ? "flex-row-reverse" : ""
             }`}
           >
             <div
-              className={` lg:border-b-[1px] p-[5%] sm:h-[50px] lg:px-[0%] lg:w-[100%] border-[white] h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-[0px] ${
-                isArabic ? "border-l-[2px] lg:border-l-[0px]" : "border-r-[2px]"
+              className={`lg:border-b-[1px] pb-[2%] pt-[1%] sm:h-[50px] lg:px-0 lg:w-full border-white h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-0 ${
+                isArabic ? "border-l-[2px] lg:border-l-0" : "border-r-[2px]"
               }`}
             >
               <p className="text-[#E79E7F]">{t("footer.follow-title")}</p>
             </div>
             <div
-              className={` pt-[5%] lg:p-[2%] lg:w-[100%] sm:py-[5%] lg:px-[0%] flex   flex-col ${
-                isArabic ? " w-[70%]" : "items-start justify-center pl-[2%]"
+              className={`pt-[2%] pb-[1%] pl-[5%] lg:w-full flex flex-col ${
+                isArabic ? "pr-[0%]" : "pl-[0%] items-start justify-center"
               }`}
             >
               <a
@@ -178,9 +175,8 @@ function Footer() {
               >
                 Facebook
               </a>
-
               <a
-                href="https://www.instagram.com/cosmo.leb/"
+                href="https://www.instagram.com/cosmo.glob/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:font-[900]"
@@ -198,21 +194,23 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex justify-start  gap-[35%] lg:w-[100%] lg:px-[4%] items-start flex-col w-[35%] pl-[3%] xl:p-[1%] pt-[1%]">
+
+        {/* SUBSCRIBE + COPYRIGHT */}
+        <div className="flex justify-start gap-[35%] lg:w-full lg:px-[4%] items-start flex-col w-[35%] pl-[3%] xl:p-[1%] pt-[1%]">
           <div
-            className={`w-[100%] flex flex-col ${
-              isArabic ? " text-right text-[15px] px-[2%]" : ""
+            className={`w-full flex flex-col ${
+              isArabic ? "text-right text-[15px] px-[2%]" : ""
             }`}
           >
             <p className="pb-[1%]">{t("footer.subscribe")}</p>
             <form
-              className={` flex w-[100%] text-[black] gap-[1%] lg:pb-[5%] md:pb-[10%] ${
-                isArabic ? " flex-row-reverse" : ""
+              className={`flex w-full text-black gap-[1%] lg:pb-[5%] md:pb-[10%] ${
+                isArabic ? "flex-row-reverse" : ""
               }`}
               onSubmit={emailSubscription}
             >
               <input
-                className={`w-[15vw] p-[2%] lg:w-[40%] md:w-[50%] xl:w-[20vw] sm:w-[80%] bg-[#dedede] rounded-[15px] h-[25px] flex justify-center items-center ${
+                className={`w-[15vw] p-[2%] lg:w-[40%] md:w-[50%] xl:w-[20vw] sm:w-[80%] bg-[#dedede] rounded-[15px] h-[25px] ${
                   isArabic ? "text-right" : ""
                 }`}
                 value={emailSub}
@@ -222,16 +220,16 @@ function Footer() {
               />
               <button
                 type="submit"
-                className="w-[4vw] hover:text-white xl:w-[5vw] lg:w-[10%] md:w-[20%] border-[1px] border-[black] bg-[#ef997b] p-[1%] rounded-[15px] h-[25px] flex justify-center items-center"
+                className="w-[4vw] hover:text-white xl:w-[5vw] lg:w-[10%] md:w-[20%] border border-black bg-[#ef997b] p-[1%] rounded-[15px] h-[25px] flex justify-center items-center"
               >
                 {t("homePage.footer.btn")}
               </button>
             </form>
           </div>
           <div className="sm:text-[12px] text-[12px] lg:pb-[2%]">
-            <p> {t("homePage.footer.copyRights")}</p>
+            <p>{t("homePage.footer.copyRights")}</p>
             <div className="flex items-center gap-[5%] h-[20px]">
-              <p className="">SITEMANAGER V4.0</p>
+              <p>SITEMANAGER V4.0</p>
               <a
                 target="_blank"
                 className="h-[10px] w-[85px]"
@@ -239,7 +237,7 @@ function Footer() {
               >
                 <img
                   src={in2info}
-                  className="w-[100%] h-[100%]"
+                  className="w-full h-full"
                   alt="in2info-logo"
                 />
               </a>

@@ -75,6 +75,23 @@
         "only":"Only",
         "availableSize":" item(s) left!"
   },
+  "storeLocator": {
+    "mainTitle": "STORE LOCATOR",
+    "stores": [
+      {
+        "name": "COSMO Beirut",
+        "address1": "Verdun 2000 Center, Ground Floor",
+        "address2": "Verdun Main Street, Beirut",
+        "phone": "+96181117733"
+      },
+      {
+        "name": "COSMO Kaslik",
+        "address1": "Fahd Center, Ground Floor",
+        "address2": "Kaslik Main Street, Kaslik",
+        "phone": "+96171017011"
+      }
+    ]
+  },
 
   "allProducts":"ALL PRODUCTS",
   "search":"Search...",

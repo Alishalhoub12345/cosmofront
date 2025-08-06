@@ -20,22 +20,22 @@ function ProductsPerDepartment() {
   const [t, i18n] = useTranslation("global");
   const selectedLang = localStorage.getItem("lang");
   const isArabic = localStorage.getItem("lang") === "ar";
-  useEffect(() => {
-    const currencyUsed = localStorage.getItem("currencyUsed");
-    if (currencyUsed) {
-      axios
-        .post("http://127.0.0.1:8000/api/currency-name", {
-          currency_name: currencyUsed,
-        })
-        .then((response) => {
-          setCurrencyValue(response.data.currency_value);
-        })
+useEffect(() => {
+  const currency = localStorage.getItem("currencyUsed");
+  if (currency) {
+    axios
+      .post("http://127.0.0.1:8000/api/currency-name", {
+        currency_name: currency,
+      })
+      .then((response) => {
+        setCurrencyValue(response.data.currency_value);
+      })
+      .catch((error) => {
+        console.error("Error fetching currency value:", error);
+      });
+  }
+}, []);
 
-        .catch((error) => {
-          console.error("Error fetching currency value:", error);
-        });
-    }
-  }, []);
   // const getProductByDepartment = async () => {
   //   const departmentRes = await axios.get(
   //     `http://127.0.0.1:8000/api/getdepartment/${departmentLink}`,

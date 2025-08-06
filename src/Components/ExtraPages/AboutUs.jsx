@@ -21,10 +21,10 @@ function AboutUs() {
   const isArabic = lang === "ar";
 
   return (
-    <div className="bg-[white]">
+    <div className="bg-[white] sm:text-[11px]">
       <div className="w-[100%] uppercase bg-[#F1F1F1] xl:h-[auto] flex flex-row lg:flex-col justify-between items-center h-[80vh]">
         <div
-          className={`w-[50%] lg:w-[80%] lg:py-[5%] md:pt-[10%] flex justify-center flex-col items-center text-center 2xl:p-[0%] p-[5%] ${
+          className={`  w-[50%] lg:w-[80%] lg:py-[5%] md:pt-[10%] flex justify-center flex-col items-center text-center 2xl:p-[0%] p-[5%] ${
             isArabic ? " text-[20px] " : ""
           }`}
         >
