@@ -14,21 +14,21 @@ function OnlinePaymentRedirect() {
   }, [orderId]);
 
   const checkOnlinePaymentStatus = async () => {
-    await axios.post(`http://127.0.0.1:8000/api/decreaseProduct/${orderId}`);
+    await axios.post(`https://www.cosmo.global/laravel/api/decreaseProduct/${orderId}`);
 
     await sendConfirmationEmail(orderId);
   };
 
   const sendConfirmationEmail = async (orderId) => {
     try {
-      const res = await axios.get(`http://127.0.0.1:8000/api/order/${orderId}`);
+      const res = await axios.get(`https://www.cosmo.global/laravel/api/order/${orderId}`);
       const orderInfo = res.data.message;
       const cartRefNumber = res.data.message.cart.uniqueCartId;
       if (!orderInfo) {
         throw new Error("Order information is not available.");
       }
 
-      await axios.post("http://127.0.0.1:8000/api/payment", {
+      await axios.post("https://www.cosmo.global/laravel/api/payment", {
         paymentMethod: "NetCommerce",
         status: "Paid",
         total: orderInfo.totalAmount,
@@ -36,7 +36,7 @@ function OnlinePaymentRedirect() {
       });
 
       const cart = await axios.get(
-        `http://127.0.0.1:8000/api/cartItems-checkout/${orderInfo.cart_id}`
+        `https://www.cosmo.global/laravel/api/cartItems-checkout/${orderInfo.cart_id}`
       );
       const cartItems = cart.data;
 
@@ -84,7 +84,7 @@ function OnlinePaymentRedirect() {
       };
 
       await axios.post(
-        "http://127.0.0.1:8000/api/orderConfirmation",
+        "https://www.cosmo.global/laravel/api/orderConfirmation",
         emailInfo
       );
       await updateOrderStatus();
@@ -99,7 +99,7 @@ function OnlinePaymentRedirect() {
 
   const updateOrderStatus = async () => {
     const res = await axios.post(
-      `http://127.0.0.1:8000/api/order-status-update/${orderId}`,
+      `https://www.cosmo.global/laravel/api/order-status-update/${orderId}`,
       {
         status: "Invoiced",
         itemStatus: "Invoiced",

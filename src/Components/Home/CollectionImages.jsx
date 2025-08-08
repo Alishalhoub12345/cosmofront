@@ -14,7 +14,7 @@ function CollectionImages() {
 
   const fetchHomePageImages = async () => {
     try {
-      const res = await axios.get("http://127.0.0.1:8000/api/home-page-images");
+      const res = await axios.get("https://www.cosmo.global/laravel/api/home-page-images");
       const response = res.data.data;
   
       setTopBannerLink(response?.[0]?.linkUrl || "");
@@ -40,13 +40,13 @@ function CollectionImages() {
       <Link to={topBannerLink || "/"} className="relative h-auto my-[5%]">
         <div className="absolute top-[30%] lg:top-[20%] flex flex-col w-full pl-[9%] justify-center items-center"></div>
         
-        <img src={`http://127.0.0.1:8000/api/storage/${topBannerImages}`} alt="top-banner" className="w-full" />
+        <img src={`https://www.cosmo.global/laravel/api/storage/${topBannerImages}`} alt="top-banner" className="w-full" />
       </Link>
 
       <div className="flex justify-evenly xl:justify-between items-center">
         <Link to={leftLink || "/"} className="w-[30%] xl:w-[47%]">
           <img
-            src={`http://127.0.0.1:8000/api/storage/${leftImage}`}
+            src={`https://www.cosmo.global/laravel/api/storage/${leftImage}`}
             alt="left-section"
             className="w-full h-full object-contain"
           />
@@ -54,7 +54,7 @@ function CollectionImages() {
 
         <Link to={rightLink || "/"} className="w-[30%] xl:w-[47%]">
           <img
-            src={`http://127.0.0.1:8000/api/storage/${rightImage}`}
+            src={`https://www.cosmo.global/laravel/api/storage/${rightImage}`}
             alt="right-section"
             className="w-full h-full object-contain"
           />
@@ -64,7 +64,7 @@ function CollectionImages() {
       <Link to={bottomBannerLink || "/"} className="relative h-auto mt-[5%]">
         <div className="absolute top-[30%] lg:top-[20%] flex flex-col w-full pl-[9%] justify-center items-center"></div>
        
-        <img src={`http://127.0.0.1:8000/api/storage/${bottomBannerImages}`} alt="bottom-banner" className="w-full" />
+        <img src={`https://www.cosmo.global/laravel/api/storage/${bottomBannerImages}`} alt="bottom-banner" className="w-full" />
       </Link>
     </div>
   );

@@ -23,7 +23,7 @@ function AllProductsOnSale() {
     const currencyUsed = localStorage.getItem("currencyUsed");
     if (currencyUsed) {
       axios
-        .post("http://127.0.0.1:8000/api/currency-name", {
+        .post("https://www.cosmo.global/laravel/api/currency-name", {
           currency_name: currencyUsed,
         })
         .then((response) => {
@@ -37,7 +37,7 @@ function AllProductsOnSale() {
   }, []);
 
   // const getSaleName = async () => {
-  //   const saleRes = await axios.get(`http://127.0.0.1:8000/api/sale/${saleId}`, {
+  //   const saleRes = await axios.get(`https://www.cosmo.global/laravel/api/sale/${saleId}`, {
   //     params: { locale: selectedLang},
   // });
   //   const saleNameResult = saleRes.data.message.sale;
@@ -50,7 +50,7 @@ function AllProductsOnSale() {
     let response;
     try {
       response = await axios.get(
-        `http://127.0.0.1:8000/api/products-on-sale/${page}?productVisible=1`,
+        `https://www.cosmo.global/laravel/api/products-on-sale/${page}?productVisible=1`,
         {
           params: { locale: selectedLang },
         }
@@ -143,7 +143,7 @@ function AllProductsOnSale() {
                       <div className="min-h-[20rem] xl:min-h-[15rem] lg:min-h-[10rem] sm:min-h-[5rem] mt-[0.1%] md:mt-[0.5%] ">
                         <img
                           className=" w-[100%] h-[100%] object-cover "
-                          src={`http://127.0.0.1:8000/api/storage/${singleProdSale.media1}`}
+                          src={`https://www.cosmo.global/laravel/api/storage/${singleProdSale.media1}`}
                           alt={`${singleProdSale.id}`}
                           onError={(e) => {
                             e.target.src = fallout;
@@ -220,7 +220,7 @@ function AllProductsOnSale() {
               </div>
               <img
                 className=" w-[100%] h-[100%] object-cover relative z-0"
-                src={`http://127.0.0.1:8000/api/storage/${singleProdSale.media1}`}
+                src={`https://www.cosmo.global/laravel/api/storage/${singleProdSale.media1}`}
                 alt={`${singleProdSale.id}`}
               /> */}
               </div>

@@ -5,7 +5,7 @@ import { useQuery } from "react-query";
 // Fetch available currencies and rates from backend
 const fetchCurrencies = async () => {
   try {
-    const response = await axios.get("http://127.0.0.1:8000/api/exchange-rates/USD");
+    const response = await axios.get("https://www.cosmo.global/laravel/api/exchange-rates/USD");
     return response.data; // [{ currency: "USD", rate: 1 }, ...]
   } catch (err) {
     console.error("Failed to fetch currencies:", err.message);

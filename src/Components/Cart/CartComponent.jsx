@@ -49,7 +49,7 @@ function CartComponent() {
     const currencyUsed = localStorage.getItem("currencyUsed");
     if (currencyUsed) {
       axios
-        .post("http://127.0.0.1:8000/api/currency-name", {
+        .post("https://www.cosmo.global/laravel/api/currency-name", {
           currency_name: currencyUsed,
         })
         .then((response) => {
@@ -108,7 +108,7 @@ function CartComponent() {
     if (cart.length > 0) {
       const sizeIds = cart.map((item) => item.selectedSize);
       const res = await axios.get(
-        "http://127.0.0.1:8000/api/product-size-cart",
+        "https://www.cosmo.global/laravel/api/product-size-cart",
         {
           params: {
             sizeIds: sizeIds,
@@ -179,7 +179,7 @@ function CartComponent() {
       );
       if (selectedCountryObj) {
         const response = await axios.get(
-          `http://127.0.0.1:8000/api/shipping-details/${selectedCountryObj.id}?totalWeight=${totalWeight}`
+          `https://www.cosmo.global/laravel/api/shipping-details/${selectedCountryObj.id}?totalWeight=${totalWeight}`
         );
         const price = response.data.shippingFee;
         setCountryPrice(price);
@@ -242,7 +242,7 @@ function CartComponent() {
   const updateItemStatus = async (products) => {
     try {
       await axios.post(
-        `http://127.0.0.1:8000/api/update-item-status/${cartRefNumber}`,
+        `https://www.cosmo.global/laravel/api/update-item-status/${cartRefNumber}`,
         {
           products: products, // Send the products array
         }
@@ -349,7 +349,7 @@ function CartComponent() {
         }),
       };
       const res = await axios.post(
-        `http://127.0.0.1:8000/api/edit-cart/${cartRefNumber}`,
+        `https://www.cosmo.global/laravel/api/edit-cart/${cartRefNumber}`,
         { ...cartInfo, _method: "PATCH" }
       );
       return res.data;
@@ -371,7 +371,7 @@ function CartComponent() {
 
   const getCountries = async () => {
     const res = await axios.get(
-      "http://127.0.0.1:8000/api/shipping-countries",
+      "https://www.cosmo.global/laravel/api/shipping-countries",
       { params: { locale: selectedLang } }
     );
     setCountries(res.data.message);
@@ -387,7 +387,7 @@ function CartComponent() {
     );
     if (selectedCountryObj && cart.length > 0) {
       const response = await axios.get(
-        `http://127.0.0.1:8000/api/shipping-details/${selectedCountryObj.id}?totalWeight=${prodWeight}`
+        `https://www.cosmo.global/laravel/api/shipping-details/${selectedCountryObj.id}?totalWeight=${prodWeight}`
       );
       const price = response.data.shippingFee;
       setCountryPrice(price);
@@ -458,7 +458,7 @@ function CartComponent() {
     };
     if (cartRefNumber) {
       const response = await axios.get(
-        `http://127.0.0.1:8000/api/single-cart/${cartRefNumber}`
+        `https://www.cosmo.global/laravel/api/single-cart/${cartRefNumber}`
       );
       const cartReferenceNumber = response.data.message.uniqueCartId;
 
@@ -467,7 +467,7 @@ function CartComponent() {
           setLoading(true);
 
           const res = await axios.post(
-            `http://127.0.0.1:8000/api/edit-cart/${cartRefNumber}`,
+            `https://www.cosmo.global/laravel/api/edit-cart/${cartRefNumber}`,
             { ...cartInfo, _method: "PATCH" }
           );
 
@@ -488,7 +488,7 @@ function CartComponent() {
 
   const createCartForAll = async (cartInfo) => {
     const res = await axios.post(
-      "http://127.0.0.1:8000/api/add-cart-for-all",
+      "https://www.cosmo.global/laravel/api/add-cart-for-all",
       cartInfo
     );
 
@@ -591,7 +591,7 @@ function CartComponent() {
                                   </div>
                                 )}
                                 <img
-                                  src={`http://127.0.0.1:8000/api/storage/${prod.product.media1}`}
+                                  src={`https://www.cosmo.global/laravel/api/storage/${prod.product.media1}`}
                                   className="object-contain w-[100%] h-[100%] "
                                   alt={prod.product.productName}
                                 />

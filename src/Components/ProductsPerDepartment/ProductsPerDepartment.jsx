@@ -24,7 +24,7 @@ useEffect(() => {
   const currency = localStorage.getItem("currencyUsed");
   if (currency) {
     axios
-      .post("http://127.0.0.1:8000/api/currency-name", {
+      .post("https://www.cosmo.global/laravel/api/currency-name", {
         currency_name: currency,
       })
       .then((response) => {
@@ -38,7 +38,7 @@ useEffect(() => {
 
   // const getProductByDepartment = async () => {
   //   const departmentRes = await axios.get(
-  //     `http://127.0.0.1:8000/api/getdepartment/${departmentLink}`,
+  //     `https://www.cosmo.global/laravel/api/getdepartment/${departmentLink}`,
   //     {
   //       params: { locale: selectedLang },
   //     }
@@ -57,7 +57,7 @@ useEffect(() => {
     let response;
     try {
       response = await axios.get(
-        `http://127.0.0.1:8000/api/get-department-with-products/${departmentLink}/${page}?productVisible=1`,
+        `https://www.cosmo.global/laravel/api/get-department-with-products/${departmentLink}/${page}?productVisible=1`,
         {
           params: { locale: selectedLang },
         }
@@ -152,7 +152,7 @@ useEffect(() => {
                       <div className="min-h-[20rem] xl:min-h-[5rem] lg:min-h-[10rem] sm:min-h-[5rem] mt-[0.1%] md:mt-[0.5%] ">
                         <img
                           className=" w-[100%] h-[100%] object-cover "
-                          src={`http://127.0.0.1:8000/api/storage/${singleProdPerDep.media1}`}
+                          src={`https://www.cosmo.global/laravel/api/storage/${singleProdPerDep.media1}`}
                           alt={`${singleProdPerDep.id}`}
                           onError={(e) => {
                             e.target.src = fallout;

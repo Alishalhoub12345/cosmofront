@@ -23,7 +23,7 @@ function AllProductsForCollection() {
     const currencyUsed = localStorage.getItem("currencyUsed");
     if (currencyUsed) {
       axios
-        .post("http://127.0.0.1:8000/api/currency-name", {
+        .post("https://www.cosmo.global/laravel/api/currency-name", {
           currency_name: currencyUsed,
         })
         .then((response) => {
@@ -37,7 +37,7 @@ function AllProductsForCollection() {
   }, []);
   // const getProductBySubcategory = async () => {
   //   const subcategoryRes = await axios.get(
-  //     `http://127.0.0.1:8000/api/SubcategoryCorrespondingDepandCat/${subcategoryId}`, {
+  //     `https://www.cosmo.global/laravel/api/SubcategoryCorrespondingDepandCat/${subcategoryId}`, {
   //       params: { locale: selectedLang},
   //   }
   //   );
@@ -55,7 +55,7 @@ function AllProductsForCollection() {
     let response;
     try {
       response = await axios.get(
-        `http://127.0.0.1:8000/api/all-products-collection/${page}?productVisible=1`,
+        `https://www.cosmo.global/laravel/api/all-products-collection/${page}?productVisible=1`,
         {
           params: { locale: selectedLang },
         }
@@ -146,7 +146,7 @@ function AllProductsForCollection() {
                       <div className="min-h-[20rem] xl:min-h-[5rem] lg:min-h-[10rem] sm:min-h-[5rem] mt-[0.1%] md:mt-[0.5%] ">
                         <img
                           className=" w-[100%] h-[100%] object-cover "
-                          src={`http://127.0.0.1:8000/api/storage/${AllProdColl.media1}`}
+                          src={`https://www.cosmo.global/laravel/api/storage/${AllProdColl.media1}`}
                           alt={`${AllProdColl.id}`}
                           onError={(e) => {
                             e.target.src = fallout;

@@ -103,7 +103,7 @@
     "faq": "الأسئلة الشائعة",
     "aboutUs": "نبذة عنا",
     "contactUs": "تواصل معنا",
-     "storeLocator": "موقع المتجر",
+     "storeLocator": "مواقعنا",
     "subscribe": " !اشترك الآن وابقَ على اطلاع بأحدث أخبارنا"
   },
   "announcementBar": " للحصول على خصم 15% على طلبك  Summer15 استخدم رمز الترويج ",
@@ -135,12 +135,14 @@
     "lebDays": "يوم عمل 1-5",
     "intDays": " 5-15 يوم عمل",
     "cost": "تكلفة الشحن",
-    "costLeb": "4.00 USD",
+    "costLeb": "5.00 USD",
     "costInt": "يحتسب عند صفحة الدفع",
     "lebanonOrder": {
       "title": "‍ :الطلبات داخل لبنان",
-      "desc": ".تتراوح مدّة التسليم من يوم إلى 7 أيام عمل بعد تجهيز طلبك بتكلفة 4 دولار أميركي"
+      "desc": "تتراوح مدة التوصيل من 1 إلى 7 أيام عمل بعد معالجة طلبك، مع رسوم قدرها 5.00 دولار أمريكي. سيتم تطبيق رسوم شحن إضافية للتبديل بقيمة 6.00 دولار أمريكي."
     },
+
+
     "intOrder": {
       "title": ":الطلبات الدولية",
       "section1Title": "مدّة التسليم",
@@ -187,12 +189,12 @@
         "sec2p6": ".فورًا بالخصم من بطاقتك COSMO عند تقديم طلب الشراء ، فإنك توافق على أن هذا يخول",
         "sec2p7": ".سيتم خصم الدفعة وتسويتها من حسابك على الفور في وقت طلبك",
         "sec2p8": ".بمجرد تجهيز طلبك ، ستتلقى على الفور رسالة بريد إلكتروني تحتوي على فاتورتك",
-        "sec2p9": "<a href=\"mailto:customercare@cosmoleb.com\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmoleb.com</a> : إذا كنت تواجه أي مشكلة في متابعة الدفع ، فيرجى التواصل معنا على "
+        "sec2p9": "<a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a> : إذا كنت تواجه أي مشكلة في متابعة الدفع ، فيرجى التواصل معنا على "
       },
       "WireTransfer": {
         "title": " :حوالة مصرفية",
-        "sec3p1": "<a href=\"mailto:customercare@cosmoleb.com\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmoleb.com</a> :أو التحويل المصرفي.لمزيد من التفاصيل حول الحوالات المصرفية ، يرجى التواصل معنا على Western Union يمكنك أيضًا الدفع بواسطة حوالة إما عبر ",
-        "sec3p2": "<a href=\"mailto:customercare@cosmoleb.com\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmoleb.com</a> :لا تتردد في الدردشة معنا عبر تطبيق واتساب أو عبر البريد الإلكتروني لمزيد من المعلومات"
+        "sec3p1": "<a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a> :أو التحويل المصرفي.لمزيد من التفاصيل حول الحوالات المصرفية ، يرجى التواصل معنا على Western Union يمكنك أيضًا الدفع بواسطة حوالة إما عبر ",
+        "sec3p2": "<a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a> :لا تتردد في الدردشة معنا عبر تطبيق واتساب أو عبر البريد الإلكتروني لمزيد من المعلومات"
       }
     }
   },
@@ -201,7 +203,7 @@
     "p1": ".يمكن تبديل القطع بغلافها غير مفتوحة في غضون 15 يوماً من إستلام طلبك أو إرجاعها مقابل قسيمة ائتمان المتجر بالمبلغ الذي تم دفعه",
     "p2": "يمكن إرجاع القطعة على أن تكون غير مستعملة وغير تالفة، مع كل البطاقات وفي التغليف الأصلي",
     "p3": ".مع رقم طلبك والتفاصيل <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>+961 71 660 774</a> إذا أردت تبديل قطعة يرجى التواصل معنا على ",
-    "p4": ".سنقوم بالرد لإبلاغك بتعليمات حول كيفية إرجاع العنصر الخاص بك والحصول على قسيمة الائتمان.مع رقم طلبك والتفاصيل عن المنتج الذي تود إرجاعه <a href=\"mailto:customercare@cosmoleb.com\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmoleb.com</a> إذا كنت تريد إرجاع أي قطعة، يرجى التواصل معنا على",
+    "p4": ".سنقوم بالرد لإبلاغك بتعليمات حول كيفية إرجاع العنصر الخاص بك والحصول على قسيمة الائتمان.مع رقم طلبك والتفاصيل عن المنتج الذي تود إرجاعه <a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a> إذا كنت تريد إرجاع أي قطعة، يرجى التواصل معنا على",
     "p5": ".نعتذر لا توجد لدينا سياسة استرداد الأموال",
 
     "section1": {
@@ -212,7 +214,7 @@
       "section2Title": ":الطلبات العالمية ",
       "sec2p1": ".يرجى أخذ العلم أن جميع المبيعات الدولية نهائية. نظرًا لطبيعة عملنا، ولأسباب متعلقة بالشحن، فإننا نلتزم بسياسة سياسة عدم التبديل / عدم الإرجاع",
       "sec2p2": ".يُنصح بالتحقق من المقاسات الخاصة بك قبل الشراء",
-      "sec2p3": " .WhatsApp: <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>+961 71 660 774</a> أو عبر <a href=\"mailto:customercare@cosmoleb.com\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmoleb.com</a> :في حالات نادرة فقط، حيث يكون الخطأ من جانبنا، سنقوم بإجراء استثناء لتبديل المنتج. يرجى الاتصال بنا في غضون 48 ساعة من استلام الحزمة عبر البريد الإلكتروني: "
+      "sec2p3": " .WhatsApp: <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>+961 71 660 774</a> أو عبر <a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a> :في حالات نادرة فقط، حيث يكون الخطأ من جانبنا، سنقوم بإجراء استثناء لتبديل المنتج. يرجى الاتصال بنا في غضون 48 ساعة من استلام الحزمة عبر البريد الإلكتروني: "
     }
   },
   "privacyPolicy": {
@@ -394,7 +396,7 @@
     "email": {
       "writeUs": "اكتب لنا",
       "p1": "أرسل لنا رسالة على",
-      "p2": " <a href=\"mailto:customercare@cosmoleb.com\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmoleb.com</a>"
+      "p2": " <a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a>"
     }
   },
   "Authentication": {
@@ -499,7 +501,7 @@
       },
       {
         "question": "هل أحتاج إلى إنشاء حساب لتقديم طلب؟",
-        "answer1": "لا، لست بحاجة إلى إنشاء حساب لتتمكن من التسوق على الموقع الرسمي <Link className='text-[#E79E7F] cursor-pointer' to='/'>cosmoleb.com</Link>.",
+        "answer1": "لا، لست بحاجة إلى إنشاء حساب لتتمكن من التسوق على الموقع الرسمي <Link className='text-[#E79E7F] cursor-pointer' to='/'>cosmo.global</Link>.",
         "answer2": "ما عليك سوى الدخول إلى الموقع؛ إضافة عنصر / عدة عناصر إلى حقيبتك؛ انقر على أيقونة الحقيبة في الزاوية اليمنى العليا من الصفحة؛ تحقق من اختيارك؛ تابع إلى الخروج؛ أدخل تفاصيل الشحن الخاصة بك؛ تابع إلى تفاصيل الدفع؛ أكد طلبك وقد انتهيت!"
       },
       {
@@ -516,7 +518,7 @@
       },
       {
         "question": " ؟COSMO ما هي البلدان التي يشحن إليها",
-        "answer1": " customercare@cosmoleb.com نحن نشحن منتجاتنا عالميًا. إذا كان لديك أي استفسار بشأن وجهة الشحن، فيرجى التواصل معنا على "
+        "answer1": " customercare@cosmo.global نحن نشحن منتجاتنا عالميًا. إذا كان لديك أي استفسار بشأن وجهة الشحن، فيرجى التواصل معنا على "
       },
       {
         "question": "  ؟COSMO أيمكن الشحن إلى عناوين متعددة مع ",
@@ -524,7 +526,7 @@
       },
       {
         "question": "أيمكنني تعديل الطلب فور تقديمه؟",
-        "answer1": "   customercare@cosmoleb.com يمكننا تعديل طلبك أو تغيير معلومات عنوان الشحن أو عنوان الفوترة فقط قبل التحضير لإرسال طلبك  إلا أننا ،لا يمكننا دمج الطلبات أو إضافة قطع جديدة إلى الطلب المسبق.بمجرد تقديمه،ستحتاج إلى تقديم طلب جديد لإضافة التغييرات. إذا كنت بحاجة إلى إجراء أي تعديلات ، فيرجى الاتصال بخدمة العملاء على +961 71 660774 أو التواصل  معنا على  "
+        "answer1": "   customercare@cosmo.global يمكننا تعديل طلبك أو تغيير معلومات عنوان الشحن أو عنوان الفوترة فقط قبل التحضير لإرسال طلبك  إلا أننا ،لا يمكننا دمج الطلبات أو إضافة قطع جديدة إلى الطلب المسبق.بمجرد تقديمه،ستحتاج إلى تقديم طلب جديد لإضافة التغييرات. إذا كنت بحاجة إلى إجراء أي تعديلات ، فيرجى الاتصال بخدمة العملاء على +961 71 660774 أو التواصل  معنا على  "
       },
       {
         "question": "ما هي سياسة الاستبدال والارجاع؟",
@@ -532,7 +534,7 @@
       },
       {
         "question": "ماذا لو تلقيت منتجًا معيّبًا ؟",
-        "answer1": " customercare@cosmoleb.com فور اكتشاف عيب ما في أي من منتجات طلبك ، يرجى التواصل معنا على "
+        "answer1": " customercare@cosmo.global فور اكتشاف عيب ما في أي من منتجات طلبك ، يرجى التواصل معنا على "
       },
       {
         "question": "ماذا يحدث في حال حدوث خطأ في المعاملة؟",
@@ -546,7 +548,7 @@
   },
 
   "storeLocator": {
-    "mainTitle": "فروعنا",
+    "mainTitle": "مواقعنا",
     "stores": [
       {
         "name": "COSMO في بيروت",

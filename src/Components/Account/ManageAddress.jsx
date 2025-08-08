@@ -48,7 +48,7 @@ function ManageAddress() {
 
   const fetchCountriesReg = async () => {
     const res = await axios.get(
-      "http://127.0.0.1:8000/api/shipping-countries",
+      "https://www.cosmo.global/laravel/api/shipping-countries",
       { params: { locale: selectedLang } }
     );
     return res.data.message;
@@ -56,7 +56,7 @@ function ManageAddress() {
 
   const fetchUserAddress = async () => {
     const res = await axios.get(
-      `http://127.0.0.1:8000/api/user-account-address/${userId}`
+      `https://www.cosmo.global/laravel/api/user-account-address/${userId}`
     );
     return res.data.user;
   };
@@ -80,7 +80,7 @@ function ManageAddress() {
   const mutation = useMutation(
     (updatedUser) =>
       axios.post(
-        `http://127.0.0.1:8000/api/update-user-address/${userId}`,
+        `https://www.cosmo.global/laravel/api/update-user-address/${userId}`,
         updatedUser
       ),
     {

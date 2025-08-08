@@ -28,11 +28,11 @@ function Footer() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://127.0.0.1:8000/api/email-subscription",
+        "https://www.cosmo.global/laravel/api/email-subscription",
         { email: emailSub }
       );
       if (res.status === 200) {
-        await axios.post("http://127.0.0.1:8000/api/mailing-list-email", {
+        await axios.post("https://www.cosmo.global/laravel/api/mailing-list-email", {
           email: emailSub,
         });
       }
@@ -78,51 +78,53 @@ function Footer() {
           }`}
         >
           {/* ABOUT */}
-          <div
-            className={`w-[20%] lg:px-[0%] lg:w-full xl:w-[30%] flex items-start lg:flex-col ${
-              isArabic ? "flex-row-reverse" : ""
-            }`}
-          >
-            <div
-              className={` lg:border-b-[1px] pb-[2%] pt-[1%] sm:h-[50px] lg:px-0 lg:w-full border-white h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-0 ${
-                isArabic ? "border-l-[2px] lg:border-l-0" : "border-r-[2px]"
-              }`}
-            >
-              <p className="text-[#E79E7F]">{t("footer.about-title")}</p>
-            </div>
-            <div
-              className={`pt-[2%] pl-[5%] pb-[1%] lg:w-full flex flex-col ${
-                isArabic ? "pr-[1%]" : "pl-[1%] items-start justify-center"
-              }`}
-            >
-              <Link to="/about-us" className="hover:font-[900]">
-                {t("footer.aboutUs")}
-              </Link>
-              <Link to="/contact-us" className="hover:font-[900]">
-                {t("footer.contactUs")}
-              </Link>
-              <Link to="/store-locator" className="hover:font-[900]">
-                {t("footer.storeLocator")}
-              </Link>
-            </div>
-          </div>
+<div
+  className={`w-[20%] lg:px-[0%] lg:w-full xl:w-[30%] flex items-start lg:flex-col ${
+    isArabic ? "flex-row-reverse" : ""
+  }`}
+>
+  <div
+    className={`lg:border-b-[0.5px] sm:pt-6 pb-[6%] pt-[4%] sm:h-[50px] lg:px-0 lg:w-full border-white h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-0 gap-2 ${
+      isArabic ? "border-l-[0.5px] lg:border-l-0 pl-2" : "border-r-[0.5px] "
+    }`}
+  >
+    <p className="text-[#E79E7F] pr-1 sm:pb-0 sm:ml-3">{t("footer.about-title")}</p>
+  </div>
+
+  <div
+    className={`sm:pt-2 pt-[4.5%] pl-[3%] pb-[1%] lg:w-full flex flex-col ${
+      isArabic ? "pr-[3%]" : "pl-[1%] items-start justify-center"
+    }`}
+  >
+    <Link to="/about-us" className="hover:font-[900] ">
+      {t("footer.aboutUs")}
+    </Link>
+    <Link to="/contact-us" className="hover:font-[900]">
+      {t("footer.contactUs")}
+    </Link>
+    <Link to="/store-locator" className="hover:font-[900]">
+      {t("footer.storeLocator")}
+    </Link>
+  </div>
+</div>
+
 
           {/* CUSTOMER */}
-          <div
-            className={`w-[30%] lg:px-[4%] lg:w-full xl:w-[30%] flex items-start lg:flex-col ${
-              isArabic ? "flex-row-reverse" : ""
-            }`}
-          >
+<div
+  className={`w-[30%] lg:px-[0%] lg:w-full xl:w-[30%] flex items-start lg:flex-col ${
+    isArabic ? "flex-row-reverse" : ""
+  }`}
+>
+  <div
+    className={`lg:border-b-[0.5px] sm:pt-6 pb-[6%] pt-[4%] sm:h-[50px] lg:px-0 lg:w-full border-white h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-0 gap-2 ${
+      isArabic ? "border-l-[0.5px] lg:border-l-0 pl-2" : "border-r-[0.5px] "
+    }`}
+  >
+    <p className="text-[#E79E7F] pr-1 sm:pb-0 sm:ml-3">{t("footer.customer-title")}</p>
+  </div>
             <div
-              className={`lg:border-b-[1px] pb-[2%] pt-[1%] sm:h-[50px] lg:px-0 lg:w-full border-white h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-0 ${
-                isArabic ? "border-l-[2px] lg:border-l-0" : "border-r-[2px]"
-              }`}
-            >
-              <p className="text-[#E79E7F]">{t("footer.customer-title")}</p>
-            </div>
-            <div
-              className={`pt-[2%] pl-[5%] pb-[1%] lg:w-full flex flex-col ${
-                isArabic ? "pr-[1%]" : "pl-[1%] items-start justify-center"
+              className={`pt-[4%] sm:pt-2 pl-[3%] pb-[1%] lg:w-full flex flex-col ${
+                isArabic ? "pr-[3%]" : "pl-[1%] items-start justify-center"
               }`}
             >
               <Link to="/shipping-policy" className="hover:font-[900]">
@@ -150,21 +152,21 @@ function Footer() {
           </div>
 
           {/* FOLLOW US */}
-          <div
-            className={`w-[20%] lg:px-[4%] lg:w-full xl:w-[30%] flex items-start lg:flex-col ${
-              isArabic ? "flex-row-reverse" : ""
-            }`}
-          >
+<div
+  className={`w-[20%] lg:px-[0%] lg:w-full xl:w-[30%] flex items-start lg:flex-col ${
+    isArabic ? "flex-row-reverse" : ""
+  }`}
+>
+  <div
+    className={`lg:border-b-[0.5px] sm:pt-6 pb-[6%] pt-[4%] sm:h-[50px] lg:px-0 lg:w-full border-white h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-0 gap-2 ${
+      isArabic ? "border-l-[0.5px] lg:border-l-0 pl-1" : "border-r-[0.5px] "
+    }`}
+  >
+    <p className="text-[#E79E7F] pr-1 sm:pb-0 sm:ml-3">{t("footer.follow-title")}</p>
+  </div>
             <div
-              className={`lg:border-b-[1px] pb-[2%] pt-[1%] sm:h-[50px] lg:px-0 lg:w-full border-white h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-0 ${
-                isArabic ? "border-l-[2px] lg:border-l-0" : "border-r-[2px]"
-              }`}
-            >
-              <p className="text-[#E79E7F]">{t("footer.follow-title")}</p>
-            </div>
-            <div
-              className={`pt-[2%] pb-[1%] pl-[5%] lg:w-full flex flex-col ${
-                isArabic ? "pr-[0%]" : "pl-[0%] items-start justify-center"
+              className={`sm:pt-2 pt-[4%] pb-[1%] pl-[5%] lg:w-full flex flex-col ${
+                isArabic ? "pr-[3%] text-[13px]" : "pl-[0%] items-start justify-center"
               }`}
             >
               <a
@@ -184,7 +186,7 @@ function Footer() {
                 Instagram
               </a>
               <a
-                href="https://www.youtube.com/channel/UCUShyAPOjFMBqt3jMHhCmmQ"
+                href="https://www.youtube.com/@Cosmo.Global"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:font-[900]"
@@ -196,16 +198,16 @@ function Footer() {
         </div>
 
         {/* SUBSCRIBE + COPYRIGHT */}
-        <div className="flex justify-start gap-[35%] lg:w-full lg:px-[4%] items-start flex-col w-[35%] pl-[3%] xl:p-[1%] pt-[1%]">
+        <div className="flex justify-center gap-[35%] lg:w-full lg:px-[4%] items-start flex-col w-[35%] pl-[3%] xl:p-[1%] pt-[1%] sm:mt-5">
           <div
             className={`w-full flex flex-col ${
-              isArabic ? "text-right text-[15px] px-[2%]" : ""
+              isArabic ? "text-[15px] px-[2%] flex text-left " : ""
             }`}
           >
             <p className="pb-[1%]">{t("footer.subscribe")}</p>
             <form
               className={`flex w-full text-black gap-[1%] lg:pb-[5%] md:pb-[10%] ${
-                isArabic ? "flex-row-reverse" : ""
+                isArabic ? "flex-row-reverse justify-end" : ""
               }`}
               onSubmit={emailSubscription}
             >
@@ -226,7 +228,11 @@ function Footer() {
               </button>
             </form>
           </div>
-          <div className="sm:text-[12px] text-[12px] lg:pb-[2%]">
+<div
+  className={`flex-col lg:pb-[2%] text-[12px] ${
+    isArabic ? "text-[12px] ml-4 sm:ml-0" : ""
+  }`}
+>
             <p>{t("homePage.footer.copyRights")}</p>
             <div className="flex items-center gap-[5%] h-[20px]">
               <p>SITEMANAGER V4.0</p>

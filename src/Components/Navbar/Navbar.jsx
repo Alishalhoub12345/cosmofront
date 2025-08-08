@@ -34,7 +34,7 @@ function Navbar() {
   const handleSearch = async (searchQuery) => {
     try {
       const response = await axios.get(
-        `http://127.0.0.1:8000/api/search-products`,
+        `https://www.cosmo.global/laravel/api/search-products`,
         {
           params: { query: searchQuery, locale: selectedLang },
         }
@@ -97,7 +97,7 @@ function Navbar() {
   const getDepartmentName = async () => {
     try {
       const res = await axios.get(
-        "http://127.0.0.1:8000/api/all-departments?visibleForAll=1",
+        "https://www.cosmo.global/laravel/api/all-departments?visibleForAll=1",
         {
           params: { locale: selectedLang },
         }
@@ -377,7 +377,7 @@ function Navbar() {
               isArabic ? "flex-row-reverse" : ""
             }`}
           >
-  <div className="text-black flex items-center gap-3 px-[3%]">
+  <div className="text-black flex items-center gap-6 px-[3%]">
   <div>
     {i18n.language === "en" && (
       <button onClick={() => changeLanguage("ar")}>العربية</button>

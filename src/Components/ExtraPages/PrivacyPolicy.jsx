@@ -14,9 +14,15 @@ function PrivacyPolicy() {
 
   const isArabic = localStorage.getItem("lang") === "ar";
   return (
-    <div className="w-[100%] px-[5%] h-[auto] lg:py-[2%] pt-[2%] font-[FrutigerLTCom-Roman]">
+    <div className="w-[100%] px-[0%] h-[auto] lg:py-[2%] pt-[0%] font-[FrutigerLTCom-Roman]">
+      <div
+  className={`w-full px-[5%] lg:py-[2%] pt-[2%] font-[FrutigerLTCom-Roman] ${
+    isArabic ? "text-right" : "text-left"
+  }`}
+  dir={isArabic ? "rtl" : "ltr"}
+>
       <div className=" px-[2%]">
-        <h1 className="text-[40px] font-[FahKwang]  lg:text-[40px] md:text-[23px] text-right">
+        <h1 className="text-[40px] font-[FahKwang]  lg:text-[40px] md:text-[23px]">
           {t("privacyPolicy.titleMain")}
         </h1>
         <div className=" text-[16px] h-[auto] ">
@@ -29,7 +35,7 @@ function PrivacyPolicy() {
                     : "w-[55%]"
                 }`}
               >
-                <strong>{t("privacyPolicy.p1")}</strong>
+                <strong className='font-[FahKwang] text-[20px]'>{t("privacyPolicy.p1")}</strong>
               </p>
               <p
                 className={`xl:w-[100%] ${
@@ -40,8 +46,13 @@ function PrivacyPolicy() {
               >
                 {t("privacyPolicy.p2")}{" "}
               </p>
-              <p className="text-right text-[20px] lg:text-[15px]">
-                {t("privacyPolicy.p3")}
+              <p
+                className={`xl:w-[100%] ${
+                  isArabic
+                    ? "w-[100%] text-right text-[20px] lg:text-[15px]"
+                    : "w-[80%]"
+                }`}
+              >                {t("privacyPolicy.p3")}
               </p>
               <p
                 className={`xl:w-[100%] ${
@@ -73,14 +84,25 @@ function PrivacyPolicy() {
               >
                 {t("privacyPolicy.p6")}
               </p>
-              <p className="text-right text-[20px] lg:text-[15px]">
-                {t("privacyPolicy.p7")}
+              <p
+                className={`xl:w-[100%] ${
+                  isArabic
+                    ? "w-[100%] text-right text-[20px] lg:text-[15px]"
+                    : "w-[80%]"
+                }`}
+              >                {t("privacyPolicy.p7")}
               </p>
             </div>
 
             <div className="py-[2%]">
-              <p className="font-[FahKwang] text-[20px] pt-[2%] md:pt-[10%] text-right">
-                <strong>{t("privacyPolicy.Intro.title")} </strong>
+              <p
+                className={`xl:w-[100%] ${
+                  isArabic
+                    ? "w-[100%] text-right text-[20px] lg:text-[25px]"
+                    : "w-[80%]"
+                }`}
+              >  
+              <strong className='font-[FahKwang] text-[20px]'>{t("privacyPolicy.Intro.title")} </strong>
               </p>
               <p
                 className={`xl:w-[100%] mt-[1%] ${
@@ -92,9 +114,16 @@ function PrivacyPolicy() {
                 {t("privacyPolicy.Intro.p1")}
               </p>
 
-              <p className="font-[FahKwang] text-[20px] pt-[2%] md:pt-[10%] text-right">
-                <strong>{t("privacyPolicy.infoCollected.title")}</strong>
+              <p
+                className={`xl:w-[100%] ${
+                  isArabic
+                    ? "w-[100%] text-right text-[20px] lg:text-[15px]"
+                    : "w-[80%] pt-6"
+                }`}
+              >   
+              <strong className='font-[FahKwang] text-[20px]'>{t("privacyPolicy.infoCollected.title")}</strong>
               </p>
+              <div className='flex-col space-y-3'>
               <p
                 className={`xl:w-[100%] mt-[1%] ${
                   isArabic
@@ -177,9 +206,16 @@ function PrivacyPolicy() {
               >
                 {t("privacyPolicy.infoCollected.p9")}
               </p>
-
-              <p className="font-[FahKwang] text-[20px] pt-[2%] md:pt-[10%] text-right">
-                <strong> {t("privacyPolicy.otherSourceInfo.title")}</strong>
+  </div>    
+              <p
+                className={`xl:w-[100%] ${
+                  isArabic
+                    ? "w-[100%] text-right text-[20px] lg:text-[15px]"
+                    : "w-[80%] pt-6"
+                }`}
+              >
+                       
+              <strong className='font-[FahKwang] text-[20px]'> {t("privacyPolicy.otherSourceInfo.title")}</strong>
               </p>
               <p
                 className={`xl:w-[100%] mt-[1%] ${
@@ -191,9 +227,16 @@ function PrivacyPolicy() {
                 {t("privacyPolicy.otherSourceInfo.p1")}
               </p>
 
-              <p className="font-[FahKwang] text-[20px] pt-[2%] md:pt-[10%] text-right">
-                <strong> {t("privacyPolicy.Cookies.title")}</strong>
+              <p
+                className={`xl:w-[100%] ${
+                  isArabic
+                    ? "w-[100%] text-right text-[20px] lg:text-[15px]"
+                    : "w-[80%] pt-6"
+                }`}
+              >                <strong className='font-[FahKwang] text-[20px]'> {t("privacyPolicy.Cookies.title")}</strong>
               </p>
+                            <div className='flex-col space-y-3'>
+
               <p
                 className={`xl:w-[100%] mt-[1%] ${
                   isArabic
@@ -306,10 +349,12 @@ function PrivacyPolicy() {
               >
                 {t("privacyPolicy.Cookies.p12")}
               </p>
-
-              <p className="font-[FahKwang] text-[20px] pt-[2%] md:pt-[10%]">
-                <strong>{t("privacyPolicy.ThirdParty.title")}</strong>
+</div>
+              <p className="font-[FahKwang] text-[20px] pt-[2%] md:pt-[10%] pb-3">
+                <strong className='text-[20px]'>{t("privacyPolicy.ThirdParty.title")}</strong>
               </p>
+                            <div className='flex-col space-y-3'>
+
               <p
                 className={`xl:w-[100%] ${
                   isArabic
@@ -328,10 +373,12 @@ function PrivacyPolicy() {
               >
                 {t("privacyPolicy.ThirdParty.p2")}
               </p>
-
-              <p className="font-[FahKwang] text-[20px] pt-[2%] md:pt-[10%]">
-                <strong> {t("privacyPolicy.useOfInfo.title")}</strong>
+</div>
+              <p className="font-[FahKwang] text-[20px] pb-3 pt-[2%] md:pt-[10%]">
+                <strong className='text-[20px]'> {t("privacyPolicy.useOfInfo.title")}</strong>
               </p>
+                            <div className='flex-col space-y-3'>
+
               <p
                 className={`xl:w-[100%] ${
                   isArabic
@@ -434,9 +481,9 @@ function PrivacyPolicy() {
               >
                 {t("privacyPolicy.useOfInfo.p12")}
               </p>
-
+              </div>
               <p className="font-[FahKwang] text-[20px] pt-[2%] md:pt-[10%]">
-                <strong>{t("privacyPolicy.businessTrnasfer.title")}</strong>
+                <strong className='text-[20px]'>{t("privacyPolicy.businessTrnasfer.title")}</strong>
               </p>
               <p
                 className={`xl:w-[100%] mt-[1%] ${
@@ -622,6 +669,7 @@ function PrivacyPolicy() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

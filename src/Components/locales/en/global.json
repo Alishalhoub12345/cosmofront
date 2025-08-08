@@ -19,7 +19,7 @@
     },
     "footer":{
       "btn":" Send",
-      "copyRights":"Copyright © 2024 Cosmo. All rights reserved ",
+      "copyRights":"Copyright © 2025 Cosmo. All rights reserved ",
       "siteManager":"SITEMANAGER V3.1",
       "placeholder":"Enter your email"
     },
@@ -164,11 +164,11 @@
     "lebDays":"1-7 business days",
     "intDays":"5-15 business days",
     "cost":"Shipment Cost",
-    "costLeb":"4.00 USD",
+    "costLeb":"5.00 USD",
     "costInt":"Calculated on Checkout",
     "lebanonOrder":{
       "title":"1-Lebanon Orders:",
-      "desc":"Delivery period goes from 1 to 7 business days after processing your order with a Charge of USD 4.00"
+      "desc":"Delivery period ranges from 1 to 7 business days after processing your order, with a charge of USD 5.00. An additional exchange shipping fee of USD 6.00 will apply."
     },
     "intOrder":{
       "title":"2-International Orders:",
@@ -220,12 +220,12 @@
         "sec2p6":"In submitting an order, you agree that this immediately authorizes COSMO to debit your card with the order payment.",
         "sec2p7":"The payment will be debited and cleared from your account immediately at the time of your order.",
         "sec2p8":"Once your order is processed, you will immediately receive an e-mail with your invoice.",
-         "sec2p9": "If you are having any trouble proceeding with payment please contact us on: <a href=\"mailto:customercare@cosmoleb.com\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmoleb.com</a>"
+         "sec2p9": "If you are having any trouble proceeding with payment please contact us on: <a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a>"
       },
       "WireTransfer":{
         "title":"3-Wire transfer:",
-        "sec3p1":"You can also pay by wire transfer either through Western Union or bank transfer. For more details about the wire transfer please contact us on: <a href=\"mailto:customercare@cosmoleb.com\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmoleb.com</a>",
-        "sec3p2":"Do not hesitate to chat with us through WhatsApp on:<a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>+961 71 660 774</a> or e-mail us on: <a href=\"mailto:customercare@cosmoleb.com\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmoleb.com</a>  for more info."
+        "sec3p1":"You can also pay by wire transfer either through Western Union or bank transfer. For more details about the wire transfer please contact us on: <a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a>",
+        "sec3p2":"Do not hesitate to chat with us through WhatsApp on:<a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>+961 71 660 774</a> or e-mail us on: <a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a>  for more info."
       }
 
     }
@@ -236,22 +236,22 @@
     "p1":"We accept to exchange unopened items within 15 days of delivery, or return them for a store credit voucher of the purchased amount.",
     "p2":"The item must be returned unworn, undamaged and unused, with all tags attached and the original packaging included.",
     "p3":"If you need to exchange an item, please contact us on <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>+961 71 660 774</a> with your order number and details.",
-    "p4":"If you need to return an item, please contact us on <a href=\"mailto:customercare@cosmoleb.com\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmoleb.com</a> with your order number and details about the product you would like to return. We will respond by informing you with instructions on how to return your item and get your credit voucher.",
+    "p4":"If you need to return an item, please contact us on <a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a> with your order number and details about the product you would like to return. We will respond by informing you with instructions on how to return your item and get your credit voucher.",
     "p5":"Unfortunately we don't have a REFUND policy but exchange is all yours.",
   
   "section1":{
    "section1Title":"1-Lebanon Orders:",
-   "sec1p1":"Residents of Lebanon will be responsible for delivery costs when exchanging or returning any item. However you can always exchange or return your online order for free at our COSMO store located in Kaslik, within 15 days of your purchase, upon presentation of your digital invoice. "
+   "sec1p1":"Residents of Lebanon will be responsible for delivery costs when exchanging or returning any item. An additional exchange shipping fee of USD 6.00 will apply. However, you can always exchange or return your online order for free at our COSMO store located in Kaslik, within 15 days of your purchase, upon presentation of your digital invoice."
    },
   "section2":{
     "section2Title":"2-International Orders:",
     "sec2p1":"Kindly note that ALL INTERNATIONAL SALES ARE FINAL. Due to the nature of our business, for shipping-related reasons, we maintain a No Return/No Exchange Policy.",
     "sec2p2":"It is advised to check for your size requirements before you make a purchase order.",
-    "sec2p3":"Only in rare occasions where the mistake is on our end, we will make an exception to exchange the item. Please contact us within 48 hours of receiving the package via email:<a href=\"mailto:customercare@cosmoleb.com\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmoleb.com</a> or via WhatsApp: <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>+961 71 660 774</a>"
+    "sec2p3":"Only in rare occasions where the mistake is on our end, we will make an exception to exchange the item. Please contact us within 48 hours of receiving the package via email:<a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a> or via WhatsApp: <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>+961 71 660 774</a>"
   }
 },
 "privacyPolicy":{
-  "titleMain":" Privacy Policy",
+  "titleMain":"Privacy Policy",
   "p1":" “COSMO” respects your privacy and is committed to protecting your privacy.",
   "p2":"Our aim is to provide you a safe and secure surfing experience whenever you visit our website.",
   "p3":"This Privacy Policy is created in order to demonstrate our firm commitment to your privacy.",
@@ -435,7 +435,7 @@
   "email":{
     "writeUs":"Write To Us",
     "p1":"Send us a message on",
-    "p2":"Email: <a href=\"mailto:customercare@cosmoleb.com\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmoleb.com</a>"
+    "p2":"Email: <a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a>"
 
   }
 },
@@ -546,7 +546,7 @@
       },
       {
         "question": "2-DO I NEED TO SET UP AN ACCOUNT TO PLACE AN ORDER?",
-        "answer1": "No, you don't need to create an account to be able to shop on the official <Link className='text-[#E79E7F] cursor-pointer' to='/'>cosmoleb.com</Link> website.",
+        "answer1": "No, you don't need to create an account to be able to shop on the official <Link className='text-[#E79E7F] cursor-pointer' to='/'>cosmo.global</Link> website.",
         "answer2": "You just enter the website; add an item/several items to your bag; click on the bag icon on the upper-right corner of the page; verify your pick(s); proceed to checkout; enter your shipping details; proceed to payment details; confirm your order and you're done!"
       },
       {
@@ -563,7 +563,7 @@
       },
       {
         "question": "6-WHICH COUNTRIES DOES COSMO SHIP TO?",
-        "answer1": "We ship our products worldwide. If you have any concern regarding a shipping destination, please contact customercare@cosmoleb.com"
+        "answer1": "We ship our products worldwide. If you have any concern regarding a shipping destination, please contact customercare@cosmo.global"
       },
       {
         "question": "7-DOES COSMO SHIP TO MULTIPLE ADDRESSES?",
@@ -571,7 +571,7 @@
       },
       {
         "question": "8-CAN I AMEND MY ORDER ONCE IT HAS BEEN PLACED?",
-        "answer1": "We can amend your order or change your billing and shipping details only before your purchase has been prepared for dispatch. However, we are unable to combine orders or add new pieces to an existing order; once it has been placed, you will need to place a new order to add changes. If you need to make any amendments, please call customer care on +961 71 660774 or contact us on costumercare@cosmoleb.com"
+        "answer1": "We can amend your order or change your billing and shipping details only before your purchase has been prepared for dispatch. However, we are unable to combine orders or add new pieces to an existing order; once it has been placed, you will need to place a new order to add changes. If you need to make any amendments, please call customer care on +961 71 660774 or contact us on costumercare@cosmo.global"
       },
       {
         "question": "9-WHAT IS THE EXCHANGES & RETURNS POLICY?",
@@ -579,7 +579,7 @@
       },
       {
         "question": "10-WHAT DO I DO IF I RECEIVE A FAULTY ITEM IN MY ORDER?",
-        "answer1": "As soon as you discover a fault, please contact us at customercare@cosmoleb.com so we can get this sorted for you."
+        "answer1": "As soon as you discover a fault, please contact us at customercare@cosmo.global so we can get this sorted for you."
       },
       {
         "question": "11-WHAT HAPPENS IF A TRANSACTION ERROR OCCURS?",

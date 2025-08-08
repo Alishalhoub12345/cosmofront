@@ -16,7 +16,7 @@ function CollectionCarousel() {
   const selectedLang = localStorage.getItem("lang");
 
   const getCollection = async () => {
-    const res = await axios.get("http://127.0.0.1:8000/api/collection", {
+    const res = await axios.get("https://www.cosmo.global/laravel/api/collection", {
       params: { locale: selectedLang },
     });
     return res.data.message;
@@ -78,7 +78,7 @@ function CollectionCarousel() {
                   <div className=" h-[550px] xl:h-[400px]  sm:h-[250px]">
                     <img
                       className="bg-[black]"
-                      src={`http://127.0.0.1:8000/api/storage/${coll.collectionImage}`}
+                      src={`https://www.cosmo.global/laravel/api/storage/${coll.collectionImage}`}
                       alt={`Slide ${index + 1}`}
                     />
                   </div>
