@@ -32,7 +32,7 @@ function ResetPassword() {
     setLoadingUpdate(true);
     try {
       const res = await axios.post(
-        `https://www.cosmo.global/laravel/api/reset-password-update/${user}`,
+        `http://127.0.0.1:8000/api/reset-password-update/${user}`,
         {
           password: newPassword,
         }
@@ -41,7 +41,7 @@ function ResetPassword() {
       if (res.status === 200) {
         setUpdateResponse(true);
         await axios.post(
-          `https://www.cosmo.global/laravel/api/email-after-reseting-password`,
+          `http://127.0.0.1:8000/api/email-after-reseting-password`,
           {
             email: res.data.email,
           }

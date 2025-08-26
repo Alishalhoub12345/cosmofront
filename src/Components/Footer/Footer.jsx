@@ -16,37 +16,35 @@ function Footer() {
     message: "",
     success: false,
   });
+const emailSubscription = async (e) => {
+  e.preventDefault();
+  try {
+    const res = await axios.post(
+      "http://127.0.0.1:8000/api/email-subscription",
+      { email: emailSub }
+    );
 
-  useEffect(() => {
-    const selectedLang = localStorage.getItem("lang");
-    if (selectedLang) {
-      i18n.changeLanguage(selectedLang);
-    }
-  }, [i18n]);
-
-  const emailSubscription = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await axios.post(
-        "https://www.cosmo.global/laravel/api/email-subscription",
-        { email: emailSub }
-      );
-      if (res.status === 200) {
-        await axios.post("https://www.cosmo.global/laravel/api/mailing-list-email", {
-          email: emailSub,
-        });
-      }
+    // treat any 2xx as success
+    if (res.status >= 200 && res.status < 300) {
       setPopUpInfoEmail({ message: res.data.message, success: true });
       setEmailSub("");
-    } catch (error) {
+    } else {
       setPopUpInfoEmail({
-        message: error.response.data.message,
+        message: "Unexpected response from server.",
         success: false,
       });
     }
-    setShowPopUpEmail(true);
-    setTimeout(() => setShowPopUpEmail(false), 3000);
-  };
+  } catch (error) {
+    const msg =
+      error?.response?.data?.message ||
+      error?.response?.data?.error ||
+      "Request failed";
+    setPopUpInfoEmail({ message: msg, success: false });
+  }
+  setShowPopUpEmail(true);
+  setTimeout(() => setShowPopUpEmail(false), 3000);
+};
+
 
   return (
     <>
@@ -116,14 +114,14 @@ function Footer() {
   }`}
 >
   <div
-    className={`lg:border-b-[0.5px] sm:pt-6 pb-[6%] pt-[4%] sm:h-[50px] lg:px-0 lg:w-full border-white h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-0 gap-2 ${
+    className={`lg:border-b-[0.5px] sm:pt-6 pb-[6%] pt-[3%] sm:h-[50px] lg:px-0 lg:w-full border-white h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-0 gap-2 ${
       isArabic ? "border-l-[0.5px] lg:border-l-0 pl-2" : "border-r-[0.5px] "
     }`}
   >
     <p className="text-[#E79E7F] pr-1 sm:pb-0 sm:ml-3">{t("footer.customer-title")}</p>
   </div>
             <div
-              className={`pt-[4%] sm:pt-2 pl-[3%] pb-[1%] lg:w-full flex flex-col ${
+              className={`pt-[3%] sm:pt-2 pl-[3%] pb-[1%] lg:w-full flex flex-col ${
                 isArabic ? "pr-[3%]" : "pl-[1%] items-start justify-center"
               }`}
             >

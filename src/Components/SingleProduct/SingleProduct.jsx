@@ -53,7 +53,7 @@ const location = rawLocation ? JSON.parse(rawLocation) : null;
     const currencyUsed = localStorage.getItem("currencyUsed");
     if (currencyUsed) {
       axios
-        .post("https://www.cosmo.global/laravel/api/currency-name", {
+        .post("http://127.0.0.1:8000/api/currency-name", {
           currency_name: currencyUsed,
         })
         .then((response) => {
@@ -112,7 +112,7 @@ const {
   isError,
 } = useQuery(["product", productSKU], async () => {
   const res = await axios.get(
-    `https://www.cosmo.global/laravel/api/getAllproductInfo/${productSKU}`,
+    `http://127.0.0.1:8000/api/getAllproductInfo/${productSKU}`,
     {
       params: { locale: selectedLang },
     }
@@ -178,7 +178,7 @@ const quantity = isInDepartment3 ? customQuantity : 1;
 
     // Fetch product details for pop-up display
     const productDetails = await axios.get(
-      `https://www.cosmo.global/laravel/api/getAllproductInfo/${productSKU}`,
+      `http://127.0.0.1:8000/api/getAllproductInfo/${productSKU}`,
       { params: { locale: selectedLang } }
     );
 
@@ -249,7 +249,7 @@ const userId = {
 
    
     const res = await axios.post(
-      "https://www.cosmo.global/laravel/api/add-cart-for-all",
+      "http://127.0.0.1:8000/api/add-cart-for-all",
       userId
     );
     setPopUpInfo(productDetails.data.product);
@@ -376,7 +376,7 @@ const userId = {
               </div>
               <div className=" w-[80px] flex justify-center items-center">
                 <img
-                  src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.media1}`}
+                  src={`http://127.0.0.1:8000/api/storage/${popUpInfo.media1}`}
                   alt={`${popUpInfo.id}`}
                   className="w-[100%] h-[100%]"
                 />
@@ -458,7 +458,7 @@ const userId = {
                     >
                       <img
                         className="cursor-pointer slidersImage "
-                        src={`https://www.cosmo.global/laravel/api/storage/${prodImages.ImageURL}`}
+                        src={`http://127.0.0.1:8000/api/storage/${prodImages.ImageURL}`}
                         alt={`${prodImages.id}`}
                       />
                     </div>
@@ -492,7 +492,7 @@ const userId = {
                     <img
                       id="productImage"
                       className="w-[100%] h-[100%] object-cover transition-transform duration-500 ease-in-out cursor-zoom-in"
-                      src={`https://www.cosmo.global/laravel/api/storage/${
+                      src={`http://127.0.0.1:8000/api/storage/${
                         imageUrl || productData.images[0]?.ImageURL
                       }`}
                       alt={`${productData.id}`}

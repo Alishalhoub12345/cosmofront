@@ -215,6 +215,27 @@ input[type="checkbox"]:checked + .custom-checkbox-label::before {
 input[type="checkbox"]:checked + .custom-checkbox-label::after {
   opacity: 1;
 }
+/* Put in src/index.css */
+.marquee-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  width: max-content;
+  white-space: nowrap;
+  animation: marquee-x 20s linear infinite;
+}
+.marquee-seq {
+  display: inline-flex;
+  align-items: center;
+}
+@keyframes marquee-x {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); } /* exactly one sequence width */
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-inner { animation: none; transform: none; }
+}
 
 /* Checkbox forthe billing address */
 
