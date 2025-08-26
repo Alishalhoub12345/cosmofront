@@ -18,15 +18,25 @@ function Footer() {
   });
 const emailSubscription = async (e) => {
   e.preventDefault();
+
   try {
     const res = await axios.post(
-      "http://127.0.0.1:8000/api/email-subscription",
-      { email: emailSub }
+      "http://127.0.0.1:8000/api/mailing-list-email", // ← fixed route
+      { email: emailSub },
+      {
+        headers: { "Content-Type": "application/json" },
+        // Optional: keep Axios throwing only on 5xx (handle 4xx in then)
+        // validateStatus: (status) => status < 500,
+      }
     );
 
-    // treat any 2xx as success
+    // Any 2xx = success
     if (res.status >= 200 && res.status < 300) {
-      setPopUpInfoEmail({ message: res.data.message, success: true });
+      const serverMsg =
+        res.data?.message ||
+        (typeof res.data === "string" ? res.data : null) ||
+        "Subscription successful!";
+      setPopUpInfoEmail({ message: serverMsg, success: true });
       setEmailSub("");
     } else {
       setPopUpInfoEmail({
@@ -35,15 +45,34 @@ const emailSubscription = async (e) => {
       });
     }
   } catch (error) {
-    const msg =
-      error?.response?.data?.message ||
-      error?.response?.data?.error ||
-      "Request failed";
-    setPopUpInfoEmail({ message: msg, success: false });
+    const status = error?.response?.status;
+    // Laravel common cases
+    if (status === 409) {
+      setPopUpInfoEmail({
+        message: "This email is already registered.",
+        success: false,
+      });
+    } else if (status === 422) {
+      const firstFieldError =
+        error?.response?.data?.errors?.email?.[0] ||
+        error?.response?.data?.message;
+      setPopUpInfoEmail({
+        message: firstFieldError || "Invalid email.",
+        success: false,
+      });
+    } else {
+      const msg =
+        error?.response?.data?.message ||
+        error?.response?.data?.error ||
+        (error?.message?.includes("Network") ? "Network error." : "Request failed.");
+      setPopUpInfoEmail({ message: msg, success: false });
+    }
+  } finally {
+    setShowPopUpEmail(true);
+    setTimeout(() => setShowPopUpEmail(false), 3000);
   }
-  setShowPopUpEmail(true);
-  setTimeout(() => setShowPopUpEmail(false), 3000);
 };
+
 
 
   return (
