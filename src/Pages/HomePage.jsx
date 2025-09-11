@@ -9,7 +9,7 @@ import CollectionImages from "../Components/Home/CollectionImages";
 import Characteristics from "../Components/Home/Characteristics";
 
 // optional: centralize API base; replace with your helper if you have one
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = "https://www.cosmo.global/laravel";
 
 function HomePage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
@@ -18,36 +18,41 @@ function HomePage() {
   const [imageUrl, setImageUrl] = useState(null);
   const [targetUrl, setTargetUrl] = useState(null);
 
+useEffect(() => {
+  (async () => {
+    try {
+      const { data } = await axios.get(`${API_BASE}/api/messages`, {
+        params: { type: "popup", current: 1, per_page: 1 },
+      });
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const { data } = await axios.get(`${API_BASE}/api/messages`, {
-          params: { type: "popup", current: 1, per_page: 1 },
-        });
-        const item = data?.data?.[0];
-        setImageUrl(item?.image_url || null);
-        setTargetUrl(item?.url || null); // <-- this is the URL stored in DB
-      } catch (e) {
-        console.error("Popup fetch failed:", e);
+      const item = data?.data?.[0];
+      if (item?.image_path) {
+        // Build full URL using storage path
+        setImageUrl(`${API_BASE}/api/storage/${item.image_path}`);
+        setTargetUrl(item?.url || null);
       }
-    })();
-  }, []);
+    } catch (e) {
+      console.error("Popup fetch failed:", e);
+    }
+  })();
+}, []);
+
 
   return (
     <>
       <Navbar />
       <Banner />
 
-     {showPopup && imageUrl && (
-        <Popup
-          imageUrl={imageUrl}
-          targetUrl={targetUrl}
-          onClose={() => setShowPopup(false)}
-          newTab={true}       
-          closeOnNavigate={false}
-        />
-      )}
+   {showPopup && imageUrl && (
+  <Popup
+    imageUrl={imageUrl}
+    targetUrl={targetUrl}
+    onClose={() => setShowPopup(false)}
+    newTab={true}       
+    closeOnNavigate={false}
+  />
+)}
+
 
       <CollectionCarousel />
       <CollectionImages />

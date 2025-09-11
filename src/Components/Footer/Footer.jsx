@@ -21,7 +21,7 @@ const emailSubscription = async (e) => {
 
   try {
     const res = await axios.post(
-      "http://127.0.0.1:8000/api/mailing-list-email", // ← fixed route
+      "https://www.cosmo.global/laravel/api/mailing-list-email", // ← fixed route
       { email: emailSub },
       {
         headers: { "Content-Type": "application/json" },

@@ -25,7 +25,7 @@ useEffect(() => {
   const currency = localStorage.getItem("currencyUsed");
   if (currency) {
     axios
-      .post("http://127.0.0.1:8000/api/currency-name", {
+      .post("https://www.cosmo.global/laravel/api/currency-name", {
         currency_name: currency,
       })
       .then((response) => {
@@ -42,7 +42,7 @@ useEffect(() => {
     let response;
     try {
       response = await axios.get(
-        `http://127.0.0.1:8000/api/collection/${collectionLink}/products/${page}?productVisible=1`,
+        `https://www.cosmo.global/laravel/api/collection/${collectionLink}/products/${page}?productVisible=1`,
         {
           params: { locale: selectedLang },
         }
@@ -69,7 +69,7 @@ useEffect(() => {
 
   const getCollectionName = async () => {
     const subcategoryRes = await axios.get(
-      `http://127.0.0.1:8000/api/collection/name/${collectionLink}`,
+      `https://www.cosmo.global/laravel/api/collection/name/${collectionLink}`,
       {
         params: { locale: selectedLang },
       }
@@ -151,7 +151,7 @@ useEffect(() => {
                   <img
                     className="object-cover w-[100%]  h-[100%]"
                     alt="collection-main-image"
-                    src={`http://127.0.0.1:8000/api/storage/${collectionTitle.collection.collectionImage}`}
+                    src={`https://www.cosmo.global/laravel/api/storage/${collectionTitle.collection.collectionImage}`}
                   />
                 </div>
 
@@ -226,7 +226,7 @@ useEffect(() => {
                           <div className="min-h-[20rem] xl:min-h-[15rem] lg:min-h-[10rem] sm:min-h-[5rem] mt-[0.1%] md:mt-[0.5%] ">
                             <img
                               className=" w-[100%] h-[100%] object-cover "
-                              src={`http://127.0.0.1:8000/api/storage/${singleColl.media1}`}
+                              src={`https://www.cosmo.global/laravel/api/storage/${singleColl.media1}`}
                               alt={`${singleColl.id}`}
                               onError={(e) => {
                                 e.target.src = fallout;

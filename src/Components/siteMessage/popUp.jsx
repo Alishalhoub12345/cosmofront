@@ -3,10 +3,10 @@ import { AiOutlineClose } from "react-icons/ai";
 
 export default function Popup({
   imageUrl,
-  targetUrl,          // <-- URL from your DB (e.g., item.url)
+  targetUrl,
   onClose,
-  newTab = true,       // open link in new tab by default
-  closeOnNavigate = false, // set true if you also want to close the modal after click
+  newTab = true,
+  closeOnNavigate = false,
 }) {
   if (!imageUrl) return null;
 
@@ -20,41 +20,38 @@ export default function Popup({
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70">
-      <div className="relative max-w-[90%] max-h-[90%]">
-        {/* Close button */}
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            onClose?.();
-          }}
-          aria-label="Close popup"
-          className="absolute -top-4 -right-4 bg-white rounded-full p-1 shadow-lg hover:bg-gray-200"
-        >
-          <AiOutlineClose size={20} />
-        </button>
-
-        {/* Image (clickable if targetUrl exists) */}
+      <div className="relative w-[82%] max-w-[70%] sm:max-w-[100%] p-[2%] flex flex-col items-center">
+        {/* Image */}
         {targetUrl ? (
           <a
             href={targetUrl}
             {...anchorProps}
             onClick={handleImageClick}
             aria-label="Open related link"
-            className="inline-block"
+            className="block w-full"
           >
             <img
               src={imageUrl}
               alt="Popup"
-              className="max-w-full max-h-full rounded-md shadow-lg"
+              className="w-full max-h-[80vh] object-contain shadow-xl"
             />
           </a>
         ) : (
           <img
             src={imageUrl}
             alt="Popup"
-            className="max-w-full max-h-full rounded-md shadow-lg"
+            className="w-full max-h-[80vh] object-contain shadow-xl"
           />
         )}
+
+        {/* Close button directly under photo */}
+        <button
+          onClick={onClose}
+          aria-label="Close popup"
+          className="mt-3 bg-white rounded-full p-2 shadow-lg hover:bg-gray-200 flex items-center justify-center"
+        >
+          <AiOutlineClose size={12} />
+        </button>
       </div>
     </div>
   );

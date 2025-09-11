@@ -26,7 +26,7 @@ function ProductsPerCategory() {
     setCurrencyUsed(currentCurrency);
 
     try {
-      const res = await axios.post("http://127.0.0.1:8000/api/currency-value", {
+      const res = await axios.post("https://www.cosmo.global/laravel/api/currency-value", {
         currency_name: currentCurrency,
       });
       setCurrencyValue(res.data.currency_value);
@@ -41,7 +41,7 @@ useEffect(() => {
   const currency = localStorage.getItem("currencyUsed");
   if (currency) {
     axios
-      .post("http://127.0.0.1:8000/api/currency-name", {
+      .post("https://www.cosmo.global/laravel/api/currency-name", {
         currency_name: currency,
       })
       .then((response) => {
@@ -57,7 +57,7 @@ useEffect(() => {
   // Fetch category info (departments + name)
   const getCategoryInfo = async () => {
     const response = await axios.get(
-      `http://127.0.0.1:8000/api/CategoryCorrespondingDepand/${categoryLink}`,
+      `https://www.cosmo.global/laravel/api/CategoryCorrespondingDepand/${categoryLink}`,
       { params: { locale: selectedLang } }
     );
     return response.data;
@@ -72,7 +72,7 @@ useEffect(() => {
   const getProductsPerCategory = async () => {
     try {
       const response = await axios.get(
-        `http://127.0.0.1:8000/api/categories/${categoryLink}/products/${page}?productVisible=1`,
+        `https://www.cosmo.global/laravel/api/categories/${categoryLink}/products/${page}?productVisible=1`,
         { params: { locale: selectedLang } }
       );
 
@@ -164,7 +164,7 @@ useEffect(() => {
                 <Link to={`/single/product/${product.productLink}/${product.productSKU}`}>
                   <div className="min-h-[20rem] xl:min-h-[15rem] lg:min-h-[10rem]">
                     <img
-                      src={`http://127.0.0.1:8000/api/storage/${product.media1}`}
+                      src={`https://www.cosmo.global/laravel/api/storage/${product.media1}`}
                       alt={product.productName}
                       onError={(e) => (e.currentTarget.src = fallout)}
                       className="w-full h-full object-cover"
