@@ -1138,7 +1138,9 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                         {currencyUsed}
                       </p>
                     </div>
-                    <p className="text-[red]">{t("checkout.cartNote")}</p>
+{getCountry?.name?.toLowerCase() !== "lebanon" && (
+  <p className="text-[red]">{t("checkout.cartNote")}</p>
+)}
                     <div
                       className={`border-t-[1px] border-[#bbbbbb] flex justify-between items-center h-[auto] py-[3%]  ${
                         isArabic ? "flex-row-reverse" : ""

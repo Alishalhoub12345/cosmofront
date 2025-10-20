@@ -66,10 +66,10 @@ function CollectionCarousel() {
   pagination={{ clickable: true }}
   autoplay={{
     delay: 700,
-    disableOnInteraction: false,   // keep autoplay after interactions
-    pauseOnMouseEnter: false,      // don't pause on hover
+    disableOnInteraction: false,   
+    pauseOnMouseEnter: false,     
   }}
-  loop={true}                       // wrap to beginning seamlessly
+  loop={true}                      
   navigation={{
     nextEl: ".collections-swiper-next",
     prevEl: ".collections-swiper-prev",

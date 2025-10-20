@@ -17,15 +17,15 @@ function CollectionImages() {
       const res = await axios.get("https://www.cosmo.global/laravel/api/home-page-images");
       const response = res.data.data;
   
-      setTopBannerLink(response?.[0]?.linkUrl || "");
+      setTopBannerLink(response?.[3]?.linkUrl || "");
       setLeftLink(response?.[1]?.linkUrl || "");
       setRightLink(response?.[2]?.linkUrl || "");
-      setBottomBannerLink(response?.[3]?.linkUrl || "");
+      setBottomBannerLink(response?.[4]?.linkUrl || "");
 
-      setTopBannerImages(response?.[0]?.image || "");
+      setTopBannerImages(response?.[3]?.image || "");
       setLeftImage(response?.[1]?.image || "");
       setRightImage(response?.[2]?.image || "");
-      setBottomBannerImages(response?.[3]?.image || "");
+      setBottomBannerImages(response?.[4]?.image || "");
     } catch (error) {
       console.error("Error fetching homepage images:", error);
     }

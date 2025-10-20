@@ -41,7 +41,15 @@ useEffect(() => {
   return (
     <>
       <Navbar />
-      <Banner />
+<Banner
+  slotMap={{
+    top: 4,     
+    middle: 0, 
+    left: 1,    
+    right: 2,   
+    bottom: 3,  
+  }}
+/>
 
    {showPopup && imageUrl && (
   <Popup

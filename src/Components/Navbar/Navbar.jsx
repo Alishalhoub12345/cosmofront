@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../images/Navbar/cosmo-logo.gif";
+import logo from "../../images/Navbar/newlogo-removebg-preview.png";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { AiOutlineClose } from "react-icons/ai";
 import { CartContext } from "../Cart/CartContext";
@@ -349,7 +349,7 @@ function Navbar() {
           ))}
 
           <div
-            className={`w-[20%] lg:text-[12px] lg:flex-col-reverse flex justify-between px-[1%] xl:px-0 lg:justify-center lg:items-center h-[100%] border bg-[#656e9a] ${
+            className={`w-[20%] lg:text-[12px] lg:flex-col-reverse flex justify-between px-[1%] xl:px-0 lg:justify-center lg:items-center h-[100%] border bg-[#ffffff] ${
               isArabic ? "flex-row-reverse" : ""
             }`}
           >
