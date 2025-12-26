@@ -1,7 +1,5 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
 import ProductsPerSubcategory from '../Components/ProductsPerSubcategory/ProductsPerSubcategory'
-import Footer from '../Components/Footer/Footer'
 
 function ProductsPerSubcategoryPage() {
 
@@ -13,13 +11,11 @@ function ProductsPerSubcategoryPage() {
   return (
     <>
        
-            <Navbar/>
        
         
             <ProductsPerSubcategory/>
        
         
-            <Footer/>
         
     </>
   )

@@ -1,7 +1,5 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
 import Login from '../Components/LoginAndRegistration/Login'
-import Footer from '../Components/Footer/Footer'
 
 function LoginPage() {
 
@@ -12,9 +10,7 @@ function LoginPage() {
   
   return (
     <>
-    <Navbar/>
     <Login/>
-    <Footer/>
     </>
   )
 }

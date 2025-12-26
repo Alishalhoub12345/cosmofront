@@ -1,7 +1,5 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
 import TermsAndConditions from '../Components/ExtraPages/TermsAndConditions'
-import Footer from '../Components/Footer/Footer'
 
 function TermsAndConditionsPage() {
 
@@ -12,9 +10,7 @@ function TermsAndConditionsPage() {
       
   return (
     <>
-    <Navbar/>
     <TermsAndConditions/>
-    <Footer/>
     
     </>
   )

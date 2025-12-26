@@ -77,49 +77,49 @@ function Registration() {
 
     return (
         <>
-            <div className={`w-[100%] h-[90vh] lg:h-[auto] flex-wrap font-[FrutigerLTCom-Roman] flex items-start justify-start lg:justify-center bg-[#F1F5FF] ${isArabic?"flex-row-reverse":""}`}>
+            <div className={`w-[100%] text-[#082252] h-[90vh] lg:h-[auto] flex-wrap font-[FrutigerLTCom-Roman] flex items-start justify-start lg:justify-center bg-[#EEEEEE] ${isArabic?"flex-row-reverse":""}`}>
                 <div className="w-[50%] lg:w-[80%] sm:w-[90%] h-[100%] lg:h-[auto] flex justify-center xl:pt-[2%] pt-[5%] lg:py-[5%] items-center">
                     <div className="h-[100%] w-[55%] lg:px-[3%] 2xl:w-[80%] lg:w-[100%] flex flex-col">
                         <div className={`lg:w-[95%] xl:pb-[5%]  ${isArabic?" text-right":""}`}>
-                            <h1 className="font-[FahKwang] text-[40px] xl:text-[30px]  lg:w-[100%]   md:text-[6.5vw]">{t("Authentication.signUp.title")}</h1>
+                            <h1 className="font-[FahKwang] text-[40px] xl:text-[30px]  lg:w-[100%] text-[#082252]  md:text-[6.5vw]">{t("Authentication.signUp.title")}</h1>
                             <p className={`text-[15px] sm:text-[12px] lg:w-[100%] ${isArabic?"":" w-[350px]"}`}>{t("Authentication.signUp.desc")}</p>
                         </div>
                         <form className="w-[100%] xl:justify-start xl:gap-[5%] h-[80%] flex justify-evenly flex-col">
                             <div className="h-[fit-content] flex flex-col justify-evenly">
                                 <div className="flex justify-start flex-col">
-                                    <label className={`h-[30px] flex items-center  ${isArabic?"flex-row-reverse text-right":""}`}>{t("Authentication.signUp.firstName")}<span className="text-[#E79E7F] mt-[-1%]" >*</span></label>
+                                    <label className={`h-[30px] flex items-center  ${isArabic?"flex-row-reverse text-right":""}`}>{t("Authentication.signUp.firstName")}<span className="text-[#082252] mt-[-1%]" >*</span></label>
                                     <input required
                                         type="text"
-                                        className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[1px] border-[black] rounded-[2px] ${isArabic?"text-right":""}`}
+                                        className={`h-[4.5vh] p-[2%] bg-[#EEEEEE] border-[1px] border-[#082252] rounded-[2px] ${isArabic?"text-right":""}`}
                                         value={firstName}
                                         onChange={(e) => setFirstName(e.target.value)}
                                     />
                                 </div>
                                 <div className="flex justify-start flex-col">
-                                    <label className={`h-[30px] flex items-center  ${isArabic?"flex-row-reverse text-right":""}`}>{t("Authentication.signUp.lastName")}<span className="text-[#E79E7F] mt-[-1%]" >*</span></label>
+                                    <label className={`h-[30px] flex items-center  ${isArabic?"flex-row-reverse text-right":""}`}>{t("Authentication.signUp.lastName")}<span className="text-[#082252] mt-[-1%]" >*</span></label>
                                     <input required
-                                        className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[1px] border-[black] rounded-[2px] ${isArabic?"text-right":""}`}
+                                        className={`h-[4.5vh] p-[2%] bg-[#EEEEEE] border-[1px] border-[#082252] rounded-[2px] ${isArabic?"text-right":""}`}
                                         type="text"
                                         value={lastName}
                                         onChange={(e) => setLastName(e.target.value)}
                                     />
                                 </div>
                                 <div className="flex justify-start flex-col">
-                                    <label className={`h-[30px] flex items-center  ${isArabic?"flex-row-reverse text-right":""}`}>{t("Authentication.login.email")}<span className="text-[#E79E7F] mt-[-1%]" >*</span></label>
+                                    <label className={`h-[30px] flex items-center  ${isArabic?"flex-row-reverse text-right":""}`}>{t("Authentication.login.email")}<span className="text-[#082252] mt-[-1%]" >*</span></label>
                                     <input
                                         type="email"
-                                        className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[1px] border-[black] rounded-[2px] ${isArabic?"text-right":""}`}
+                                        className={`h-[4.5vh] p-[2%] bg-[#EEEEEE] border-[1px] border-[#082252] rounded-[2px] ${isArabic?"text-right":""}`}
                                         value={email}
                                         required
                                         onChange={(e) => setEmail(e.target.value)}
                                     />
                                 </div>
                                 <div className="">
-                                    <label className={`h-[30px] flex items-center  ${isArabic?"flex-row-reverse text-right":""}`}>{t("Authentication.signUp.phone")} <span className="text-[#E79E7F] mt-[-1%]" >*</span></label>
+                                    <label className={`h-[30px] flex items-center  ${isArabic?"flex-row-reverse text-right":""}`}>{t("Authentication.signUp.phone")} <span className="text-[#082252] mt-[-1%]" >*</span></label>
                                     <div className="">
                                         <div className="">
                                             <PhoneInput
-                                                className="bg-transparent border-[0.5px] border-[black] px-[2%] rounded-[2px] w-[100%] countryCode"
+                                                className="bg-transparent border-[0.5px] border-[#082252] px-[2%] rounded-[2px] w-[100%] countryCode"
                                                 international required
                                                 countryCallingCodeEditable={false}
                                                 defaultCountry="LB"
@@ -130,10 +130,10 @@ function Registration() {
                                     </div>
                                 </div>
                                 <div className="">
-                                    <p className={`h-[30px] flex items-center  ${isArabic?"flex-row-reverse text-right":""}`}>{t("Authentication.signUp.gender")} <span className="text-[#E79E7F] mt-[-1%]" >*</span></p>
+                                    <p className={`h-[30px] flex items-center  ${isArabic?"flex-row-reverse text-right":""}`}>{t("Authentication.signUp.gender")} <span className="text-[#082252] mt-[-1%]" >*</span></p>
                                     <div className={`${isArabic?"":"dropdown-container"}`}>
                                         <select
-                                            className={`h-[4.5vh] p-[2%] 2xl:py-[0%] lg:px-[1%] bg-[#F1F5FF] border-[0.5px] border-[black] rounded-[2px] custom-select cursor-pointer w-[100%] text-[0.8vw] xl:text-[15px]  ${isArabic?"text-right":" px-[2%]"}`}
+                                            className={`h-[4.5vh] p-[2%] 2xl:py-[0%] lg:px-[1%] bg-[#EEEEEE] border-[0.5px] border-[#082252] rounded-[2px] custom-select cursor-pointer w-[100%] text-[0.8vw] xl:text-[15px]  ${isArabic?"text-right":" px-[2%]"}`}
                                             value={gender} required
                                             onChange={(e) => setGender(e.target.value)}
                                         >
@@ -144,34 +144,34 @@ function Registration() {
                                     </div>
                                 </div>
                                 <div className="flex justify-start flex-col pt-[1%] relative">
-                                    <label className={`h-[30px] flex items-center  ${isArabic?"flex-row-reverse text-right":""}`}>{t("Authentication.login.pass")} <span className="h-[100%] text-[#E79E7F] mt-[-1%]" >*</span></label>
+                                    <label className={`h-[30px] flex items-center  ${isArabic?"flex-row-reverse text-right":""}`}>{t("Authentication.login.pass")} <span className="h-[100%] text-[#082252] mt-[-1%]" >*</span></label>
                                     <input
                     type={showPassword ? "text" : "password"}
-                    className={`h-[40px] p-[2%] bg-[#F1F5FF] border-[1px] border-[black] rounded-[2px]  ${isArabic?" flex text-right":"pr-[30px]"}`}
+                    className={`h-[40px] p-[2%] bg-[#EEEEEE] border-[1px] border-[#082252] rounded-[2px]  ${isArabic?" flex text-right":"pr-[30px]"}`}
                     value={signUpPassword}
                     autoComplete="pass"
                     onChange={(e) => setSignUpPassword(e.target.value)}
                   />
                                     {showPassword ? (
                     <IoEyeOffOutline
-                      className={`absolute hover:text-[#E79E7F] cursor-pointer ${isArabic?"top-[62%] left-[10px]":"right-[10px] top-[72%] transform translate-y-[-50%]"}`}
+                      className={`absolute hover:text-[#082252] cursor-pointer ${isArabic?"top-[62%] left-[10px]":"right-[10px] top-[72%] transform translate-y-[-50%]"}`}
                       onClick={() => setShowPassword(!showPassword)}
                     />
                   ) : (
                     <AiOutlineEye
-                    className={`absolute hover:text-[#E79E7F] cursor-pointer ${isArabic?"top-[62%] left-[10px]":"right-[10px] top-[72%] transform translate-y-[-50%]"}`}
+                    className={`absolute hover:text-[#082252] cursor-pointer ${isArabic?"top-[62%] left-[10px]":"right-[10px] top-[72%] transform translate-y-[-50%]"}`}
                       onClick={() => setShowPassword(!showPassword)}
                     />
                   )}
                                 </div>
-                                <p className="text-[12px]"><span className="text-[#E79E7F] mt-[-1%]" >*</span>{t("Authentication.signUp.required")}</p>
+                                <p className="text-[12px]"><span className="text-[#082252] mt-[-1%]" >*</span>{t("Authentication.signUp.required")}</p>
                             </div>
                             <div className="flex items-center justify-end flex-col gap-[2%] h-[100px]">
-                                <button className="w-[100%] h-[4.5vh] text-white flex justify-center items-center bg-[#676f98] hover:bg-[#2f4672] hover:text-[#E79E7F]" disabled={signUpLoading} onClick={handleNextPage}>
+                                <button className="w-[100%] h-[4.5vh] text-white flex justify-center items-center hover:bg-[#676f98] bg-[#082252] " disabled={signUpLoading} onClick={handleNextPage}>
                                     {signUpLoading ? 'Loading...' : t("Authentication.signUp.next")}
                                 </button>
-                                {signUpError && <p className="text-[#E79E7F] text-[12px]">{signUpError}</p>}
-                                <p className="text-[12px] text-[#1e335a]">{t("Authentication.signUp.haveAccount")} <Link to="/login" className="font-[700] underline underline-offset-1 hover:text-[#E79E7F]">{t("Authentication.login.loginBtn")}</Link></p>
+                                {signUpError && <p className="text-[#082252] text-[12px]">{signUpError}</p>}
+                                <p className="text-[12px] text-[#1e335a]">{t("Authentication.signUp.haveAccount")} <Link to="/login" className="font-[700] hover:underline underline-offset-1 hover:text-[#082252]">{t("Authentication.login.loginBtn")}</Link></p>
                             </div>
                         </form>
                     </div>

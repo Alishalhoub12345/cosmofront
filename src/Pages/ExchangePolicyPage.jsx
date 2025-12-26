@@ -1,6 +1,5 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
-import Footer from '../Components/Footer/Footer'
+
 import ExchangePolicy from '../Components/ExtraPages/ExchangePolicy'
 
 function ExchangePolicyPage() {
@@ -9,9 +8,7 @@ function ExchangePolicyPage() {
   }, []);
   return (
     <>
-    <Navbar/>
     <ExchangePolicy/>
-    <Footer/>
     </>
   )
 }

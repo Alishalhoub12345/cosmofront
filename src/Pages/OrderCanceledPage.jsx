@@ -1,7 +1,5 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
 import OrderCanceled from '../Components/Popups/OrderCanceled'
-import Footer from '../Components/Footer/Footer'
 
 function OrderCanceledPage() {
       React.useEffect(() => {
@@ -9,9 +7,7 @@ function OrderCanceledPage() {
       }, []);
   return (
       <>
-          <Navbar />
           <OrderCanceled />
-          <Footer/>
       </>
   )
 }

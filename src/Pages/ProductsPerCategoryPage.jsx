@@ -1,6 +1,5 @@
 
-import Navbar from '../Components/Navbar/Navbar'
-import Footer from '../Components/Footer/Footer'
+
 import ProductsPerCategory from '../Components/ProductsPerCategory/ProductsPerCategory'
 import React from 'react';
 
@@ -12,13 +11,11 @@ function ProductsPerCategoryPage() {
   return (
     <>
     
-        <Navbar/>
     
     
        <ProductsPerCategory/>
     
     
-        <Footer/>
     
 </>
   )

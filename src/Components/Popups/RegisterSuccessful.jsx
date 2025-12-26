@@ -7,8 +7,8 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 function RegisterSuccessful() {
   const [t, i18n] = useTranslation("global");
-  const [lang, setLang] = useState(localStorage.getItem("lang") || "en");
-  const selectedLang = localStorage.getItem("lang");
+  const [setLang] = useState(localStorage.getItem("lang") || "en");
+  // const selectedLang = localStorage.getItem("lang");
   
   useEffect(() => {
     const selectedLang = localStorage.getItem("lang");
@@ -19,7 +19,7 @@ function RegisterSuccessful() {
   }, [i18n]);
 
 
-  const isArabic = lang === "ar";
+  // const isArabic = lang === "ar";
 
   return (
     <div className='w-[100%] h-[90vh]'>

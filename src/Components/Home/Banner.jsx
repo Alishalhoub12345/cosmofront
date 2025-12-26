@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import parrot from "../../images/Home/parrot peach.png";
 import { useTranslation } from "react-i18next";
 
 const API = "https://www.cosmo.global/laravel/api"; // adjust if needed
@@ -72,11 +71,11 @@ if (main?.image) {
       </div>
 
       <div className="flex justify-center items-center w-[100%] flex-col py-[2%]">
-        <img
+        {/* <img
           src={parrot}
           className="w-[190px] md:w-[140px] sm:w-[100px]"
           alt="parrot-icon"
-        />
+        /> */}
         <p
           className={`text-[20px] font-[FrutigerLTCom-Roman] w-[40%] text-center pb-[5%] lg:pb-[10%] xl:w-[80%] md:text-[18px] md:w-[90%] sm:text-[15px] ${
             isArabic ? "text-[25px]" : ""

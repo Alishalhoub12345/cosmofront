@@ -43,7 +43,7 @@ function CartComponent() {
     }
   }, [i18n]);
 
-  const isArabic = lang === "ar";
+  const isArabic = lang == "ar";
 
   useEffect(() => {
     const currencyUsed = localStorage.getItem("currencyUsed");
@@ -138,7 +138,7 @@ function CartComponent() {
 
       const totalWeight = cart.reduce((total, item) => {
         const product = getQuantityMax.find(
-          (p) => String(p.size.id) === String(item.selectedSize)
+          (p) => String(p.size.id) == String(item.selectedSize)
         );
         return total + (product ? product.productWeight * item.quantity : 0);
       }, 0);
@@ -157,8 +157,8 @@ function CartComponent() {
   const findQuantity = (productId, selectedSize) => {
     const item = cart.find(
       (item) =>
-        String(item.productId) === String(productId) &&
-        String(item.selectedSize) === String(selectedSize)
+        String(item.productId) == String(productId) &&
+        String(item.selectedSize) == String(selectedSize)
     );
     return item ? item.quantity : 0;
   };
@@ -168,14 +168,14 @@ function CartComponent() {
     if (updatedCart.length > 0 && selectedCountry !== 109) {
       const totalWeight = updatedCart.reduce((total, item) => {
         const product = products.find(
-          (p) => String(p.size.id) === String(item.selectedSize)
+          (p) => String(p.size.id) == String(item.selectedSize)
         );
         return total + (product ? product.productWeight * item.quantity : 0);
       }, 0);
       setProdWeight(totalWeight);
 
       const selectedCountryObj = countries.find(
-        (country) => String(country.id) === String(selectedCountry)
+        (country) => String(country.id) == String(selectedCountry)
       );
       if (selectedCountryObj) {
         const response = await axios.get(
@@ -195,11 +195,11 @@ function CartComponent() {
   const handleIncrease = async (productId, selectedSize) => {
     const updatedCart = cart.map((item) => {
       if (
-        String(item.productId) === String(productId) &&
-        String(item.selectedSize) === String(selectedSize)
+        String(item.productId) == String(productId) &&
+        String(item.selectedSize) == String(selectedSize)
       ) {
         const maxQuantityForSize = maxQuantity.find(
-          (q) => q.id === selectedSize
+          (q) => q.id == selectedSize
         );
 
         if (maxQuantityForSize) {
@@ -223,8 +223,8 @@ function CartComponent() {
   const handleDecrease = async (productId, selectedSize) => {
     const updatedCart = cart?.map((item) => {
       if (
-        String(item.productId) === String(productId) &&
-        String(item.selectedSize) === String(selectedSize)
+        String(item.productId) == String(productId) &&
+        String(item.selectedSize) == String(selectedSize)
       ) {
         const newQuantity = Math.max(1, item.quantity - 1);
         return {
@@ -255,8 +255,8 @@ function CartComponent() {
   const handleRemove = async (productId, selectedSize) => {
     const updatedCart = cart.filter((item) => {
       return !(
-        String(item.productId) === String(productId) &&
-        String(item.selectedSize) === String(selectedSize)
+        String(item.productId) == String(productId) &&
+        String(item.selectedSize) == String(selectedSize)
       );
     });
 
@@ -270,21 +270,20 @@ function CartComponent() {
       },
     ];
 
-    await updateItemStatus(productsToRemove); // Call the new function
+    await updateItemStatus(productsToRemove); 
     await getProductsInCart();
   };
 
   const handleClearCart = async () => {
-    const updatedCart = []; // Clear the cart
-    updateCartState(updatedCart); // Update the state with the empty cart
-    updateProdWeight(updatedCart); // Update the product weight accordingly
+    const updatedCart = [];
+    updateCartState(updatedCart); 
+    updateProdWeight(updatedCart); 
 
-    // Prepare the productsToRemove array to send
     const productsToRemove = cart.map((item) => ({
-      size_id: item.selectedSize, // Assuming you want to remove all sizes in the cart
+      size_id: item.selectedSize, 
     }));
 
-    await updateItemStatus(productsToRemove); // Call the new function
+    await updateItemStatus(productsToRemove); 
     await getProductsInCart();
   };
 
@@ -293,8 +292,8 @@ function CartComponent() {
     products.forEach((prod) => {
       const item = cart.find(
         (item) =>
-          String(item.productId) === String(prod.product.id) &&
-          String(item.selectedSize) === String(prod.size.id)
+          String(item.productId) == String(prod.product.id) &&
+          String(item.selectedSize) == String(prod.size.id)
       );
       if (item) {
         if (
@@ -330,7 +329,7 @@ function CartComponent() {
         shipping_country_id: selectedCountry,
         products: updatedCart?.map((item) => {
           const product = products.find(
-            (p) => String(p.size.id) === String(item.selectedSize)
+            (p) => String(p.size.id) == String(item.selectedSize)
           );
           return {
             product_id: item.productId,
@@ -383,7 +382,7 @@ function CartComponent() {
 
   const getUpdatedShippingPrice = async () => {
     const selectedCountryObj = countries.find(
-      (country) => String(country.id) === String(selectedCountry)
+      (country) => String(country.id) == String(selectedCountry)
     );
     if (selectedCountryObj && cart.length > 0) {
       const response = await axios.get(
@@ -412,7 +411,7 @@ function CartComponent() {
     const selectedValue = e.target.value;
     setSelectedCountry(selectedValue);
     const selectedCountryObj = countries.find(
-      (country) => String(country.id) === String(selectedValue)
+      (country) => String(country.id) == String(selectedValue)
     );
     await getUpdatedShippingPrice();
     if (selectedCountryObj) {
@@ -437,7 +436,7 @@ function CartComponent() {
       shipping_country_id: selectedCountry,
       products: cart.map((item) => {
         const product = products.find(
-          (p) => String(p.size.id) === String(item.selectedSize)
+          (p) => String(p.size.id) == String(item.selectedSize)
         );
         return {
           product_id: item.productId,
@@ -462,7 +461,7 @@ function CartComponent() {
       );
       const cartReferenceNumber = response.data.message.uniqueCartId;
 
-      if (cartRefNumber === cartReferenceNumber) {
+      if (cartRefNumber == cartReferenceNumber) {
         try {
           setLoading(true);
 
@@ -534,18 +533,18 @@ function CartComponent() {
                 {cartItems == 0 || !cartItems ? (
                   <div className="gap-[5%] flex flex-col items-center p-[10%] h-[100%]">
                     <div className="h-[100px] w-[100px] sm:w-[70px] sm:h-[70px]">
-                      <img
+                      {/* <img
                         className="h-[100%] w-[100%] "
                         src={parrotCart}
                         alt="parrotCart"
-                      ></img>
+                      ></img> */}
                     </div>
                     <p className="text-[20px] font-[FrutigerLTCom-Roman] w-[300px] md:text-[16px] xl:text-[12px] md:w-[250px] text-center">
                       {t("cart.empty")}
                     </p>
                     <Link
                       to="/"
-                      className="bg-[#676f98] font-[FahKwang] flex items-center justify-center hover:text-[#E79E7F] hover:bg-[#2f4672] h-[50px] text-white w-[120px]"
+                      className="bg-[#082252] font-[FahKwang] flex items-center justify-center hover:bg-[#2f4672] h-[50px] text-white w-[120px]"
                     >
                       {t("cart.shopNow")}
                     </Link>
@@ -559,7 +558,7 @@ function CartComponent() {
                     >
                       <button
                         onClick={handleClearCart}
-                        className={`hover:text-[#E79E7F] text-[#082252] gap-[5px] flex ${
+                        className={`text-[#082252] gap-[5px] hover:text-[#2f4672] flex ${
                           isArabic ? "flex-row-reverse" : ""
                         }`}
                       >
@@ -610,11 +609,12 @@ function CartComponent() {
                                 <p className="text-[15px] xl:text-[12px] sm:text-[8px]">
                                   {prod.product.productColor}, {prod.size.size}
                                 </p>
-                                {prod.product.productSale && (
-                                  <p className="text-[15px] xl:text-[12px] sm:text-[8px] text-[#E79E7F] pt-[2%]">
-                                    {prod.product.productSale}% OFF
-                                  </p>
-                                )}
+{prod.product.productSale > 0 && (
+  <p className="text-[15px] xl:text-[12px] sm:text-[8px] text-[#4e6692] pt-[2%]">
+    {prod.product.productSale}% OFF
+  </p>
+)}
+
                               </div>
 
                               {prod.size.quantity == 0 ||
@@ -645,36 +645,46 @@ function CartComponent() {
                                     </div>
                                   )}
 
-                                  <div className="h-[25px] border-[1px] border-[#2f4672] rounded-full flex items-center sm:w-[20%] sm:h-[20px] w-[8%] md:w-[15%] justify-evenly">
-                                    <button
-                                      onClick={() =>
-                                        handleDecrease(
-                                          prod.product.id,
-                                          prod.size.id
-                                        )
-                                      }
-                                      className="w-[35%] hover:border-l-[1px] hover:bg-[#E79E7F] hover:border-[#E79E7F] hover:text-white hover:rounded-l-full border-r-[1px] h-[100%] text-[#E79E7F] border-[#2f4672] flex items-center justify-center"
-                                    >
-                                      -
-                                    </button>
-                                    <p className="w-[30%] flex items-center justify-center h-[100%] xl:text-[12px]">
-                                      {findQuantity(
-                                        prod.product.id,
-                                        prod.size.id
-                                      )}
-                                    </p>
-                                    <button
-                                      onClick={() =>
-                                        handleIncrease(
-                                          prod.product.id,
-                                          prod.size.id
-                                        )
-                                      }
-                                      className="w-[35%] hover:border-r-[1px] hover:bg-[#E79E7F] hover:border-[#E79E7F] hover:text-white hover:rounded-r-full border-l-[1px] h-[100%] text-[#E79E7F] border-[#2f4672] flex items-center justify-center"
-                                    >
-                                      +
-                                    </button>
-                                  </div>
+<div
+  className={`flex items-center gap-2 mt-2 ${
+    isArabic ? "flex-row-reverse" : ""
+  }`}
+>
+  {/* Decrease Button */}
+  <button
+    onClick={() => handleDecrease(prod.product.id, prod.size.id)}
+    disabled={findQuantity(prod.product.id, prod.size.id) <= 1}
+    className={`w-[30px] h-[30px] flex justify-center items-center ${
+      findQuantity(prod.product.id, prod.size.id) <= 1
+        ? "bg-gray-300 text-white cursor-not-allowed"
+        : "bg-[#082252] text-white"
+    }`}
+  >
+    -
+  </button>
+
+  {/* Quantity Number */}
+  <p className="min-w-[30px] text-center">
+    {findQuantity(prod.product.id, prod.size.id)}
+  </p>
+
+  {/* Increase Button */}
+  <button
+    onClick={() => handleIncrease(prod.product.id, prod.size.id)}
+    disabled={
+      findQuantity(prod.product.id, prod.size.id) >=
+      prod.size.quantity // <-- Maximum stock for that size
+    }
+    className={`w-[30px] h-[30px] flex justify-center items-center ${
+      findQuantity(prod.product.id, prod.size.id) >= prod.size.quantity
+        ? "bg-gray-300 text-white cursor-not-allowed"
+        : "bg-[#082252] hover:bg-[#676f98] text-white"
+    }`}
+  >
+    +
+  </button>
+</div>
+
 
                                   {prod.product.productSale ? (
                                     <div className="w-[15%] flex items-center justify-center">
@@ -715,7 +725,7 @@ function CartComponent() {
                                   onClick={() =>
                                     handleRemove(prod.product.id, prod.size.id)
                                   }
-                                  className="text-[#E79E7F] cursor-pointer w-[100%] h-[100%] hover:text-[#f5baa1]"
+                                  className="text-[#082252] cursor-pointer w-[100%] h-[100%] hover:text-[#676F98]"
                                 />
                               </div>
                             </div>
@@ -762,7 +772,7 @@ function CartComponent() {
                       }`}
                     >
                       <select
-                        className={`custom-select cursor-pointer w-[100%] text-[0.8vw] xl:text-[15px] h-[50px] bg-[#EEEEEE] border-[0.5px] px-[5%] border-black ${
+                        className={`custom-select cursor-pointer w-[100%] text-[0.8vw] xl:text-[15px] h-[50px] bg-[#EEEEEE] border-[0.5px] px-[5%] border-[#082252] ${
                           isArabic ? "text-right" : ""
                         }`}
                         value={selectedCountry}
@@ -825,7 +835,7 @@ function CartComponent() {
                     {t("cart.desc")}
                     <a
                       href="/exchange-policy"
-                      className="text-[#E79E7F] cursor-pointer"
+                      className="text-[#082252] font-semibold hover:underline cursor-pointer"
                     >
                       {t("cart.anchor")}
                     </a>
@@ -838,18 +848,18 @@ function CartComponent() {
               <div className="flex justify-center items-center h-[auto]">
                 {soldOut || isDeleted || isHidden ? (
                   <div className="flex justify-between flex-col w-[100%] items-center">
-                    <p className="text-center text-[12px] w-[80%] text-[#ea9e7e]">
+                    <p className="text-center text-[12px] w-[80%] text-[#082252] hover:font-bold">
                       {t("cart.remove")}
                     </p>
 
-                    <button className="text-white w-[100%] h-[70px] bg-[#676f98] font-[FahKwang] cursor-not-allowed text-center text-[20px]">
+                    <button className="text-white w-[100%] h-[70px] bg-[#082252] font-[FahKwang] cursor-not-allowed text-center text-[20px]">
                       {t("cart.checkout")}
                     </button>
                   </div>
                 ) : (
                   <button
                     onClick={addCartToDbForGuest}
-                    className="text-white h-[70px] w-[100%] hover:bg-[#2f4672] bg-[#676f98] font-[FahKwang] hover:text-[#E79E7F] text-center text-[20px]"
+                    className="text-white h-[70px] w-[100%] hover:bg-[#2f4672] bg-[#082252] font-[FahKwang] text-center text-[20px]"
                     disabled={loading}
                   >
                     {loading ? "Loading..." : t("cart.checkout")}
@@ -858,7 +868,7 @@ function CartComponent() {
               </div>
             ) : (
               <div className="flex justify-center items-center h-[70px]">
-                <button className="text-white w-[100%] h-[100%] bg-[#676f98] font-[FahKwang] cursor-not-allowed text-center text-[20px]">
+                <button className="text-white w-[100%] h-[100%] bg-[#082252] font-[FahKwang] cursor-not-allowed text-center text-[20px]">
                   {t("cart.checkout")}
                 </button>
               </div>

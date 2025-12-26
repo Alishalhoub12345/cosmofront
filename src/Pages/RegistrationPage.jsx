@@ -1,7 +1,5 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
 import Registration from '../Components/LoginAndRegistration/SignUP/Registration'
-import Footer from '../Components/Footer/Footer'
 
 function RegistrationPage() {
   React.useEffect(() => {
@@ -9,9 +7,7 @@ function RegistrationPage() {
   }, []);
   return (
     <>
-    <Navbar/>
    <Registration/>
-    <Footer/>
     </>
   )
 }

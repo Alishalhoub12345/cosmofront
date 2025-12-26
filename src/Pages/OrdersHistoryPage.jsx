@@ -1,7 +1,5 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
 import OrdersHistory from '../Components/Account/OrdersHistory'
-import Footer from '../Components/Footer/Footer'
 
 function OrdersHistoryPage() {
    React.useEffect(() => {
@@ -9,9 +7,7 @@ function OrdersHistoryPage() {
    }, []);
   return (
     <>
-    <Navbar/>
     <OrdersHistory/>
-    <Footer/>
     </>
   )
 }

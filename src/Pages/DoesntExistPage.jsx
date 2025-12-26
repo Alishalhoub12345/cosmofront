@@ -1,7 +1,5 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
 import DoesntExist from '../Components/ExtraPages/DoesntExist'
-import Footer from '../Components/Footer/Footer'
 
 function DoesntExistPage() {
      React.useEffect(() => {
@@ -9,9 +7,7 @@ function DoesntExistPage() {
      }, []);
   return (
       <>
-          <Navbar />
           <DoesntExist />
-          <Footer/>
       </>
   )
 }

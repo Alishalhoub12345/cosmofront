@@ -65,7 +65,7 @@ function CollectionCarousel() {
   freeMode={true}
   pagination={{ clickable: true }}
   autoplay={{
-    delay: 700,
+    delay: 1700,
     disableOnInteraction: false,   
     pauseOnMouseEnter: false,     
   }}

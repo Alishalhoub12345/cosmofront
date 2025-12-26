@@ -1,7 +1,5 @@
 import React from 'react'
 import AllProductsForCollection from '../Components/ProductsPerCollection/AllProductsForCollection'
-import Navbar from '../Components/Navbar/Navbar'
-import Footer from '../Components/Footer/Footer'
 
 function AllProductsPerCollectionPage() {
   
@@ -12,9 +10,7 @@ function AllProductsPerCollectionPage() {
   
  return (
   <>
-    <Navbar/>
      <AllProductsForCollection/>
-    <Footer/>
   </>
   )
 }

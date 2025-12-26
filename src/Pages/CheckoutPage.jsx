@@ -1,7 +1,5 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
 import Checkout from '../Components/Checkout/Checkout'
-import Footer from '../Components/Footer/Footer'
 
 function CheckoutPage() {
 
@@ -12,9 +10,7 @@ function CheckoutPage() {
   
   return (
     <>
-    <Navbar/>
     <Checkout/>
-    <Footer/>
     </>
   )
 }

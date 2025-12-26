@@ -593,8 +593,21 @@
   },
   "addedToCart":"Added to the cart",
   "continue":"Continue Shopping",
-  "viewCart":"View Cart"
+  "viewCart":"View Cart",
   
+"currencies": {
+  "USD": "USD",
+  "AED": "AED",
+  "IQD": "IQD",
+  "EGP": "EGP",
+  "BHD": "BHD",
+  "SAR": "SAR",
+  "QAR": "QAR",
+  "KWD": "KWD",
+  "JOD": "JOD"
+}
+
+
 
 
 }

@@ -1,7 +1,5 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar';
 import AboutUs from '../Components/ExtraPages/AboutUs';
-import Footer from '../Components/Footer/Footer'
 import Characteristics from '../Components/Home/Characteristics';
 
 function AboutUsPage() {
@@ -10,13 +8,10 @@ function AboutUsPage() {
       }, []);
   return (
     <>
-    <Navbar/>
     <AboutUs/>
     <div className=' bg-white  py-[2%]'>
     <Characteristics />
-
     </div>
-    <Footer/>
     </>
   )
 }

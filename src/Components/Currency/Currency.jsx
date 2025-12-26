@@ -2,48 +2,75 @@ import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { useQuery } from "react-query";
 import { createPortal } from "react-dom";
+import { useTranslation } from "react-i18next";
 
-// Fetch available currencies and rates from backend
+const getUserLocation = async () => {
+  try {
+    const response = await axios.get("https://www.cosmo.global/laravel/api/location");
+    const data = response.data;
+    localStorage.setItem("location", JSON.stringify(data));
+    return data;
+  } catch (error) {
+    console.error("Location fetch error:", error);
+    return null;
+  }
+};
+
 const fetchCurrencies = async () => {
   try {
-    const response = await axios.get("https://www.cosmo.global/laravel/api/exchange-rates/USD");
-    return response.data; // [{ currency: "USD", rate: 1 }, ...]
+    const response = await axios.get(
+      "https://www.cosmo.global/laravel/api/exchange-rates/USD"
+    );
+    return response.data;
   } catch {
-    return [
-      { currency: "USD", rate: 1 },
-      { currency: "EUR", rate: 0.91 },
-      { currency: "IQD", rate: 1300 },
-      { currency: "EGP", rate: 49 },
-      { currency: "AED", rate: 3.67 },
-      { currency: "SAR", rate: 3.75 },
-      { currency: "KWD", rate: 0.31 },
-      { currency: "BHD", rate: 0.38 },
-    ];
+    return [];
   }
 };
 
 export default function Currency() {
   const btnRef = useRef(null);
-  const menuRef = useRef(null);
+  const { t } = useTranslation("global");
+
+  // ✔️ Use SAME Arabic detection method as Banner.jsx
+  const isArabic = localStorage.getItem("lang") === "ar";
+
   const [selectedCurrency, setSelectedCurrency] = useState("USD");
   const [isOpen, setIsOpen] = useState(false);
 
-  const { data: currencies = [], error, isLoading } = useQuery(
+  const { data: currencies = [], isLoading } = useQuery(
     "currencies",
     fetchCurrencies,
-    { staleTime: 5 * 60 * 1000, refetchOnWindowFocus: false }
+    { staleTime: 300000, refetchOnWindowFocus: false }
   );
 
   useEffect(() => {
-    const saved = localStorage.getItem("currencyUsed") || "USD";
-    setSelectedCurrency(saved);
-  }, []);
+    const loadCurrency = async () => {
+      let saved = localStorage.getItem("currencyUsed");
 
-  // Close on Escape
-  useEffect(() => {
-    const onKey = (e) => e.key === "Escape" && setIsOpen(false);
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
+      if (!saved) {
+        const location = await getUserLocation();
+        const userCurrency = location?.currency?.code || "USD";
+
+        const allowed = [
+          "USD",
+          "AED",
+          "EGP",
+          "BHD",
+          "IQD",
+          "SAR",
+          "QAR",
+          "KWD",
+          "JOD",
+        ];
+
+        saved = allowed.includes(userCurrency) ? userCurrency : "USD";
+        localStorage.setItem("currencyUsed", saved);
+      }
+
+      setSelectedCurrency(saved);
+    };
+
+    loadCurrency();
   }, []);
 
   const handleChange = (currency) => {
@@ -51,71 +78,81 @@ export default function Currency() {
     localStorage.setItem("currencyUsed", currency);
     setIsOpen(false);
     window.location.reload();
+    
   };
 
-  // Compute viewport position for the floating menu
   const rect = btnRef.current?.getBoundingClientRect();
   const left = rect
     ? Math.max(8, Math.min(window.innerWidth - 176 - 8, rect.left))
     : 8;
   const top = rect ? rect.bottom + 8 : 56;
 
-  const menu = isOpen && rect
-    ? createPortal(
-        <>
-          {/* Backdrop to catch outside clicks/taps */}
-          <div
-            className="fixed inset-0 z-[99998]"
-            onClick={() => setIsOpen(false)}
-            aria-hidden="true"
-          />
+  const menu =
+    isOpen && rect
+      ? createPortal(
+          <>
+            <div
+              className="fixed inset-0 z-[99998]"
+              onClick={() => setIsOpen(false)}
+            />
 
-          {/* The dropdown itself */}
-          <div
-            ref={menuRef}
-            style={{ top, left }}
-            className="fixed z-[99999] w-35 bg-white border border-gray-300 rounded-md shadow-lg"
-            onClick={(e) => e.stopPropagation()} // keep clicks inside
-          >
-            {isLoading && (
-              <div className="px-4 py-2 text-gray-500">Loading...</div>
-            )}
-            {error && (
-              <div className="px-4 py-2 text-red-500">Error loading currencies</div>
-            )}
-            {!isLoading && !error && currencies.length === 0 && (
-              <div className="px-4 py-2 text-gray-400">No currencies</div>
-            )}
-            {!isLoading &&
-              !error &&
-              currencies.map((c) => (
-                <button
-                  key={c.currency}
-                  onClick={() => handleChange(c.currency)}
-                  className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${
-                    c.currency === selectedCurrency
-                      ? "font-semibold text-[#d98865]"
-                      : "text-gray-700"
-                  }`}
-                >
-                  {c.currency}
-                </button>
-              ))}
-          </div>
-        </>,
-        document.body
-      )
-    : null;
+            <div
+              style={{ top, left }}
+              className="fixed z-[99999] bg-white border border-gray-300 rounded-md shadow-lg min-w-[150px]"
+            >
+              {isLoading && (
+                <div className="px-4 py-2 text-sm text-gray-500">
+                  Loading...
+                </div>
+              )}
+
+              {!isLoading &&
+                currencies.map((c) => {
+                  const translated =
+                    t(`currencies.${c.currency}`) !== `currencies.${c.currency}`
+                      ? t(`currencies.${c.currency}`)
+                      : c.currency;
+
+                  return (
+                    <button
+                      key={c.currency}
+                      onClick={() => handleChange(c.currency)}
+                      className={`block w-full px-4 py-2 text-sm text-left ${
+                        c.currency === selectedCurrency
+                          ? "font-semibold text-[#082252]"
+                          : "text-gray-700"
+                      }`}
+                    >
+                      {isArabic
+                        ? `${translated}`
+                        : `${c.currency}`}
+                    </button>
+                  );
+                })}
+            </div>
+          </>,
+          document.body
+        )
+      : null;
+
+  const selectedTranslated =
+    t(`currencies.${selectedCurrency}`) !==
+    `currencies.${selectedCurrency}`
+      ? t(`currencies.${selectedCurrency}`)
+      : selectedCurrency;
 
   return (
     <div className="inline-block text-left">
       <button
         ref={btnRef}
-        onClick={() => setIsOpen((p) => !p)}
-        className="sm:text-white text-black text-sm font-medium cursor-pointer"
+        onClick={() => setIsOpen((prev) => !prev)}
+        className="sm:text-[#082252] text-[#082252] text-sm font-medium cursor-pointer"
       >
-        {selectedCurrency}
+        {isArabic
+          ? `${selectedTranslated}`
+          : `${selectedTranslated}`}
       </button>
+
       {menu}
     </div>
   );

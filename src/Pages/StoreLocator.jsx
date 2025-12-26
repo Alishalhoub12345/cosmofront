@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../Components/Navbar/Navbar";
-import Footer from "../Components/Footer/Footer";
+
 import { useTranslation } from "react-i18next";
 import { LuMapPin, LuPhone } from "react-icons/lu";
 
@@ -23,7 +22,6 @@ const StoreLocator = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#f5f5f5]">
-      <Navbar />
 
       <div
         className={`flex-1 px-[2%] lg:py-[2%] pt-[2%] font-[FrutigerLTCom-Roman] ${
@@ -81,7 +79,6 @@ const StoreLocator = () => {
         </div>
       </div>
 
-      <Footer />
     </div>
   );
 };

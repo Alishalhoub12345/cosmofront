@@ -195,7 +195,7 @@ function Login() {
         <div className="flex flex-col items-center justify-center h-[350px] lg:h-[300px] sm:h-[250px] w-[40%] xl:w-[60%] md:w-[90%] md:left-[5%] xl:left-[20%] absolute top-[30%] left-[30%] z-[2] bg-white">
           <div className="absolute right-[2%] top-[5%]">
             <AiOutlineClose
-              className="text-[20px] hover:text-[#E79E7F] cursor-pointer"
+              className="text-[20px] hover:text-[#082252] cursor-pointer"
               onClick={handleClosePassword}
             />
           </div>
@@ -218,7 +218,7 @@ function Login() {
                 }`}
               >
                 {t("Authentication.login.email")}
-                <span className="text-[#E79E7F] mt-[-1%]"> *</span>
+                <span className="text-[#082252] font-bold mt-[-1%]"> *</span>
               </label>
               <input
                 type="email"
@@ -231,13 +231,13 @@ function Login() {
               />
             </div>
             {emailStatus && (
-              <p className="text-[#E79E7F] text-[12px]">{emailStatus}</p>
+              <p className="text-[#082252] text-[12px]">{emailStatus}</p>
             )}
             <div className="w-[100%] flex justify-center items-center">
               <button
                 type="submit"
                 className="h-[40px] w-[200px] text-white
-                bg-[#676f98] hover:bg-[#2f4672] hover:text-[#E79E7F]"
+                bg-[#676f98] hover:bg-[#2f4672] hover:text-[#082252]"
                 disabled={loader}
               >
                 {loader
@@ -250,22 +250,22 @@ function Login() {
       )}
 
       <div
-        className={`w-[100%] lg:h-[auto]  h-[90vh] flex-wrap font-[FrutigerLTCom-Roman] flex items-center justify-center bg-[#F1F5FF] ${
+        className={`w-[100%] lg:h-[auto]  h-[90vh] flex-wrap font-[FrutigerLTCom-Roman] flex items-center justify-center bg-[#EEEEEE] ${
           isArabic ? "flex-row-reverse text-right" : ""
         }`}
       >
         <div className="w-[50%] lg:w-[80%] sm:w-[90%] h-[100%] lg:h-[auto] p-[5%] xl:px-[0%] flex justify-center items-center flex-col">
           <div className="w-[80%]  xl:w-[100%] h-[100%] flex justify-start items-center flex-col">
             <div className="w-[80%] lg:w-[95%]">
-              <h1 className="font-[FahKwang] text-[40px] xl:text-[30px]  lg:w-[100%]   md:text-[6.5vw]">
+              <h1 className="font-[FahKwang] text-[40px] xl:text-[30px]  lg:w-[100%]   md:text-[6.5vw] text-[#082252]">
                 {t("Authentication.login.title")}
               </h1>
-              <p className="text-[15px] sm:text-[12px]">
+              <p className="text-[15px] sm:text-[12px] text-[#082252]">
                 {t("Authentication.login.desc")}
               </p>
             </div>
             <form
-              className="w-[80%] lg:w-[95%] h-[380px] lg:h-[300px] flex justify-evenly flex-col"
+              className="w-[80%] lg:w-[95%] h-[380px] lg:h-[300px] flex justify-evenly flex-col text-[#082252]"
               onSubmit={handleLogin}
             >
               <div className="h-[150px] flex flex-col justify-between">
@@ -276,11 +276,11 @@ function Login() {
                     }`}
                   >
                     {t("Authentication.login.email")}
-                    <span className="text-[#E79E7F]  mt-[-1%]"> *</span>
+                    <span className="text-[#082252]  mt-[-1%]"> *</span>
                   </label>
                   <input
                     type="email"
-                    className={`h-[40px] p-[2%] bg-[#F1F5FF] border-[1px] border-[black] rounded-[2px] ${
+                    className={`h-[40px] p-[2%] bg-[#EEEEEE] border-[1px] border-[black] rounded-[2px] ${
                       isArabic ? "text-right" : ""
                     }`}
                     value={email}
@@ -294,11 +294,11 @@ function Login() {
                     }`}
                   >
                     {t("Authentication.login.pass")}
-                    <span className="text-[#E79E7F] mt-[-1%]">*</span>
+                    <span className="text-[#082252] mt-[-1%]">*</span>
                   </label>
                   <input
                     type={showPassword ? "text" : "password"}
-                    className={`h-[40px] p-[2%] bg-[#F1F5FF] border-[1px] border-[black] rounded-[2px]  ${
+                    className={`h-[40px] p-[2%] bg-[#EEEEEE] border-[1px] border-[black] rounded-[2px]  ${
                       isArabic ? " flex text-right" : "pr-[30px]"
                     }`}
                     value={password}
@@ -307,7 +307,7 @@ function Login() {
                   />
                   {showPassword ? (
                     <IoEyeOffOutline
-                      className={`absolute hover:text-[#E79E7F] cursor-pointer ${
+                      className={`absolute hover:font-bold cursor-pointer ${
                         isArabic
                           ? "top-[50%] left-[10px]"
                           : "right-[10px] top-[55%] transform translate-y-[-50%]"
@@ -316,7 +316,7 @@ function Login() {
                     />
                   ) : (
                     <AiOutlineEye
-                      className={`absolute hover:text-[#E79E7F] cursor-pointer ${
+                      className={`absolute hover:text-[#082252] cursor-pointer ${
                         isArabic
                           ? "top-[50%] left-[10px]"
                           : "right-[10px] top-[55%] transform translate-y-[-50%]"
@@ -327,7 +327,7 @@ function Login() {
                   <div className="w-[100%] pt-[1%] flex justify-end">
                     <p
                       onClick={handleOpenPassword}
-                      className="text-right text-[12px] text-[#1e335a] hover:text-[#E79E7F] cursor-pointer"
+                      className="text-right text-[12px] text-[#1e335a] hover:underline underline-offset-1 cursor-pointer"
                     >
                       {t("Authentication.login.forgot")}
                     </p>
@@ -337,18 +337,17 @@ function Login() {
               <div className="flex items-center justify-between flex-col h-[80px]">
                 <button
                   className=" w-[100%] h-[40px] text-white
-                  bg-[#676f98] hover:bg-[#2f4672]
-                  hover:text-[#E79E7F]"
+                  bg-[#3f4771] hover:bg-[#082252]"
                   disabled={loading}
                 >
                   {loading ? "Loading..." : t("Authentication.login.loginBtn")}
                 </button>
-                {error && <p className="text-[#E79E7F] text-[12px]">{error}</p>}
+                {error && <p className="text-[#EEEEEE] font-semibold text-[12px]">{error}</p>}
                 <p className="text-[12px] text-[#1e335a]">
                   {t("Authentication.login.noAccnt")}
                   <Link
                     to="/signup-account"
-                    className="font-[700] underline underline-offset-1 hover:text-[#E79E7F]"
+                    className="font-[700]  hover:underline underline-offset-1"
                   >
                     {t("Authentication.login.sign")}
                   </Link>

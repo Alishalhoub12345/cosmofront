@@ -1,7 +1,5 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar';
 import OrderSuccessful from '../Components/Popups/OrderSuccessful';
-import Footer from '../Components/Footer/Footer';
 
 function OrderSuccessfulPage() {
 
@@ -10,9 +8,7 @@ function OrderSuccessfulPage() {
       }, []);
   return (
     <>
-    <Navbar/>
     <OrderSuccessful/>
-    <Footer/>
     </>
   )
 }

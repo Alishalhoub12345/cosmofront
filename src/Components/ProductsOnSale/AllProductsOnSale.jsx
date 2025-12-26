@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import loader from "../../images/Loader/cosmo_website_loader_transparent_Fast.gif";
-import { useQuery } from "react-query";
+// import { useQuery } from "react-query";
 import saleFlag from "../../images/Products/sales-flag-blue.png";
 import { useTranslation } from "react-i18next";
 import fallout from "../../images/Products/C-image-missing.png";
@@ -16,7 +16,7 @@ function AllProductsOnSale() {
   const [showMoreLoading, setShowMoreLoading] = useState(false);
   const [currencyValue, setCurrencyValue] = useState(1);
   const currencyUsed = localStorage.getItem("currencyUsed");
-  const [t, i18n] = useTranslation("global");
+  const [t] = useTranslation("global");
   const selectedLang = localStorage.getItem("lang");
   const isArabic = localStorage.getItem("lang") === "ar";
   useEffect(() => {

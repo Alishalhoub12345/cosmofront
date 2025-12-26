@@ -1,6 +1,5 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
-import Footer from '../Components/Footer/Footer'
+
 import AllProductsForSearch from '../Components/AllProductsForSearch/AllProductsForSearch';
 import { useLocation } from 'react-router-dom';
 
@@ -15,9 +14,7 @@ function AllProductsForSearchPage() {
 
   return (
     <>
-    <Navbar/>
     <AllProductsForSearch searchQuery={query}/>
-    <Footer/>
     </>
   )
 }

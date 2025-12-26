@@ -1,6 +1,5 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
-import Footer from '../Components/Footer/Footer'
+
 import SizeChart from '../Components/ExtraPages/SizeChart'
 
 function SizeChartPage() {
@@ -10,10 +9,8 @@ function SizeChartPage() {
       
   return (
     <>
-    <Navbar/>
     <SizeChart/>
 
-    <Footer/>
 
     </>
   )

@@ -1,7 +1,5 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
 import ResetPassword from '../Components/LoginAndRegistration/ResetPassword'
-import Footer from '../Components/Footer/Footer'
 
 function ResetPasswordPage() {
   
@@ -12,9 +10,7 @@ function ResetPasswordPage() {
 
   return (
     <>
-        <Navbar/>
         <ResetPassword/>
-        <Footer/>
     </>
   )
 }

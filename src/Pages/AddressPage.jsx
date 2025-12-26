@@ -1,7 +1,5 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
 import Address from '../Components/LoginAndRegistration/SignUP/Address'
-import Footer from '../Components/Footer/Footer'
 
 function AddressPage() {
   React.useEffect(() => {
@@ -11,9 +9,7 @@ function AddressPage() {
   
   return (
     <>
-    <Navbar/>
     <Address/>
-    <Footer/>
     </>
   )
 }

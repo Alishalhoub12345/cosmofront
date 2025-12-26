@@ -1,7 +1,5 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
 import PrivacyPolicy from '../Components/ExtraPages/PrivacyPolicy'
-import Footer from '../Components/Footer/Footer'
 
 function PrivacyPolicyPage() {
    React.useEffect(() => {
@@ -9,9 +7,7 @@ function PrivacyPolicyPage() {
    }, []);
   return (
       <>
-          <Navbar />
           <PrivacyPolicy />
-          <Footer/>
       </>
   )
 }

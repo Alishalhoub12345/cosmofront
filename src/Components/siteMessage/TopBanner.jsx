@@ -45,17 +45,17 @@ export default function TopBanner() {
 
   const Content = (
     <div className="flex items-center gap-2 px-4 py-1">
-      <img className="h-5 w-5 object-contain" src={parrot} alt="" />
+      {/* <img className="h-5 w-5 object-contain" src={parrot} alt="" /> */}
       <span className="flex items-center text-center text-[16px] font-[FahKwang] leading-none sm:text-[12px]">
         {banner.text}
       </span>
-            <img className="h-5 w-5 object-contain" src={parrot} alt="" />
+            {/* <img className="h-5 w-5 object-contain" src={parrot} alt="" /> */}
 
     </div>
   );
 
 return (
-  <div className="flex justify-center items-center w-full bg-white text-[#082252] shadow">
+  <div className="flex justify-center items-center w-full bg-[#082252] text-[#e2e2e2] shadow border-b">
     {isHttpUrl ? (
       <a
         href={banner.url}

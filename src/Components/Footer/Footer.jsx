@@ -1,9 +1,9 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { Link } from "react-router-dom";
 import { IoIosCheckmark } from "react-icons/io";
 import { AiOutlineClose } from "react-icons/ai";
-import in2info from "../../images/AboutUs/in2info-logo.png";
+import in2info from "../../images/logo1.png";
 import { useTranslation } from "react-i18next";
 
 function Footer() {
@@ -21,12 +21,11 @@ const emailSubscription = async (e) => {
 
   try {
     const res = await axios.post(
-      "https://www.cosmo.global/laravel/api/mailing-list-email", // ← fixed route
+      "https://www.cosmo.global/laravel/api/mailing-list-email",
       { email: emailSub },
       {
         headers: { "Content-Type": "application/json" },
-        // Optional: keep Axios throwing only on 5xx (handle 4xx in then)
-        // validateStatus: (status) => status < 500,
+    
       }
     );
 
@@ -78,11 +77,11 @@ const emailSubscription = async (e) => {
   return (
     <>
       {showPopUpEmail && (
-        <div className="popup flex justify-between w-[280px] bg-white px-[1%] fixed right-[2%] top-[15%] z-[20] h-[100px]">
+        <div className="popup flex justify-between w-[280px] bg-white px-[1%] fixed right-[2%] top-[15%] z-[20] h-[100px] border-t-black">
           <div className="h-full w-[50%] justify-evenly items-center flex">
             <div className="flex justify-center items-center h-full">
               {popUpInfoEmail.success ? (
-                <div className="w-[40px] h-[40px] flex justify-center items-center rounded-full text-white bg-[#676F98]">
+                <div className="w-[40px] h-[40px] flex justify-center items-center rounded-full text-white bg-[#eeeeee]">
                   <IoIosCheckmark className="text-[40px]" />
                 </div>
               ) : (
@@ -98,7 +97,7 @@ const emailSubscription = async (e) => {
         </div>
       )}
 
-      <div className="bg-[#082252] border-[white] border-[0px] lg:w-full font-[FahKwang] text-white flex justify-evenly flex-row lg:flex-col">
+      <div className="bg-[#eeeeee]  border-[#082252] border-t-2 lg:w-full font-[FahKwang] text-[#082252] flex justify-evenly flex-row lg:flex-col">
         <div
           className={`w-[65%] lg:w-full xl:w-full flex justify-center xl:justify-evenly gap-[4%] items-start lg:flex-col ${
             isArabic ? "text-[15px] text-right" : ""
@@ -106,16 +105,16 @@ const emailSubscription = async (e) => {
         >
           {/* ABOUT */}
 <div
-  className={`w-[20%] lg:px-[0%] lg:w-full xl:w-[30%] flex items-start lg:flex-col ${
+  className={`w-[30%] lg:px-[0%] lg:w-full xl:w-[30%] flex items-start lg:flex-col ${
     isArabic ? "flex-row-reverse" : ""
   }`}
 >
   <div
-    className={`lg:border-b-[0.5px] sm:pt-6 pb-[6%] pt-[4%] sm:h-[50px] lg:px-0 lg:w-full border-white h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-0 gap-2 ${
+    className={`lg:border-b-[0.5px] sm:pt-6 pb-[6%] pt-[4%] sm:h-[50px] lg:px-0 lg:w-full border-[#082252] h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-0 gap-2 ${
       isArabic ? "border-l-[0.5px] lg:border-l-0 pl-2" : "border-r-[0.5px] "
     }`}
   >
-    <p className="text-[#E79E7F] pr-1 sm:pb-0 sm:ml-3">{t("footer.about-title")}</p>
+    <p className="text-[#082252] font-semibold sm:pb-0 sm:ml-3">{t("footer.about-title")}</p>
   </div>
 
   <div
@@ -138,16 +137,16 @@ const emailSubscription = async (e) => {
 
           {/* CUSTOMER */}
 <div
-  className={`w-[30%] lg:px-[0%] lg:w-full xl:w-[30%] flex items-start lg:flex-col ${
+  className={`w-[40%] lg:px-[0%] lg:w-full xl:w-[30%] flex items-start lg:flex-col ${
     isArabic ? "flex-row-reverse" : ""
   }`}
 >
   <div
-    className={`lg:border-b-[0.5px] sm:pt-6 pb-[6%] pt-[3%] sm:h-[50px] lg:px-0 lg:w-full border-white h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-0 gap-2 ${
+    className={`lg:border-b-[0.5px] sm:pt-6 pb-[6%] pt-[3%] sm:h-[50px] lg:px-0 lg:w-full border-[#082252] h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-0 gap-2 ${
       isArabic ? "border-l-[0.5px] lg:border-l-0 pl-2" : "border-r-[0.5px] "
     }`}
   >
-    <p className="text-[#E79E7F] pr-1 sm:pb-0 sm:ml-3">{t("footer.customer-title")}</p>
+    <p className="text-[#082252] font-semibold sm:pb-0 sm:ml-3">{t("footer.customer-title")}</p>
   </div>
             <div
               className={`pt-[3%] sm:pt-2 pl-[3%] pb-[1%] lg:w-full flex flex-col ${
@@ -185,11 +184,11 @@ const emailSubscription = async (e) => {
   }`}
 >
   <div
-    className={`lg:border-b-[0.5px] sm:pt-6 pb-[6%] pt-[4%] sm:h-[50px] lg:px-0 lg:w-full border-white h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-0 gap-2 ${
+    className={`lg:border-b-[0.5px] sm:pt-6 pb-[6%] pt-[4%] sm:h-[50px] lg:px-0 lg:w-full border-[#082252] h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-0 gap-2 ${
       isArabic ? "border-l-[0.5px] lg:border-l-0 pl-1" : "border-r-[0.5px] "
     }`}
   >
-    <p className="text-[#E79E7F] pr-1 sm:pb-0 sm:ml-3">{t("footer.follow-title")}</p>
+    <p className="text-[#082252] font-semibold sm:pb-0 sm:ml-3">{t("footer.follow-title")}</p>
   </div>
             <div
               className={`sm:pt-2 pt-[4%] pb-[1%] pl-[5%] lg:w-full flex flex-col ${
@@ -239,7 +238,7 @@ const emailSubscription = async (e) => {
               onSubmit={emailSubscription}
             >
               <input
-                className={`w-[15vw] p-[2%] lg:w-[40%] md:w-[50%] xl:w-[20vw] sm:w-[80%] bg-[#dedede] rounded-[15px] h-[25px] ${
+                className={`w-[15vw] p-[2%] lg:w-[40%] md:w-[50%] xl:w-[20vw] sm:w-[80%] bg-[#dedede] rounded-[3px] h-[25px] ${
                   isArabic ? "text-right" : ""
                 }`}
                 value={emailSub}
@@ -249,7 +248,7 @@ const emailSubscription = async (e) => {
               />
               <button
                 type="submit"
-                className="w-[4vw] hover:text-white xl:w-[5vw] lg:w-[10%] md:w-[20%] border border-black bg-[#ef997b] p-[1%] rounded-[15px] h-[25px] flex justify-center items-center"
+                className="w-[4vw] hover:bg-[#082252] hover:text-[#eeeeee] xl:w-[5vw] lg:w-[10%] md:w-[20%] border border-[#082252] bg-[#eeeeee] p-[1%] rounded-[3px] h-[25px] flex justify-center items-center"
               >
                 {t("homePage.footer.btn")}
               </button>
@@ -265,7 +264,7 @@ const emailSubscription = async (e) => {
               <p>SITEMANAGER V4.0</p>
               <a
                 target="_blank"
-                className="h-[10px] w-[85px]"
+                className="h-[13px] w-[85px]"
                 href="http://www.in2info.com/"
               >
                 <img

@@ -1,6 +1,5 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
-import Footer from '../Components/Footer/Footer'
+
 import ShippingPolicy from '../Components/ExtraPages/ShippingPolicy'
 
 function ShippingPolicyPage() {
@@ -11,9 +10,7 @@ function ShippingPolicyPage() {
   
   return (
     <>
-    <Navbar/>
     <ShippingPolicy/>
-    <Footer/>
     </>
   )
 }

@@ -109,7 +109,7 @@ useEffect(() => {
 
   return (
     <div className="">
-      <div className=" w-[100%] uppercase flex items-center  h-[60px]">
+      <div className=" w-[100%] uppercase flex items-center text-[#082252] h-[60px]">
         <div
           className={`flex h-[50px] justify-end items-center  md:w-[100%] ${
             isArabic ? " w-[100%] text-[15px] " : "w-[600px] flex-row-reverse"
@@ -127,7 +127,7 @@ useEffect(() => {
           <Link
             to={`/products/department/${collectionTitle?.collection?.departments[0].departmentLink}`}
             className={`border-x-[1.5px] sm:text-[12px]  px-[2%] py-[0.5%] hover:cursor-pointer ${
-              isArabic ? "border-l-[black]" : "border-r-[black]"
+              isArabic ? "border-l-[#082252]" : "border-r-[#082252]"
             }`}
           >
             <strong>
@@ -156,7 +156,7 @@ useEffect(() => {
                 </div>
 
                 <div
-                  className={` md:pt-[0%] relative w-[20%] lg:w-[80%] md:w-[100%]  pt-[5%] md:py-[0%] min-h-[20rem] xl:min-h-[15rem] lg:min-h-[10rem] md:min-h-[7rem] sm:min-h-[6rem]  py-[3%]  mt-[0.4%] text-black flex justify-center md:justify-start flex-col ${
+                  className={` md:pt-[0%] relative w-[20%] lg:w-[80%] md:w-[100%]  pt-[5%] md:py-[0%] min-h-[20rem] xl:min-h-[15rem] lg:min-h-[10rem] md:min-h-[7rem] sm:min-h-[6rem]  py-[3%]  mt-[0.4%] text-[#082252] flex justify-center md:justify-start flex-col ${
                     isArabic ? "text-right " : "items-start "
                   }`}
                 >
@@ -246,7 +246,7 @@ useEffect(() => {
                               </div>
                             </>
                           )}
-                        <div className=" h-[75px] xl:h-[70px] md:h-[60px] py-[3%] text-black ">
+                        <div className=" h-[75px] xl:h-[70px] md:h-[60px] py-[3%] text-[#082252]">
                           <p
                             className={`leading-[1] font-[100]  uppercase ${
                               isArabic
@@ -311,7 +311,7 @@ useEffect(() => {
         </>
       ) : (
         <>
-          <div className="h-[80vh] flex justify-center items-center text-[black]">
+          <div className="h-[80vh] flex justify-center items-center text-[#082252]">
             <img
               className="w-[50px] md:w-[30px] sm:w-[20px]"
               src={loader}
