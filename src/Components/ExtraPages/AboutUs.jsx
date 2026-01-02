@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import image1 from "../../images/AboutUs/aboutus_1.jpg";
 import image2 from "../../images/AboutUs/aboutus_2.jpg";
 import diamond from "../../images/AboutUs/Vector.svg";
-import peachC from "../../images/AboutUs/C peach on blue.png";
-import parrot from "../../images/Home/parrot.png";
+import peachC from "../../images/AboutUs/C-navy.png";
+import parrot from "../../images/Home/C-navy.png";
 import { useTranslation } from "react-i18next";
 
 function AboutUs() {
@@ -21,8 +21,8 @@ function AboutUs() {
   const isArabic = lang === "ar";
 
   return (
-    <div className="bg-[white] sm:text-[11px]">
-      <div className="w-[100%] uppercase bg-[#F1F1F1] xl:h-[auto] flex flex-row lg:flex-col justify-between items-center h-[80vh]">
+    <div className="bg-[white] sm:text-[11px] text-[#082252]">
+      <div className="w-[100%]  uppercase bg-[#F1F1F1] xl:h-[auto] flex flex-row lg:flex-col justify-between items-center h-[80vh]">
         <div
           className={`  w-[50%] lg:w-[80%] lg:py-[5%] md:pt-[10%] flex justify-center flex-col items-center text-center 2xl:p-[0%] p-[5%] ${
             isArabic ? " text-[20px] " : ""
@@ -90,7 +90,7 @@ function AboutUs() {
         <div className="flex justify-center w-[100%] items-center flex-col">
           <img
             src={parrot}
-            className="xl:w-[80px] pb-[1%] w-[100px]"
+            className="xl:w-[80px] pb-[1%] w-[160px]"
             alt="parrot"
           />
           <h1

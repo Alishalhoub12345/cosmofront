@@ -68,7 +68,7 @@ function OrderSuccessful() {
             <div className=" flex justify-center items-center flex-col">
               <div className=" w-[70px] bg-[#D1D4E0] h-[70px] rounded-full flex items-center justify-center">
                 <div className=" w-[55px] bg-[#B1B6CA] h-[55px] rounded-full flex items-center justify-center">
-                  <div className=" pr-[8%] bg-[#656E9A] w-[40px] h-[40px] rounded-full flex items-center justify-center ">
+                  <div className=" pr-[8%] bg-[#082252] w-[40px] h-[40px] rounded-full flex items-center justify-center ">
                     <div className=" w-[20px] ">
                       <img
                         className="w-[100%] h-[100%] object-cover"
@@ -89,8 +89,8 @@ function OrderSuccessful() {
               <Link
                 to="/"
                 className=" w-[90%] h-[40px] text-white
-                    bg-[#676f98] hover:bg-[#2f4672]
-                    hover:text-[#E79E7F] flex justify-center items-center"
+                    bg-[#082252] hover:bg-[#2f4672]
+                    hover:text-[#082252] flex justify-center items-center"
               >
                 {t("popUps.orderPlaced.btn")}
               </Link>

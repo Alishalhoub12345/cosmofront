@@ -98,7 +98,7 @@ function DashboardMenu() {
        
       </div>
       <div className='w-[100%] h-[80px] items-center flex justify-end'>
-        <div className='flex w-[150px] bg-[#E79E7F] text-white hover:bg-[#f3b194] cursor-pointer h-[40px] justify-evenly items-center'>
+        <div className='flex w-[150px] bg-[#082252] text-white cursor-pointer h-[40px] justify-evenly items-center'>
           <RiLogoutBoxRLine className='w-[25px] h-[30px]' />
           <button className='h-[30px]' onClick={handleLogout}>{t("dashboard.personalInfo.logout")}</button>
         </div> 

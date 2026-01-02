@@ -61,8 +61,8 @@
     "fabric": "القماش",
     "washing": "تعليمات الغسيل",
     "color": "اللون ",
-    "sizeChart": "     لإيجاد المقاس الملائم يرجى التوجه إلى   <a href=\"/size-chart\"> <strong class=\"text-[#1e335a] hover:text-[#ea9e7e]\"> دليل المقاسات</strong></a>       ",
-    "shipping": "   للمزيد من المعلومات حول عملية الشحن ، يرجى التوجه إلى <a href=\"/shipping-policy\"> <strong class=\"text-[#1e335a] hover:text-[#ea9e7e]\">  سياسة الشحن </strong></a>",
+    "sizeChart": "     لإيجاد المقاس الملائم يرجى التوجه إلى   <a href=\"/size-chart\"> <strong class=\"text-[#1e335a] hover:text-[#082252]\"> دليل المقاسات</strong></a>       ",
+    "shipping": "   للمزيد من المعلومات حول عملية الشحن ، يرجى التوجه إلى <a href=\"/shipping-policy\"> <strong class=\"text-[#1e335a] hover:text-[#082252]\">  سياسة الشحن </strong></a>",
     "wearing": "الإطلالة",
     "cart": "أضف إلى السلة",
     "maxQuantity": "لقد وصلت إلى الكمية القصوى",
@@ -132,8 +132,8 @@
     "leb": "The Net :لبنان",
     "international": " Sky-Net :دوليًا",
     "estimated": "وقت التسليم المتوقّع",
-    "lebDays": "يوم عمل 1-5",
-    "intDays": " 5-15 يوم عمل",
+    "lebDays": "من 5 الى 7 يوم عمل",
+    "intDays": "من 5 الى 15 يوم عمل",
     "cost": "تكلفة الشحن",
     "costLeb": "5.00 USD",
     "costInt": "يحتسب عند صفحة الدفع",
@@ -160,7 +160,7 @@
       "sec2p2": " .يتحمّل الزبون مسؤولية رسوم الاستيراد المطبقة خلال أو بعد احتساب الشحن (التعريفات والضرائب). يحتسب الثمن وفق وجهة الطرد وتتفاوت قيمة الضرائب من بلد الى اّخر",
       "sec2p3": " .ملاحظة:  ينبغي دفع هذه الرسوم لتحرير طلبك من الجمارك",
       "section3Title": " :المنتجات ذات عيوب",
-      "sec3p1": "<a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>+ 961 1 593 400.</a> على The Net  مسؤولًا عن أي منتج تالف أو ضائع خلال الشحن. إذا تلقيت طلبك تالفًا أو به عيوب ، يرجى التواصل مع COSMO لا يعتبر",
+      "sec3p1": "<a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#082252]'>+ 961 1 593 400.</a> على The Net  مسؤولًا عن أي منتج تالف أو ضائع خلال الشحن. إذا تلقيت طلبك تالفًا أو به عيوب ، يرجى التواصل مع COSMO لا يعتبر",
       "sec3p2": " .يرجى الاحتفاظ بجميع مواد التعبئة والتغليف والقطع ذات عيوب قبل تقديم مطالبة"
     }
   },
@@ -189,12 +189,12 @@
         "sec2p6": ".فورًا بالخصم من بطاقتك COSMO عند تقديم طلب الشراء ، فإنك توافق على أن هذا يخول",
         "sec2p7": ".سيتم خصم الدفعة وتسويتها من حسابك على الفور في وقت طلبك",
         "sec2p8": ".بمجرد تجهيز طلبك ، ستتلقى على الفور رسالة بريد إلكتروني تحتوي على فاتورتك",
-        "sec2p9": "<a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a> : إذا كنت تواجه أي مشكلة في متابعة الدفع ، فيرجى التواصل معنا على "
+        "sec2p9": "<a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:font-semibold'>customercare@cosmo.global</a> : إذا كنت تواجه أي مشكلة في متابعة الدفع ، فيرجى التواصل معنا على "
       },
       "WireTransfer": {
         "title": " :حوالة مصرفية",
-        "sec3p1": "<a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a> :أو التحويل المصرفي.لمزيد من التفاصيل حول الحوالات المصرفية ، يرجى التواصل معنا على Western Union يمكنك أيضًا الدفع بواسطة حوالة إما عبر ",
-        "sec3p2": "<a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a> :لا تتردد في الدردشة معنا عبر تطبيق واتساب أو عبر البريد الإلكتروني لمزيد من المعلومات"
+        "sec3p1": "<a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:font-semibold'>customercare@cosmo.global</a> :أو التحويل المصرفي.لمزيد من التفاصيل حول الحوالات المصرفية ، يرجى التواصل معنا على Western Union يمكنك أيضًا الدفع بواسطة حوالة إما عبر ",
+        "sec3p2": "<a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:font-semibold'>customercare@cosmo.global</a> :لا تتردد في الدردشة معنا عبر تطبيق واتساب أو عبر البريد الإلكتروني لمزيد من المعلومات"
       }
     }
   },
@@ -202,8 +202,8 @@
     "titleMain": "سياسة التبديل والإرجاع",
     "p1": ".يمكن تبديل القطع بغلافها غير مفتوحة في غضون 15 يوماً من إستلام طلبك أو إرجاعها مقابل قسيمة ائتمان المتجر بالمبلغ الذي تم دفعه",
     "p2": "يمكن إرجاع القطعة على أن تكون غير مستعملة وغير تالفة، مع كل البطاقات وفي التغليف الأصلي",
-    "p3": ".مع رقم طلبك والتفاصيل <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>+961 71 660 774</a> إذا أردت تبديل قطعة يرجى التواصل معنا على ",
-    "p4": ".سنقوم بالرد لإبلاغك بتعليمات حول كيفية إرجاع العنصر الخاص بك والحصول على قسيمة الائتمان.مع رقم طلبك والتفاصيل عن المنتج الذي تود إرجاعه <a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a> إذا كنت تريد إرجاع أي قطعة، يرجى التواصل معنا على",
+    "p3": ".مع رقم طلبك والتفاصيل <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:font-semibold'>+961 71 660 774</a> إذا أردت تبديل قطعة يرجى التواصل معنا على ",
+    "p4": ".سنقوم بالرد لإبلاغك بتعليمات حول كيفية إرجاع العنصر الخاص بك والحصول على قسيمة الائتمان.مع رقم طلبك والتفاصيل عن المنتج الذي تود إرجاعه <a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:font-semibold'>customercare@cosmo.global</a> إذا كنت تريد إرجاع أي قطعة، يرجى التواصل معنا على",
     "p5": ".نعتذر لا توجد لدينا سياسة استرداد الأموال",
 
     "section1": {
@@ -214,7 +214,7 @@
       "section2Title": ":الطلبات العالمية ",
       "sec2p1": ".يرجى أخذ العلم أن جميع المبيعات الدولية نهائية. نظرًا لطبيعة عملنا، ولأسباب متعلقة بالشحن، فإننا نلتزم بسياسة سياسة عدم التبديل / عدم الإرجاع",
       "sec2p2": ".يُنصح بالتحقق من المقاسات الخاصة بك قبل الشراء",
-      "sec2p3": " .WhatsApp: <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>+961 71 660 774</a> أو عبر <a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a> :في حالات نادرة فقط، حيث يكون الخطأ من جانبنا، سنقوم بإجراء استثناء لتبديل المنتج. يرجى الاتصال بنا في غضون 48 ساعة من استلام الحزمة عبر البريد الإلكتروني: "
+      "sec2p3": " .WhatsApp: <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:font-semibold'>+961 71 660 774</a> أو عبر <a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:font-semibold'>customercare@cosmo.global</a> :في حالات نادرة فقط، حيث يكون الخطأ من جانبنا، سنقوم بإجراء استثناء لتبديل المنتج. يرجى الاتصال بنا في غضون 48 ساعة من استلام الحزمة عبر البريد الإلكتروني: "
     }
   },
   "privacyPolicy": {
@@ -391,12 +391,12 @@
     "call": {
       "callUs": "اتصل بنا",
       "p1": "تواصل معنا على الرقم التالي",
-      "p2": " <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>+961 71 660 774</a>"
+      "p2": " <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:font-semibold'>+961 71 660 774</a>"
     },
     "email": {
       "writeUs": "اكتب لنا",
       "p1": "أرسل لنا رسالة على",
-      "p2": " <a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a>"
+      "p2": " <a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:font-semibold'>customercare@cosmo.global</a>"
     }
   },
   "Authentication": {
@@ -497,16 +497,16 @@
     "questions": [
       {
         "question": "كيف يمكنني الطلب والدفع؟",
-        "answer1": "يرجى الرجوع إلى قسم <Link className='text-[#E79E7F] cursor-pointer' to='/payment-policy'>الطلبات والمدفوعات</Link> للحصول على المعلومات."
+        "answer1": "يرجى الرجوع إلى قسم <Link className='text-[#082252] cursor-pointer' to='/payment-policy'>الطلبات والمدفوعات</Link> للحصول على المعلومات."
       },
       {
         "question": "هل أحتاج إلى إنشاء حساب لتقديم طلب؟",
-        "answer1": "لا، لست بحاجة إلى إنشاء حساب لتتمكن من التسوق على الموقع الرسمي <Link className='text-[#E79E7F] cursor-pointer' to='/'>cosmo.global</Link>.",
+        "answer1": "لا، لست بحاجة إلى إنشاء حساب لتتمكن من التسوق على الموقع الرسمي <Link className='text-[#082252] cursor-pointer' to='/'>cosmo.global</Link>.",
         "answer2": "ما عليك سوى الدخول إلى الموقع؛ إضافة عنصر / عدة عناصر إلى حقيبتك؛ انقر على أيقونة الحقيبة في الزاوية اليمنى العليا من الصفحة؛ تحقق من اختيارك؛ تابع إلى الخروج؛ أدخل تفاصيل الشحن الخاصة بك؛ تابع إلى تفاصيل الدفع؛ أكد طلبك وقد انتهيت!"
       },
       {
         "question": "هل تبقى معلوماتي الشخصية خاصة؟",
-        "answer1": "يرجى التأكد من أن معلوماتك الشخصية تبقى خاصة وسرية ولن نقوم ببيعها لطرف ثالث لأغراض التسويق. لمزيد من المعلومات، يرجى قراءة <Link className='text-[#E79E7F] cursor-pointer' to='/privacy-policy'>سياسة الخصوصية</Link> المنشورة على موقعنا بالكامل."
+        "answer1": "يرجى التأكد من أن معلوماتك الشخصية تبقى خاصة وسرية ولن نقوم ببيعها لطرف ثالث لأغراض التسويق. لمزيد من المعلومات، يرجى قراءة <Link className='text-[#082252] cursor-pointer' to='/privacy-policy'>سياسة الخصوصية</Link> المنشورة على موقعنا بالكامل."
       },
       {
         "question": "ماذا أفعل في حال نسيت كلمة المرور؟",

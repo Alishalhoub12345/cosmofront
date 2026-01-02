@@ -11,7 +11,8 @@ function Footer() {
   const [t, i18n] = useTranslation("global");
   const [showPopUpEmail, setShowPopUpEmail] = useState(false);
   const [lang, setLang] = useState(localStorage.getItem("lang") || "en");
-  const isArabic = lang === "ar";
+  const isArabic = i18n.language === "ar";
+
   const [popUpInfoEmail, setPopUpInfoEmail] = useState({
     message: "",
     success: false,
@@ -110,8 +111,8 @@ const emailSubscription = async (e) => {
   }`}
 >
   <div
-    className={`lg:border-b-[0.5px] sm:pt-6 pb-[6%] pt-[4%] sm:h-[50px] lg:px-0 lg:w-full border-[#082252] h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-0 gap-2 ${
-      isArabic ? "border-l-[0.5px] lg:border-l-0 pl-2" : "border-r-[0.5px] "
+    className={`sm:pt-6 pb-[6%] pt-[4%] sm:h-[50px] lg:px-0 lg:w-full h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-0 gap-2 ${
+      isArabic ? "pl-2" : "border-r-[0px] "
     }`}
   >
     <p className="text-[#082252] font-semibold sm:pb-0 sm:ml-3">{t("footer.about-title")}</p>
@@ -142,8 +143,8 @@ const emailSubscription = async (e) => {
   }`}
 >
   <div
-    className={`lg:border-b-[0.5px] sm:pt-6 pb-[6%] pt-[3%] sm:h-[50px] lg:px-0 lg:w-full border-[#082252] h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-0 gap-2 ${
-      isArabic ? "border-l-[0.5px] lg:border-l-0 pl-2" : "border-r-[0.5px] "
+    className={`sm:pt-6 pb-[6%] pt-[3%] sm:h-[50px] lg:px-0 lg:w-full h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-0 gap-2 ${
+      isArabic ? "pl-2" : "border-r-[0px] "
     }`}
   >
     <p className="text-[#082252] font-semibold sm:pb-0 sm:ml-3">{t("footer.customer-title")}</p>
@@ -184,8 +185,8 @@ const emailSubscription = async (e) => {
   }`}
 >
   <div
-    className={`lg:border-b-[0.5px] sm:pt-6 pb-[6%] pt-[4%] sm:h-[50px] lg:px-0 lg:w-full border-[#082252] h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-0 gap-2 ${
-      isArabic ? "border-l-[0.5px] lg:border-l-0 pl-1" : "border-r-[0.5px] "
+    className={`sm:pt-6 pb-[6%] pt-[4%] sm:h-[50px] lg:px-0 lg:w-full h-[20vh] xl:h-[25vh] lg:h-[5px] lg:border-r-0 gap-2 ${
+      isArabic ? "pl-2" : "border-r-[0px] "
     }`}
   >
     <p className="text-[#082252] font-semibold sm:pb-0 sm:ml-3">{t("footer.follow-title")}</p>
@@ -218,6 +219,14 @@ const emailSubscription = async (e) => {
                 className="hover:font-[900]"
               >
                 YouTube
+              </a>                
+              <a
+                href="https://www.tiktok.com/@cosmo.glob"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:font-[900]"
+              >
+                TikTok
               </a>
             </div>
           </div>

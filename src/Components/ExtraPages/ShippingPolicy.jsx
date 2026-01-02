@@ -15,7 +15,7 @@ function ShippingPolicy() {
 
   return (
     <div
-      className={`w-[100%] px-[5%] h-[auto] lg:py-[2%] pt-[2%] md:pt-[5%] font-[FrutigerLTCom-Roman] ${
+      className={`w-[100%] px-[5%] h-[auto] lg:py-[2%] pt-[2%] md:pt-[5%] font-[FrutigerLTCom-Roman] text-[#082252]${
         isArabic
           ? " text-[20px] lg:text-[15px] w-[100%] text-right"
           : ""
@@ -236,15 +236,16 @@ function ShippingPolicy() {
                 }
               >
                 {t("shipping.intOrder.sec1p3")}{" "}
-                <a
-                  className={`underline underline-offset-2 cursor-pointer hover:text-[#E79E7F] ${
-                    isArabic
-                      ? " text-[20px] lg:text-[15px] w-[100%] text-right"
-                      : ""
-                  }`}
-                >
-                  www.thenet.group/track
-                </a>
+<a
+  href="https://www.thenet.group/track"
+  target="_blank"
+  rel="noopener noreferrer"
+  className={`underline underline-offset-2 cursor-pointer hover:font-semibold ${
+    isArabic ? "text-[20px] lg:text-[15px] w-[100%] text-right" : ""
+  }`}
+>
+  www.thenet.group/track
+</a>
               </p>
               <p
                 className={

@@ -192,11 +192,11 @@ function ManageAddress() {
                       }`}
                     >
                       {t("Authentication.signUp.country")}
-                      <span className="text-[#E79E7F]  mt-[-1%]">*</span>
+                      <span className="text-[#082252]  mt-[-1%]">*</span>
                     </label>
                     <select
                       ref={countryRef}
-                      className={`h-[40px]  p-[2%] border-[1px] border-[black] rounded-[2px] ${
+                      className={`h-[40px]  p-[2%] border-[1px] border-[#082252] rounded-[2px] ${
                         isArabic ? "text-right" : ""
                       }`}
                       defaultValue={userAddress?.countryName || ""}
@@ -217,12 +217,12 @@ function ManageAddress() {
                       }`}
                     >
                       {t("Authentication.signUp.zipCode")}
-                      <span className="text-[#E79E7F]  mt-[-1%]">*</span>{" "}
+                      <span className="text-[#082252]  mt-[-1%]">*</span>{" "}
                     </label>
                     <input
                       ref={zipCodeRef}
                       type="text"
-                      className={`h-[40px]  p-[2%] border-[1px] border-[black] rounded-[2px] ${
+                      className={`h-[40px]  p-[2%] border-[1px] border-[#082252] rounded-[2px] ${
                         isArabic ? "text-right" : ""
                       }`}
                       defaultValue={userAddress?.zip_code || ""}
@@ -242,12 +242,12 @@ function ManageAddress() {
                       }`}
                     >
                       {t("Authentication.signUp.region")}
-                      <span className="text-[#E79E7F]  mt-[-1%]">*</span>
+                      <span className="text-[#082252]  mt-[-1%]">*</span>
                     </label>
                     <input
                       ref={regionRef}
                       type="text"
-                      className={`h-[40px]  p-[2%] border-[1px] border-[black] rounded-[2px] ${
+                      className={`h-[40px]  p-[2%] border-[1px] border-[#082252] rounded-[2px] ${
                         isArabic ? "text-right" : ""
                       }`}
                       defaultValue={userAddress?.region || ""}
@@ -261,12 +261,12 @@ function ManageAddress() {
                       }`}
                     >
                       {t("Authentication.signUp.city")}
-                      <span className="text-[#E79E7F]  mt-[-1%]">*</span>
+                      <span className="text-[#082252]  mt-[-1%]">*</span>
                     </label>
                     <input
                       ref={cityRef}
                       type="text"
-                      className={`h-[40px]  p-[2%] border-[1px] border-[black] rounded-[2px] ${
+                      className={`h-[40px]  p-[2%] border-[1px] border-[#082252] rounded-[2px] ${
                         isArabic ? "text-right" : ""
                       }`}
                       defaultValue={userAddress?.city || ""}
@@ -286,12 +286,12 @@ function ManageAddress() {
                       }`}
                     >
                       {t("Authentication.signUp.address")}
-                      <span className="text-[#E79E7F]  mt-[-1%]">*</span>
+                      <span className="text-[#082252]  mt-[-1%]">*</span>
                     </label>
                     <input
                       ref={addressRef}
                       type="text"
-                      className={`h-[40px]  p-[2%] border-[1px] border-[black] rounded-[2px] ${
+                      className={`h-[40px]  p-[2%] border-[1px] border-[#082252] rounded-[2px] ${
                         isArabic ? "text-right" : ""
                       }`}
                       defaultValue={userAddress?.address || ""}
@@ -305,12 +305,12 @@ function ManageAddress() {
                       }`}
                     >
                       {t("Authentication.signUp.apartment")}
-                      <span className="text-[#E79E7F]  mt-[-1%]">*</span>
+                      <span className="text-[#082252]  mt-[-1%]">*</span>
                     </label>
                     <input
                       ref={apartmentRef}
                       type="text"
-                      className={`h-[40px]  p-[2%] border-[1px] border-[black] rounded-[2px] ${
+                      className={`h-[40px]  p-[2%] border-[1px] border-[#082252] rounded-[2px] ${
                         isArabic ? "text-right" : ""
                       }`}
                       defaultValue={userAddress?.apartment || ""}
@@ -323,7 +323,7 @@ function ManageAddress() {
                     isArabic ? "" : "justify-end items-end"
                   }`}
                 >
-                  <div className="flex w-[150px] hover:bg-[#2f4672] bg-[#676f98] hover:text-[#E79E7F] text-white cursor-pointer h-[30px] justify-evenly items-center">
+                  <div className="flex w-[150px] hover:bg-[#082252] bg-[#676f98]  text-white cursor-pointer h-[30px] justify-evenly items-center">
                     <button
                       className="h-[30px]"
                       type="submit"

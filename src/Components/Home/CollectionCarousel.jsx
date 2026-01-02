@@ -40,8 +40,8 @@ function CollectionCarousel() {
   }, [i18n]);
 
   return (
-    <div className="flex justify-center items-center flex-col">
-      <h1 className="text-[3vw] pb-[2%] font-[400] font-[FahKwang] xl:text-[35px] md:text-[8vw]">
+    <div className="flex justify-center items-center flex-col text-[#082252]">
+      <h1 className="text-[3vw] text-[#082252] pb-[2%] font-[400] font-[FahKwang] xl:text-[35px] md:text-[8vw]">
         {t("homePage.ourCollection")}
       </h1>
 
@@ -64,11 +64,11 @@ function CollectionCarousel() {
   spaceBetween={2}
   freeMode={true}
   pagination={{ clickable: true }}
-  autoplay={{
-    delay: 1700,
-    disableOnInteraction: false,   
-    pauseOnMouseEnter: false,     
-  }}
+  // autoplay={{
+  //   delay: 1700,
+  //   disableOnInteraction: false,   
+  //   pauseOnMouseEnter: false,     
+  // }}
   loop={true}                      
   navigation={{
     nextEl: ".collections-swiper-next",

@@ -16,7 +16,7 @@ function Characteristics() {
   }, [i18n]);
   
   return (
-    <div className="h-[auto] w-[100%] p-[5%] px-[15%] lg:px-[10%] ">
+    <div className="h-[auto] w-[100%] p-[5%] px-[15%] lg:px-[10%] text-[#082252] ">
         <div className="flex justify-evenly items-start">
             <div className=" w-[35%] h-[100%] flex justify-center items-center flex-col">
             <img className="w-[200px] lg:w-[20vw]" src={luxury} alt="icon-1"></img>

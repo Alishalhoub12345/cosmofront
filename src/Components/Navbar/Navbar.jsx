@@ -155,7 +155,7 @@ const BurgerIcon = ({ className, onClick }) => (
             }`}
           />
 
-          <div className="mt-4 bg-white rounded max-h-[60vh] overflow-auto p-3 text-black">
+          <div className="mt-4 bg-white rounded max-h-[60vh] overflow-auto p-3 text-[#082252]">
             {message && <p>{message}</p>}
 
             {results.length > 0 &&
@@ -177,11 +177,11 @@ const BurgerIcon = ({ className, onClick }) => (
       {/* ---------------------- MOBILE NAVBAR (≤1350px) ---------------------- */}
       <div className="hidden xl:flex h-[70px] bg-[#f0f0f0ab] text-[#082252] items-center justify-between px-4 shadow">
         {/* Left icons */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 text-[#082252]">
           {menuOpen ? (
             <AiOutlineClose className="text-2xl" onClick={() => setMenuOpen(false)} />
           ) : (
-            <div className="w-6 h-6 flex items-center justify-center">
+            <div className="w-6 h-6 flex items-center justify-center text-[#082252]">
 <BurgerIcon
   className="w-6 h-6 text-[#082252]"
   onClick={() => setMenuOpen(true)}
@@ -224,7 +224,7 @@ const BurgerIcon = ({ className, onClick }) => (
 
       {/* ---------------------- MOBILE DROPDOWN MENU ---------------------- */}
       {menuOpen && (
-        <div className="hidden xl:flex flex-col bg-white shadow max-h-[70vh] overflow-y-auto border-t">
+        <div className="text-[#082252] hidden xl:flex flex-col bg-white shadow max-h-[70vh] overflow-y-auto border-t">
           {departments?.map((dep) => (
             <div key={dep.id} className="border-b">
               {/* CLICKABLE + DROPDOWN */}
@@ -320,7 +320,10 @@ const BurgerIcon = ({ className, onClick }) => (
         </Link>
 
         {/* Departments */}
-        <div className={`flex ${isArabic ? "flex-row-reverse" : ""} text-[#082252] h-full`}>
+<div
+  className={`flex flex-nowrap ${isArabic ? "flex-row-reverse" : ""} 
+  text-[#082252] h-full text-[clamp(10px,0.9vw,16px)]`}
+>
           {departments?.map((dep) => (
             <div
               key={dep.id}
@@ -329,12 +332,12 @@ const BurgerIcon = ({ className, onClick }) => (
                 setDropdown(null);
                 setSubDropdown(null);
               }}
-              className="relative w-[20vh] h-full flex justify-center items-center border-r bg-[#f0f0f0ab]"
+className="relative flex-1 min-w-0 h-full flex justify-center items-center border-r bg-[#f0f0f0ab] text-center"
             >
               {/* CLICKABLE DEPARTMENT */}
               <Link
                 to={`/products/department/${dep.departmentLink}`}
-                className="hover:font-bold font-[FahKwang]"
+className="hover:font-bold font-[FahKwang] whitespace-nowrap truncate px-2 w-[200px]"
               >
                 {dep.departmentName}
               </Link>

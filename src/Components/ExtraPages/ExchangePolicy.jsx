@@ -15,7 +15,7 @@ function ExchangePolicy() {
 
   return (
     <div
-      className={`w-[100%] h-[80vh] px-[5%] lg:h-[auto] lg:py-[2%] pt-[2%] font-[FrutigerLTCom-Roman] ${
+      className={`text-[#082252] w-[100%] h-[80vh] px-[5%] lg:h-[auto] lg:py-[2%] pt-[2%] font-[FrutigerLTCom-Roman] ${
         isArabic ? " text-right w-[100%] text-[20px] lg:text-[15px]" : ""
       }`}
     >

@@ -83,7 +83,7 @@ body {
  
  circle {
   fill: none;
-  stroke: #E79E7F;
+  stroke: #082252;
   stroke-width: 2;
   stroke-dasharray: 1, 200;
   stroke-dashoffset: 0;
@@ -130,7 +130,7 @@ input[type="radio"]:checked {
   -moz-appearance: none;
   width: 0.9em;
   height: 0.9em;
-  background-color: #ea9e7e;
+  background-color: #082252;
   border-radius: 50%;
   border: 3.5px solid #dedede;
   outline: none;
@@ -342,7 +342,7 @@ height: 40px !important;
   padding-bottom: 2%;
   font-weight: 200;
   border-left:0.5px solid black;
-  color:#E79E7F;
+  color:#082252;
 }
 .swiper-button-next,
 .swiper-button-prev {

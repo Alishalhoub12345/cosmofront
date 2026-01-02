@@ -11,7 +11,7 @@ function DoesntExist() {
           to="/"
           className=" w-[200px] h-[40px] text-white
                     bg-[#676f98] hover:bg-[#2f4672]
-                    hover:text-[#E79E7F] flex justify-center items-center"
+                    hover:text-[#082252] flex justify-center items-center"
         >
           Back to Home
         </Link>

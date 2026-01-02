@@ -112,11 +112,11 @@ function Address() {
                     }`}
                   >
                     <Link to="/signup-account">
-                      <div className="border-[0.5px] border-[black] rounded-full w-[100%] h-[100%] hover:border-[#E79E7F] cursor-pointer">
+                      <div className="border-[0.5px] border-[#082252] rounded-full w-[100%] h-[100%]  cursor-pointer">
                         {isArabic ? (
-                          <IoIosArrowRoundForward className="w-[100%] h-[100%] hover:text-[#E79E7F]" />
+                          <IoIosArrowRoundForward className="w-[100%] h-[100%] hover:text-[#082252]" />
                         ) : (
-                          <IoIosArrowRoundBack className="w-[100%] h-[100%] hover:text-[#E79E7F]" />
+                          <IoIosArrowRoundBack className="w-[100%] h-[100%] hover:text-[#082252]" />
                         )}
                       </div>
                     </Link>
@@ -147,13 +147,13 @@ function Address() {
                         }`}
                       >
                         {t("Authentication.signUp.country")}
-                        <span className="text-[#E79E7F] h-[100%]">*</span>
+                        <span className="text-[#082252] h-[100%]">*</span>
                       </label>
                       <div
                         className={`  ${isArabic ? "" : "dropdown-container"}`}
                       >
                         <select
-                          className={`h-[4.5vh] px-[2%] bg-[#F1F5FF] border-[0.5px] border-[black] rounded-[2px] custom-select cursor-pointer w-[100%] text-[0.8vw] xl:text-[15px] ${
+                          className={`h-[4.5vh] px-[2%] bg-[#F1F5FF] border-[0.5px] border-[#082252] rounded-[2px] custom-select cursor-pointer w-[100%] text-[0.8vw] xl:text-[15px] ${
                             isArabic ? "  text-right" : ""
                           }`}
                           value={selectedCountry}
@@ -175,14 +175,14 @@ function Address() {
                         }`}
                       >
                         {t("Authentication.signUp.region")}
-                        <span className="text-[#E79E7F] h-[100%]">*</span>
+                        <span className="text-[#082252] h-[100%]">*</span>
                       </label>
                       <input
                         type="text"
                         required
                         value={region}
                         onChange={(e) => setRegion(e.target.value)}
-                        className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[black] rounded-[2px] ${
+                        className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[#082252] rounded-[2px] ${
                           isArabic ? " text-right" : ""
                         }`}
                       />
@@ -194,14 +194,14 @@ function Address() {
                         }`}
                       >
                         {t("Authentication.signUp.address")}
-                        <span className="text-[#E79E7F] h-[100%]">*</span>
+                        <span className="text-[#082252] h-[100%]">*</span>
                       </label>
                       <input
                         type="text"
                         required
                         value={address}
                         onChange={(e) => setAddress(e.target.value)}
-                        className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[black] rounded-[2px] ${
+                        className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[#082252] rounded-[2px] ${
                           isArabic ? " text-right" : ""
                         }`}
                       />
@@ -214,14 +214,14 @@ function Address() {
                           }`}
                         >
                           {t("Authentication.signUp.city")}
-                          <span className="text-[#E79E7F] h-[100%]">*</span>
+                          <span className="text-[#082252] h-[100%]">*</span>
                         </label>
                         <input
                           type="text"
                           required
                           value={city}
                           onChange={(e) => setCity(e.target.value)}
-                          className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[black] rounded-[2px] w-[100%] ${
+                          className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[#082252] rounded-[2px] w-[100%] ${
                             isArabic ? " text-right" : ""
                           }`}
                         />
@@ -233,14 +233,14 @@ function Address() {
                           }`}
                         >
                           {t("Authentication.signUp.zipCode")}
-                          <span className="text-[#E79E7F] h-[100%]">*</span>
+                          <span className="text-[#082252] h-[100%]">*</span>
                         </label>
                         <input
                           type="text"
                           value={zipcode}
                           required
                           onChange={(e) => setZipcode(e.target.value)}
-                          className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[black] w-[100%] rounded-[2px] ${
+                          className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[#082252] w-[100%] rounded-[2px] ${
                             isArabic ? " text-right" : ""
                           }`}
                         />
@@ -253,26 +253,26 @@ function Address() {
                         }`}
                       >
                         {t("Authentication.signUp.apartment")}
-                        <span className="text-[#E79E7F] h-[100%]">*</span>
+                        <span className="text-[#082252] h-[100%]">*</span>
                       </label>
                       <input
                         type="text"
                         required
                         value={apartment}
                         onChange={(e) => setApartment(e.target.value)}
-                        className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[black] rounded-[2px] ${
+                        className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[#082252] rounded-[2px] ${
                           isArabic ? " text-right" : ""
                         }`}
                       />
                     </div>
                     <p className="text-[12px]">
-                      <span className="text-[#E79E7F]">*</span>{" "}
+                      <span className="text-[#082252]">*</span>{" "}
                       {t("Authentication.signUp.required")}
                     </p>
                   </div>
                   <div className="flex items-center justify-end flex-col gap-[2%] h-[100px]">
                     <button
-                      className="w-[100%] h-[4.5vh] text-white bg-[#676f98] hover:bg-[#2f4672] hover:text-[#E79E7F]"
+                      className="w-[100%] h-[4.5vh] text-white bg-[#082252] hover:bg-[#2f4672] "
                       disabled={signUpLoading}
                       onClick={handleSignUp}
                     >
@@ -281,7 +281,7 @@ function Address() {
                         : t("Authentication.login.sign")}
                     </button>
                     {signUpResult && (
-                      <p className="text-[#E79E7F] text-[12px]">
+                      <p className="text-[#082252] text-[12px]">
                         {signUpResult}
                       </p>
                     )}
@@ -289,7 +289,7 @@ function Address() {
                       {t("Authentication.signUp.haveAccount")}
                       <Link
                         to="/login"
-                        className="font-[700] underline underline-offset-1 hover:text-[#E79E7F]"
+                        className="font-[700] underline underline-offset-1 hover:text-[#082252]"
                       >
                         {t("Authentication.login.loginBtn")}
                       </Link>

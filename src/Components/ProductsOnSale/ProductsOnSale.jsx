@@ -118,7 +118,7 @@ useEffect(() => {
           <Link
             to={`/products/department/${saleNameResult?.departments[0].departmentLink}`}
             className={`border-x-[1.5px] sm:text-[12px]  px-[2%] py-[0.5%] hover:cursor-pointer ${
-              isArabic ? "border-l-[black]" : "border-r-[black]"
+              isArabic ? "border-l-[#082252]" : "border-r-[#082252]"
             }`}
           >
             <strong>
@@ -180,7 +180,7 @@ useEffect(() => {
                           </div>
                         </>
                       )}
-                    <div className=" h-[75px] xl:h-[70px] md:h-[60px] py-[3%] text-black ">
+                    <div className=" h-[75px] xl:h-[70px] md:h-[60px] py-[3%] text-[#082252]">
                       <p
                         className={`leading-[1] font-[100]  uppercase ${
                           isArabic
@@ -247,7 +247,7 @@ useEffect(() => {
             {moreItems && (
               <button
                 onClick={handleLoadMore}
-                className="w-[200px] py-[1%] md:py-[3%] md:w-[150px] md:text-[12px] text-center bg-[#676f98] text-white font-bold uppercase hover:text-[#ea9e7e] hover:bg-[#2f4672]"
+                className="w-[150px] p-[10px] rounded-sm md:py-[3%] md:w-[150px] md:text-[12px] text-center bg-[#082252] text-white font-bold uppercase hover:bg-[#2f4672]"
                 disabled={showMoreLoading}
               >
                 {showMoreLoading ? "Loading..." : "Show More"}
@@ -256,7 +256,7 @@ useEffect(() => {
           </div>
         </div>
       ) : (
-        <div className="h-[80vh] flex justify-center items-center text-[black]">
+        <div className="h-[80vh] flex justify-center items-center text-[#082252]">
           <img
             className="w-[50px] md:w-[30px] sm:w-[20px]"
             src={loader}

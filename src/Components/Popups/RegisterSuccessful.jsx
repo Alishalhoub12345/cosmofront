@@ -29,7 +29,7 @@ function RegisterSuccessful() {
            <div className=' flex justify-center items-center flex-col'>
            <div className=' w-[70px] bg-[#D1D4E0] h-[70px] rounded-full flex items-center justify-center'>
            <div className=' w-[55px] bg-[#B1B6CA] h-[55px] rounded-full flex items-center justify-center'>
-           <div className='  bg-[#656E9A] w-[40px] h-[40px] rounded-full flex items-center justify-center '>
+           <div className='  bg-[#082252] w-[40px] h-[40px] rounded-full flex items-center justify-center '>
            <div className=' flex justify-center items-center '>
            <IoIosCheckmark className='text-white text-[30px]'/>
             </div>
@@ -44,8 +44,8 @@ function RegisterSuccessful() {
             <p className='text-center'> {t("popUps.signupSuccess.p1")}</p>
              <div className='w-[100%] h-[40px] flex items-center justify-center'>
              <Link to="/login" className=" w-[90%] h-[40px] text-white
-                    bg-[#676f98] hover:bg-[#2f4672]
-                    hover:text-[#E79E7F] flex justify-center items-center">{t("popUps.signupSuccess.btn")}</Link>
+                    bg-[#082252] hover:bg-[#2f4672]
+                    hover:text-[#082252] flex justify-center items-center">{t("popUps.signupSuccess.btn")}</Link>
               </div>
           </div>
           

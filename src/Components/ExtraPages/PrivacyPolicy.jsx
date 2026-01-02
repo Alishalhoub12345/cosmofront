@@ -14,7 +14,7 @@ function PrivacyPolicy() {
 
   const isArabic = localStorage.getItem("lang") === "ar";
   return (
-    <div className="w-[100%] px-[0%] h-[auto] lg:py-[2%] pt-[0%] font-[FrutigerLTCom-Roman]">
+    <div className="text-[#082252] w-[100%] px-[0%] h-[auto] lg:py-[2%] pt-[0%] font-[FrutigerLTCom-Roman]">
       <div
   className={`w-full px-[5%] lg:py-[2%] pt-[2%] font-[FrutigerLTCom-Roman] ${
     isArabic ? "text-right" : "text-left"

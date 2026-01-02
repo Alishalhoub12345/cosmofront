@@ -19,7 +19,7 @@ export default function Popup({
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#082252]">
       <div className="relative w-[82%] max-w-[70%] sm:max-w-[100%] p-[2%] flex flex-col items-center">
         {/* Image */}
         {targetUrl ? (

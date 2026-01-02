@@ -65,8 +65,8 @@
         "fabric":"FABRIC",
         "washing":"WASHING INSTRUCTIONS",
         "color":"COLOR",
-        "sizeChart":"To fit you well, kindly refer to our <a href=\"/size-chart\"> <strong class=\"text-[#1e335a] hover:text-[#ea9e7e]\">SIZE CHART</strong></a>",
-        "shipping": "For more info about the shipping process, kindly refer to the <a href=\"/shipping-policy\"> <strong class=\"text-[#1e335a] hover:text-[#ea9e7e]\"> SHIPPING POLICY. </strong></a>",
+        "sizeChart":"To fit you well, kindly refer to our <a href=\"/size-chart\"> <strong class=\"text-[#1e335a] hover:text-[#082252]\">SIZE CHART</strong></a>",
+        "shipping": "For more info about the shipping process, kindly refer to the <a href=\"/shipping-policy\"> <strong class=\"text-[#1e335a] hover:text-[#082252]\"> SHIPPING POLICY. </strong></a>",
         "wearing":"WEARING",
         "cart": "ADD TO CART",
         "maxQuantity":" You have reached maximum quantity! ",
@@ -75,23 +75,27 @@
         "only":"Only",
         "availableSize":" item(s) left!"
   },
+
   "storeLocator": {
     "mainTitle": "STORE LOCATOR",
     "stores": [
       {
-        "name": "COSMO Beirut",
-        "address1": "Verdun 2000 Center, Ground Floor",
-        "address2": "Verdun Main Street, Beirut",
-        "phone": "+96181117733"
-      },
-      {
-        "name": "COSMO Kaslik",
+        "name": "Cosmo Global - Kaslik Branch",
         "address1": "Fahd Center, Ground Floor",
         "address2": "Kaslik Main Street, Kaslik",
-        "phone": "+96171017011"
+        "phone": "+96171017011",
+        "mapLink": "https://www.google.com/maps/place/Cosmo+Global+-+Kaslik+Branch/@33.9834856,35.6250483,17z/data=!3m1!4b1!4m6!3m5!1s0x151f41aee24f93e1:0x64b346a41abb341f!8m2!3d33.9834812!4d35.6201774!16s%2Fg%2F11gv_x7sps"
+      },
+      {
+        "name": "Cosmo Global - Verdun Branch",
+        "address1": "Verdun 2000 Center, Ground Floor",
+        "address2": "Verdun Main Street, Beirut ",
+        "phone": "+96181117733",
+        "mapLink": "https://www.google.com/maps/place/Cosmo+Global+-+Verdun+Branch/@33.8872271,35.4881586,17z/data=!3m1!4b1!4m6!3m5!1s0x151f17000a629799:0xde18040f00db9653!8m2!3d33.8872227!4d35.4832877!16s%2Fg%2F11x27p8bh5"
       }
     ]
   },
+
 
   "allProducts":"ALL PRODUCTS",
   "search":"Search...",
@@ -154,7 +158,7 @@
   },
   
   "shipping":{
-    "titleMain":"SHIPPING & DELIVERY",
+    "titleMain":"SHIPPING POLICY",
     "title":"We ship worldwide",
     "p1":"Our shipping methods through <strong>The Net</strong> are fast and easy",
     "shipmentMethod":"Shipment Method",
@@ -187,7 +191,7 @@
       "sec2p2":"They will be charged upon the package reaching the destination country and they vary widely depending on the country you are situated in.",
       "sec2p3":"Payment of these fees is necessary to release your order from customs.",
       "section3Title":"DAMAGES",
-      "sec3p1": "COSMO is not liable for any products damaged or lost during shipping. If you received your order damaged, please contact The Net on <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>+ 961 1 593 400</a> to file a claim.",
+      "sec3p1": "COSMO is not liable for any products damaged or lost during shipping. If you received your order damaged, please contact The Net on <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:font-semibold'>+ 961 1 593 400</a> to file a claim.",
       "sec3p2":"Please save all packaging materials and damaged goods before filing a claim."
      
    
@@ -213,19 +217,19 @@
       "DebitCard":{
         "title":"2-Debit/Credit Cards:",
         "sec2p1":"Once you fill your info, you can choose the Debit/Credit Card option through our International secure payment gateway.",
-        "sec2p2":"With COSMO, the safety of our customers is primordial. We have devoted our time and efforts to ensure all transactions are 100% secure with  <span class='text-[#E79E7F]'>NetCommerce</span> secure e-payment gateway.",
-        "sec2p3":"<span class='text-[#E79E7F]'>NetCommerce</span> is a leading e-commerce company specializing in cashless transactions. The order form is located on a secure server and all transactions are processed via the  <span class='text-[#E79E7F]'>NetCommerce</span> protocol ensuring that your private data remains safe and confidential",
-        "sec2p4":" <span class='text-[#E79E7F]'>NetCommerce</span> accepts all major debit/credit cards (Visa & MasterCard). ",
+        "sec2p2":"With COSMO, the safety of our customers is primordial. We have devoted our time and efforts to ensure all transactions are 100% secure with  <span class='hover:font-semibold'>NetCommerce</span> secure e-payment gateway.",
+        "sec2p3":"<span class='hover:font-semibold'>NetCommerce</span> is a leading e-commerce company specializing in cashless transactions. The order form is located on a secure server and all transactions are processed via the  <span class='hover:font-semibold'>NetCommerce</span> protocol ensuring that your private data remains safe and confidential",
+        "sec2p4":" <span class='hover:font-semibold'>NetCommerce</span> accepts all major debit/credit cards (Visa & MasterCard). ",
         "sec2p5":"Only one card may be used per transaction.",
         "sec2p6":"In submitting an order, you agree that this immediately authorizes COSMO to debit your card with the order payment.",
         "sec2p7":"The payment will be debited and cleared from your account immediately at the time of your order.",
         "sec2p8":"Once your order is processed, you will immediately receive an e-mail with your invoice.",
-         "sec2p9": "If you are having any trouble proceeding with payment please contact us on: <a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a>"
+         "sec2p9": "If you are having any trouble proceeding with payment please contact us on: <a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:font-semibold'>customercare@cosmo.global</a>"
       },
       "WireTransfer":{
         "title":"3-Wire transfer:",
-        "sec3p1":"You can also pay by wire transfer either through Western Union or bank transfer. For more details about the wire transfer please contact us on: <a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a>",
-        "sec3p2":"Do not hesitate to chat with us through WhatsApp on:<a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>+961 71 660 774</a> or e-mail us on: <a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a>  for more info."
+        "sec3p1":"You can also pay by wire transfer either through Western Union or bank transfer. For more details about the wire transfer please contact us on: <a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:font-semibold'>customercare@cosmo.global</a>",
+        "sec3p2":"Do not hesitate to chat with us through WhatsApp on:<a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:font-semibold'>+961 71 660 774</a> or e-mail us on: <a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:font-semibold'>customercare@cosmo.global</a>  for more info."
       }
 
     }
@@ -235,8 +239,8 @@
     "titleMain":"EXCHANGE POLICY",
     "p1":"We accept to exchange unopened items within 15 days of delivery, or return them for a store credit voucher of the purchased amount.",
     "p2":"The item must be returned unworn, undamaged and unused, with all tags attached and the original packaging included.",
-    "p3":"If you need to exchange an item, please contact us on <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>+961 71 660 774</a> with your order number and details.",
-    "p4":"If you need to return an item, please contact us on <a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a> with your order number and details about the product you would like to return. We will respond by informing you with instructions on how to return your item and get your credit voucher.",
+    "p3":"If you need to exchange an item, please contact us on <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:font-semibold'>+961 71 660 774</a> with your order number and details.",
+    "p4":"If you need to return an item, please contact us on <a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:font-semibold'>customercare@cosmo.global</a> with your order number and details about the product you would like to return. We will respond by informing you with instructions on how to return your item and get your credit voucher.",
     "p5":"Unfortunately we don't have a REFUND policy but exchange is all yours.",
   
   "section1":{
@@ -247,7 +251,7 @@
     "section2Title":"2-International Orders:",
     "sec2p1":"Kindly note that ALL INTERNATIONAL SALES ARE FINAL. Due to the nature of our business, for shipping-related reasons, we maintain a No Return/No Exchange Policy.",
     "sec2p2":"It is advised to check for your size requirements before you make a purchase order.",
-    "sec2p3":"Only in rare occasions where the mistake is on our end, we will make an exception to exchange the item. Please contact us within 48 hours of receiving the package via email:<a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a> or via WhatsApp: <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>+961 71 660 774</a>"
+    "sec2p3":"Only in rare occasions where the mistake is on our end, we will make an exception to exchange the item. Please contact us within 48 hours of receiving the package via email:<a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:font-semibold'>customercare@cosmo.global</a> or via WhatsApp: <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:font-semibold'>+961 71 660 774</a>"
   }
 },
 "privacyPolicy":{
@@ -430,12 +434,12 @@
   "call":{
     "callUs":"Call Us",
     "p1":"You can contact us on",
-    "p2":"Phone: <a href=\"tel:+96171660774\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>+961 71 660 774</a>"
+    "p2":"Phone: <a href=\"tel:+96171660774\" class='hover-underline cursor-pointer '>+961 71 660 774</a>"
   },
   "email":{
     "writeUs":"Write To Us",
     "p1":"Send us a message on",
-    "p2":"Email: <a href=\"mailto:customercare@cosmo.global\" class='underline underline-offset-2 cursor-pointer hover:text-[#E79E7F]'>customercare@cosmo.global</a>"
+    "p2":"Email: <a href=\"mailto:customercare@cosmo.global\" class='hover-underline cursor-pointer'>customercare@cosmo.global</a>"
 
   }
 },
@@ -542,16 +546,16 @@
     "questions": [
       {
         "question": "1-How do I order and Pay?",
-        "answer1": "Please refer to the section <Link className='text-[#E79E7F] cursor-pointer' to='/payment-policy'>Orders & Payments</Link> for information."
+        "answer1": "Please refer to the section <Link className='hover:font-semibold cursor-pointer' to='/payment-policy'>Orders & Payments</Link> for information."
       },
       {
         "question": "2-DO I NEED TO SET UP AN ACCOUNT TO PLACE AN ORDER?",
-        "answer1": "No, you don't need to create an account to be able to shop on the official <Link className='text-[#E79E7F] cursor-pointer' to='/'>cosmo.global</Link> website.",
+        "answer1": "No, you don't need to create an account to be able to shop on the official <Link className='hover:font-semibold cursor-pointer' to='/'>cosmo.global</Link> website.",
         "answer2": "You just enter the website; add an item/several items to your bag; click on the bag icon on the upper-right corner of the page; verify your pick(s); proceed to checkout; enter your shipping details; proceed to payment details; confirm your order and you're done!"
       },
       {
         "question": "3-IS MY PERSONAL INFORMATION KEPT PRIVATE?",
-        "answer1": "Please be assured that your personal information is kept private and confidential and at no point will we sell it to a third party for marketing purposes. For more information, please read our <Link className='text-[#E79E7F] cursor-pointer' to='/privacy-policy'>Privacy Policy</Link> published on our website in full."
+        "answer1": "Please be assured that your personal information is kept private and confidential and at no point will we sell it to a third party for marketing purposes. For more information, please read our <Link className='hover:font-semibold cursor-pointer' to='/privacy-policy'>Privacy Policy</Link> published on our website in full."
       },
       {
         "question": "4-I FORGOT MY PASSWORD - WHAT SHOULD I DO?",

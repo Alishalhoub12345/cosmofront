@@ -193,12 +193,12 @@ function PersonalInformation() {
                       }`}
                     >
                       {t("Authentication.signUp.firstName")}
-                      <span className="text-[#E79E7F]  mt-[-1%]">*</span>
+                      <span className="text-[#082252]  mt-[-1%]">*</span>
                     </label>
                     <input
                       ref={firstNameRef}
                       type="text"
-                      className={`h-[40px]  p-[2%] sm:w-[100%] border-[1px] border-[black] rounded-[2px] ${
+                      className={`h-[40px]  p-[2%] sm:w-[100%] border-[1px] border-[#082252] rounded-[2px] ${
                         isArabic ? "text-right" : ""
                       }`}
                       required
@@ -211,12 +211,12 @@ function PersonalInformation() {
                       }`}
                     >
                       {t("Authentication.signUp.lastName")}
-                      <span className="text-[#E79E7F]  mt-[-1%]">*</span>
+                      <span className="text-[#082252]  mt-[-1%]">*</span>
                     </label>
                     <input
                       ref={lastNameRef}
                       type="text"
-                      className={`h-[40px]  p-[2%] sm:w-[100%] border-[1px] border-[black] rounded-[2px] ${
+                      className={`h-[40px]  p-[2%] sm:w-[100%] border-[1px] border-[#082252] rounded-[2px] ${
                         isArabic ? "text-right" : ""
                       }`}
                       required
@@ -231,12 +231,12 @@ function PersonalInformation() {
                       }`}
                     >
                       {t("Authentication.login.email")}{" "}
-                      <span className="text-[#E79E7F]  mt-[-1%]">*</span>
+                      <span className="text-[#082252]  mt-[-1%]">*</span>
                     </label>
                     <input
                       ref={emailRef}
                       type="email"
-                      className={`h-[40px]  p-[2%] sm:w-[100%] border-[1px] border-[black] rounded-[2px] ${
+                      className={`h-[40px]  p-[2%] sm:w-[100%] border-[1px] border-[#082252] rounded-[2px] ${
                         isArabic ? "text-right" : ""
                       }`}
                       required
@@ -249,10 +249,10 @@ function PersonalInformation() {
                       }`}
                     >
                       {t("Authentication.signUp.phone")}
-                      <span className="text-[#E79E7F]  mt-[-1%]">*</span>
+                      <span className="text-[#082252]  mt-[-1%]">*</span>
                     </label>
                     <PhoneInput
-                      className="bg-transparent border-[0.5px] border-[black] px-[2%] rounded-[2px] w-[100%] countryCode"
+                      className="bg-transparent border-[0.5px] border-[#082252] px-[2%] rounded-[2px] w-[100%] countryCode"
                       international
                       required
                       countryCallingCodeEditable={false}
@@ -271,7 +271,7 @@ function PersonalInformation() {
                     }`}
                   >
                     {t("Authentication.signUp.gender")}{" "}
-                    <span className="text-[#E79E7F] mt-[-0.5%] ">*</span>
+                    <span className="text-[#082252] mt-[-0.5%] ">*</span>
                   </p>
                   <div
                     className={` w-[40%] md:w-[100%] xl:w-[50%] ${
@@ -279,7 +279,7 @@ function PersonalInformation() {
                     }`}
                   >
                     <select
-                      className={`h-[4.5vh] p-[2%]  2xl:py-[0%] lg:px-[1%] border-[0.5px] border-[black] rounded-[2px] custom-select cursor-pointer text-[0.8vw] xl:text-[15px] px-[2%] ${
+                      className={`h-[4.5vh] p-[2%]  2xl:py-[0%] lg:px-[1%] border-[0.5px] border-[#082252] rounded-[2px] custom-select cursor-pointer text-[0.8vw] xl:text-[15px] px-[2%] ${
                         isArabic ? "text-right" : ""
                       }`}
                       required
@@ -299,7 +299,7 @@ function PersonalInformation() {
                     isArabic ? "" : "justify-end items-end"
                   }`}
                 >
-                  <div className="flex w-[150px] hover:bg-[#2f4672] bg-[#676f98] hover:text-[#E79E7F] text-white cursor-pointer h-[30px] justify-evenly items-center">
+                  <div className="flex w-[150px] hover:bg-[#082252] bg-[#676f98]  text-white cursor-pointer h-[30px] justify-evenly items-center">
                     <button
                       className="h-[30px]"
                       type="submit"

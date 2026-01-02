@@ -222,7 +222,7 @@ function Login() {
               </label>
               <input
                 type="email"
-                className={`h-[40px] sm:h-[30px] p-[2%] border-[1px] border-[black] rounded-[2px] ${
+                className={`h-[40px] sm:h-[30px] p-[2%] border-[1px] border-[#082252] rounded-[2px] ${
                   isArabic ? " text-right" : ""
                 }`}
                 value={forgotPasswordEmail}
@@ -280,7 +280,7 @@ function Login() {
                   </label>
                   <input
                     type="email"
-                    className={`h-[40px] p-[2%] bg-[#EEEEEE] border-[1px] border-[black] rounded-[2px] ${
+                    className={`h-[40px] p-[2%] bg-[#EEEEEE] border-[1px] border-[#082252] rounded-[2px] ${
                       isArabic ? "text-right" : ""
                     }`}
                     value={email}
@@ -298,7 +298,7 @@ function Login() {
                   </label>
                   <input
                     type={showPassword ? "text" : "password"}
-                    className={`h-[40px] p-[2%] bg-[#EEEEEE] border-[1px] border-[black] rounded-[2px]  ${
+                    className={`h-[40px] p-[2%] bg-[#EEEEEE] border-[1px] border-[#082252] rounded-[2px]  ${
                       isArabic ? " flex text-right" : "pr-[30px]"
                     }`}
                     value={password}

@@ -215,13 +215,17 @@ function AllProductsForSearch({ searchQuery }) {
           </div>
           <div className="p-[2%] flex justify-center items-center">
             {moreItems && (
+          <div className="p-[2%] flex justify-center items-center">
+            {moreItems && (
               <button
                 onClick={handleLoadMore}
-                className="w-[200px] h-[55px] py-[2%] md:w-[150px] md:text-[12px] md:h-[40px] text-center bg-[#676f98] text-white font-bold uppercase hover:text-[#ea9e7e] hover:bg-[#2f4672]"
+                className="w-[150px] p-[10px] rounded-sm md:py-[3%] md:w-[150px] md:text-[12px] text-center bg-[#082252] text-white font-bold uppercase hover:bg-[#2f4672]"
                 disabled={showMoreLoading}
               >
                 {showMoreLoading ? "Loading..." : "Show More"}
               </button>
+            )}
+          </div>
             )}
           </div>
         </div>

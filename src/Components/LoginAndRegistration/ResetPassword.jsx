@@ -81,11 +81,11 @@ function ResetPassword() {
                     <div className="flex justify-start flex-col pt-[1%] relative">
                       <label className=" h-[30px] flex items-center">
                         Password{" "}
-                        <span className=" h-[100%] text-[#E79E7F]">*</span>
+                        <span className=" h-[100%] text-[#082252]">*</span>
                       </label>
                       <input
                         type={showNewPassword ? "text" : "password"}
-                        className="h-[40px] p-[2%] bg-[#F1F5FF] border-[1px] border-[black] rounded-[2px] pr-[30px]"
+                        className="h-[40px] p-[2%] bg-[#F1F5FF] border-[1px] border-[#082252] rounded-[2px] pr-[30px]"
                         value={newPassword}
                         autoComplete="pass"
                         onChange={(e) => setNewPassword(e.target.value)}
@@ -93,24 +93,24 @@ function ResetPassword() {
                       />
                       {showNewPassword ? (
                         <IoEyeOffOutline
-                          className="absolute hover:text-[#E79E7F] right-[10px] top-[70%] transform translate-y-[-50%] cursor-pointer"
+                          className="absolute hover:text-[#082252] right-[10px] top-[70%] transform translate-y-[-50%] cursor-pointer"
                           onClick={() => setShowNewPassword(!showNewPassword)}
                         />
                       ) : (
                         <AiOutlineEye
-                          className="absolute hover:text-[#E79E7F] right-[10px] top-[70%] transform translate-y-[-50%] cursor-pointer"
+                          className="absolute hover:text-[#082252] right-[10px] top-[70%] transform translate-y-[-50%] cursor-pointer"
                           onClick={() => setShowNewPassword(!showNewPassword)}
                         />
                       )}
                     </div>
                     {error && (
-                      <p className="text-[#E79E7F] text-[12px]">{error}</p>
+                      <p className="text-[#082252] text-[12px]">{error}</p>
                     )}
                     <div className="flex items-center justify-between flex-col h-[80px]">
                       <button
                         className=" w-[100%] h-[40px] text-white
-                  bg-[#676f98] hover:bg-[#2f4672]
-                  hover:text-[#E79E7F]"
+                  bg-[#082252] hover:bg-[#2f4672]
+                  "
                         disabled={loadingUpdate}
                       >
                         {loadingUpdate ? "Loading..." : "Update Password"}

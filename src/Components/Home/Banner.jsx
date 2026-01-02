@@ -77,7 +77,7 @@ if (main?.image) {
           alt="parrot-icon"
         /> */}
         <p
-          className={`text-[20px] font-[FrutigerLTCom-Roman] w-[40%] text-center pb-[5%] lg:pb-[10%] xl:w-[80%] md:text-[18px] md:w-[90%] sm:text-[15px] ${
+          className={`text-[20px] text-[#082252] font-[FrutigerLTCom-Roman] w-[40%] text-center pb-[5%] lg:pb-[10%] xl:w-[80%] md:text-[18px] md:w-[90%] sm:text-[15px] ${
             isArabic ? "text-[25px]" : ""
           }`}
         >

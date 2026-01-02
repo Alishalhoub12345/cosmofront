@@ -17,7 +17,7 @@ function PaymentPolicy() {
 
   return (
     <div
-      className={`w-[100%] px-[5%] h-[auto] lg:py-[2%] pt-[2%] font-[FrutigerLTCom-Roman] ${
+      className={`text-[#082252] w-[100%] px-[5%] h-[auto] lg:py-[2%] pt-[2%] font-[FrutigerLTCom-Roman] ${
         isArabic ? " text-right" : ""
       }`}
     >

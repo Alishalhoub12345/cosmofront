@@ -546,11 +546,11 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                 }`}
               >
                 <Link to="/cart">
-                  <div className="border-[0.5px] border-[black] rounded-full w-[100%] h-[100%] hover:border-[#E79E7F] cursor-pointer">
+                  <div className="border-[0.5px] border-[#082252] rounded-full w-[100%] h-[100%] cursor-pointer">
                     {isArabic ? (
-                      <IoIosArrowRoundForward className="w-[100%] h-[100%] hover:text-[#E79E7F]" />
+                      <IoIosArrowRoundForward className="w-[100%] h-[100%] " />
                     ) : (
-                      <IoIosArrowRoundBack className="w-[100%] h-[100%] hover:text-[#E79E7F]" />
+                      <IoIosArrowRoundBack className="w-[100%] h-[100%] " />
                     )}
                   </div>
                 </Link>
@@ -609,13 +609,13 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                       }`}
                     >
                       {t("Authentication.signUp.firstName")}
-                      <span className="text-[#E79E7F]  mt-[-1%]">*</span>
+                      <span className="text-[#082252]  mt-[-1%]">*</span>
                     </label>
                     <input
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
                       type="text"
-                      className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[black] rounded-[2px] ${
+                      className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[#082252] rounded-[2px] ${
                         isArabic ? " text-right" : ""
                       }`}
                       required
@@ -628,7 +628,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                       }`}
                     >
                       {t("Authentication.signUp.lastName")}
-                      <span className="text-[#E79E7F]  mt-[-1%]">*</span>
+                      <span className="text-[#082252]  mt-[-1%]">*</span>
                     </label>
                     <input
                       value={lastName}
@@ -649,7 +649,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                       }`}
                     >
                       {t("Authentication.login.email")}
-                      <span className="text-[#E79E7F]  mt-[-1%]"> *</span>{" "}
+                      <span className="text-[#082252]  mt-[-1%]"> *</span>{" "}
                     </label>
                     <input
                       value={email}
@@ -668,7 +668,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                       }`}
                     >
                       {t("Authentication.signUp.phone")}
-                      <span className="text-[#E79E7F] mt-[-1%]">*</span>
+                      <span className="text-[#082252] mt-[-1%]">*</span>
                     </label>
                     <div className="">
                       <div className="">
@@ -693,14 +693,14 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                       }`}
                     >
                       {t("Authentication.signUp.address")}
-                      <span className="text-[#E79E7F]  mt-[-1%]">*</span>
+                      <span className="text-[#082252]  mt-[-1%]">*</span>
                     </label>
                     <input
                       value={address}
                       placeholder={isArabic ? "عنوان الشارع" : "Street Address"}
                       onChange={(e) => setAddress(e.target.value)}
                       type="text"
-                      className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[black] rounded-[2px] ${
+                      className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[#082252] rounded-[2px] ${
                         isArabic ? " text-right" : ""
                       }`}
                       required
@@ -714,7 +714,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                       }
                       onChange={(e) => setApartment(e.target.value)}
                       type="text"
-                      className={`h-[4.5vh] mt-[1%] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[black] rounded-[2px] ${
+                      className={`h-[4.5vh] mt-[1%] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[#082252] rounded-[2px] ${
                         isArabic ? " text-right" : ""
                       }`}
                       required
@@ -729,13 +729,13 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                       }`}
                     >
                       {t("Authentication.signUp.city")}{" "}
-                      <span className="text-[#E79E7F]  mt-[-1%]">*</span>
+                      <span className="text-[#082252]  mt-[-1%]">*</span>
                     </label>
                     <input
                       value={city}
                       onChange={(e) => setCity(e.target.value)}
                       type="text"
-                      className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[black] rounded-[2px] ${
+                      className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[#082252] rounded-[2px] ${
                         isArabic ? " text-right" : ""
                       }`}
                       required
@@ -748,13 +748,13 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                       }`}
                     >
                       {t("Authentication.signUp.region")}
-                      <span className="text-[#E79E7F]  mt-[-1%]">*</span>{" "}
+                      <span className="text-[#082252]  mt-[-1%]">*</span>{" "}
                     </label>
                     <input
                       value={region}
                       onChange={(e) => setRegion(e.target.value)}
                       type="text"
-                      className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[black] rounded-[2px] ${
+                      className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[#082252] rounded-[2px] ${
                         isArabic ? " text-right" : ""
                       }`}
                       required
@@ -769,9 +769,9 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                       }`}
                     >
                       {t("Authentication.signUp.country")}
-                      <span className="text-[#E79E7F]  mt-[-1%]">*</span>
+                      <span className="text-[#082252]  mt-[-1%]">*</span>
                     </label>
-                    <div className="h-[4.5vh]  p-[2%] border-[1px] border-[black] rounded-[2px] bg-[#E8F0FE]">
+                    <div className="h-[4.5vh]  p-[2%] border-[1px] border-[#082252] rounded-[2px] bg-[#E8F0FE]">
                       {getCountry.name}
                     </div>
                   </div>
@@ -787,7 +787,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                       value={zipCode}
                       onChange={(e) => setZipCode(e.target.value)}
                       type="text"
-                      className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[black] rounded-[2px] ${
+                      className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[#082252] rounded-[2px] ${
                         isArabic ? " text-right" : ""
                       }`}
                     />
@@ -805,7 +805,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
                     type="text"
-                    className={`h-[5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[black] rounded-[2px] ${
+                    className={`h-[5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[#082252] rounded-[2px] ${
                       isArabic ? " text-right" : ""
                     }`}
                   />
@@ -839,13 +839,13 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                           }`}
                         >
                           {t("checkout.billingFirstName")}
-                          <span className="text-[#E79E7F]  mt-[-1%]">*</span>
+                          <span className="text-[#082252]  mt-[-1%]">*</span>
                         </label>
                         <input
                           value={billingFirstName}
                           onChange={(e) => setBillingFirstName(e.target.value)}
                           type="text"
-                          className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[black] rounded-[2px] ${
+                          className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[#082252] rounded-[2px] ${
                             isArabic ? " text-right" : ""
                           }`}
                           required
@@ -858,13 +858,13 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                           }`}
                         >
                           {t("checkout.billingLastName")}
-                          <span className="text-[#E79E7F]  mt-[-1%]">*</span>
+                          <span className="text-[#082252]  mt-[-1%]">*</span>
                         </label>
                         <input
                           value={billingLastName}
                           onChange={(e) => setBillingLastName(e.target.value)}
                           type="text"
-                          className={`h-[4.5vh]  p-[2%] bg-[#F1F5FF] border-[0.5px] border-[black] rounded-[2px] ${
+                          className={`h-[4.5vh]  p-[2%] bg-[#F1F5FF] border-[0.5px] border-[#082252] rounded-[2px] ${
                             isArabic ? " text-right" : ""
                           }`}
                           required
@@ -879,7 +879,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                           }`}
                         >
                           {t("checkout.billingEmail")}
-                          <span className="text-[#E79E7F]  mt-[-1%]">
+                          <span className="text-[#082252]  mt-[-1%]">
                             {" "}
                             *
                           </span>{" "}
@@ -888,7 +888,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                           value={billingEmail}
                           onChange={(e) => setBillingEmail(e.target.value)}
                           type="email"
-                          className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[black] rounded-[2px] ${
+                          className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[#082252] rounded-[2px] ${
                             isArabic ? " text-right" : ""
                           }`}
                           required
@@ -901,12 +901,12 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                           }`}
                         >
                           {t("checkout.billingPhone")}
-                          <span className="text-[#E79E7F] mt-[-1%]">*</span>
+                          <span className="text-[#082252] mt-[-1%]">*</span>
                         </label>
 
                         <div className="">
                           <PhoneInput
-                            className="bg-transparent border-[0.5px] border-[black] px-[2%] rounded-[2px] w-[100%] countryCode"
+                            className="bg-transparent border-[0.5px] border-[#082252] px-[2%] rounded-[2px] w-[100%] countryCode"
                             international
                             required
                             countryCallingCodeEditable={false}
@@ -925,7 +925,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                           }`}
                         >
                           {t("checkout.billingAddress")}
-                          <span className="text-[#E79E7F]  mt-[-1%]">*</span>
+                          <span className="text-[#082252]  mt-[-1%]">*</span>
                         </label>
                         <input
                           value={billingAddress}
@@ -934,7 +934,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                             isArabic ? "عنوان الشارع" : "Street Address"
                           }
                           type="text"
-                          className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[black] rounded-[2px] ${
+                          className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[#082252] rounded-[2px] ${
                             isArabic ? " text-right" : ""
                           }`}
                           required
@@ -948,7 +948,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                               : "Apt, suite, unit, building, floor, etc."
                           }
                           type="text"
-                          className={`h-[4.5vh] p-[2%] mt-[1%] bg-[#F1F5FF] border-[0.5px] border-[black] rounded-[2px] ${
+                          className={`h-[4.5vh] p-[2%] mt-[1%] bg-[#F1F5FF] border-[0.5px] border-[#082252] rounded-[2px] ${
                             isArabic ? " text-right" : ""
                           }`}
                           required
@@ -963,13 +963,13 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                           }`}
                         >
                           {t("checkout.billingCity")}{" "}
-                          <span className="text-[#E79E7F]  mt-[-1%]">*</span>
+                          <span className="text-[#082252]  mt-[-1%]">*</span>
                         </label>
                         <input
                           value={billingCity}
                           onChange={(e) => setBillingCity(e.target.value)}
                           type="text"
-                          className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[black] rounded-[2px] ${
+                          className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[#082252] rounded-[2px] ${
                             isArabic ? " text-right" : ""
                           }`}
                           required
@@ -982,7 +982,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                           }`}
                         >
                           {t("checkout.billingRegion")}
-                          <span className="text-[#E79E7F]  mt-[-1%]">
+                          <span className="text-[#082252]  mt-[-1%]">
                             *
                           </span>{" "}
                         </label>
@@ -990,7 +990,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                           value={billingRegion}
                           onChange={(e) => setBillingRegion(e.target.value)}
                           type="text"
-                          className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[black] rounded-[2px] ${
+                          className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[#082252] rounded-[2px] ${
                             isArabic ? " text-right" : ""
                           }`}
                           required
@@ -1005,10 +1005,10 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                           }`}
                         >
                           {t("checkout.billingCountry")}{" "}
-                          <span className="text-[#E79E7F]  mt-[-1%]">*</span>
+                          <span className="text-[#082252]  mt-[-1%]">*</span>
                         </label>
                         <select
-                          className={`custom-select cursor-pointer h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[black] rounded-[2px] ${
+                          className={`custom-select cursor-pointer h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[#082252] rounded-[2px] ${
                             isArabic ? "text-right" : ""
                           }`}
                           value={billingCountry}
@@ -1034,7 +1034,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                           value={billingZipCode}
                           onChange={(e) => setBillingZipCode(e.target.value)}
                           type="text"
-                          className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[black] rounded-[2px] ${
+                          className={`h-[4.5vh] p-[2%] bg-[#F1F5FF] border-[0.5px] border-[#082252] rounded-[2px] ${
                             isArabic ? " text-right" : ""
                           }`}
                         />
@@ -1091,7 +1091,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                               <p>{prodInfo.productName}</p>
                               <p>{prodInfo.pivot.size.size}</p>
                               {prodInfo.productSale && (
-                                <p className=" text-[#E79E7F]">
+                                <p className=" text-[#082252]">
                                   {prodInfo.productSale}% OFF
                                 </p>
                               )}
@@ -1168,7 +1168,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
   {cartItems.shipping_country_id === 109 ? (
     <>
       <button
-        className="w-full h-full flex-1 hover:bg-[#2f4672] bg-[#676f98] font-[FahKwang] hover:text-[#E79E7F] text-white text-[1vw] xl:text-[15px]"
+        className="w-full h-full flex-1 hover:bg-[#2f4672] bg-[#082252] font-[FahKwang]  text-white text-[1vw] xl:text-[15px]"
         type="submit"
         value="COD"
         disabled={orderloading || onlineLoading}
@@ -1176,7 +1176,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
         {orderloading ? "Loading..." : t("checkout.cod")}
       </button>
       <button
-        className="w-full h-full flex-1 hover:bg-[#2f4672] bg-[#676f98] font-[FahKwang] hover:text-[#E79E7F] text-white text-[1vw] xl:text-[15px]"
+        className="w-full h-full flex-1 hover:bg-[#2f4672] bg-[#082252] font-[FahKwang]  text-white text-[1vw] xl:text-[15px]"
         type="submit"
         value="online"
         disabled={orderloading || onlineLoading}
@@ -1186,7 +1186,7 @@ const sendConfirmationEmail = async (orderId, cartId) => {
     </>
   ) : (
     <button
-      className="w-full h-full hover:bg-[#2f4672] bg-[#676f98] font-[FahKwang] hover:text-[#E79E7F] text-white text-[1vw] xl:text-[15px]"
+      className="w-full h-full hover:bg-[#2f4672] bg-[#082252] font-[FahKwang]  text-white text-[1vw] xl:text-[15px]"
       type="submit"
       value="online"
       disabled={orderloading || onlineLoading}

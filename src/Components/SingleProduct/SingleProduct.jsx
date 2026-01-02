@@ -394,11 +394,11 @@ const userId = {
             </div>
           </div>
           <div className=" flex justify-evenly text-[12px]">
-            <button onClick={closePopup} className="hover:text-[#E79E7F]">
+            <button onClick={closePopup} className="hover:text-[#082252]">
               {" "}
               {t("continue")}
             </button>
-            <Link to="/cart" className="hover:text-[#E79E7F]">
+            <Link to="/cart" className="hover:text-[#082252]">
               {t("viewCart")}
             </Link>
           </div>
@@ -621,7 +621,7 @@ const userId = {
     </button>
   </div>
 
-  <p className="text-[12px] text-[#ea9e7e] mt-[5px]">
+  <p className="text-[12px] text-[#082252] mt-[5px]">
     {t("singleProductPage.only")} {productData.sizes[0].quantity}{" item(s) available"}
   </p>
 </div>
@@ -647,8 +647,8 @@ const userId = {
           onClick={() => handleSizeClick(prodSize.id)}
           className={`mt-[2%] border-[1px] flex text-[#7d7d7d] justify-center items-center border-[#2f4672] w-[40px] h-[40px] ${
             selectedSize === prodSize.id
-              ? "text-[white] bg-[#ea9e7e]"
-              : "hover:text-white hover:bg-[#ea9e7e]"
+              ? "text-[white] bg-[#082252]"
+              : "hover:text-white hover:bg-[#082252]"
           }`}
         >
           <p className="text-[0.8vw] xl:text-[13px] w-[100%] h-[100%] flex justify-center items-center">
@@ -659,7 +659,7 @@ const userId = {
     </div>
     {selectedQuantity !== null && (
       <p
-        className={`text-[12px] text-[#ea9e7e] py-[0.5px] ${
+        className={`text-[12px] text-[#082252] py-[0.5px] ${
           isArabic ? "text-right" : ""
         }`}
       >
@@ -695,14 +695,14 @@ const userId = {
 
                 {sizetoChoose && selectedSize === "" && (
                   <div className=" w-[100%] pt-[2%]  flex items-center justify-center">
-                    <p className=" text-center text-[12px] w-[80%] text-[#ea9e7e]">
+                    <p className=" text-center text-[12px] w-[80%] text-[#082252]">
                       {t("singleProductPage.selectSize")}
                     </p>
                   </div>
                 )}
                 {isMaxQuantityReached && (
                   <div className=" w-[100%] pt-[2%] flex items-center justify-center">
-                    <p className="text-center text-[12px] w-[80%] text-[#ea9e7e]">
+                    <p className="text-center text-[12px] w-[80%] text-[#082252]">
                       {t("singleProductPage.maxQuantity")}
                     </p>
                   </div>
@@ -724,12 +724,12 @@ const userId = {
                       disabled={isMaxQuantityReached || loadAddToCart} // Disable if max quantity is reached or loading
                       className={`w-[100%] py-[2.5%] text-white text-[12px] ${
                         isMaxQuantityReached || loadAddToCart // Adjust styles based on loading or max quantity reached
-                          ? "bg-[#475164] cursor-not-allowed hover:bg-[#475164] text-[#c1c1c1] hover:text-[#c1c1c1]"
-                          : "bg-[#676f98] hover:text-[#ea9e7e] hover:bg-[#2f4672]"
+                          ? "bg-[#082252] cursor-not-allowed hover:bg-[#475164] text-[#c1c1c1] hover:text-[#c1c1c1]"
+                          : "bg-[#082252]  hover:bg-[#2f4672]"
                       }`}
                     >
                       {loadAddToCart ? ( // Show loader if loading
-                        <p className="text-[#ea9e7e]">Loading...</p>
+                        <p className="text-[#082252]">Loading...</p>
                       ) : (
                         t("singleProductPage.cart") // Show cart text otherwise
                       )}

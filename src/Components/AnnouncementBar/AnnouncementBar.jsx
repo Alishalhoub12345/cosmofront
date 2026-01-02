@@ -13,7 +13,7 @@ function AnnouncementBar() {
     }
   }, [i18n]);
   return (
-    <div className=' h-[30px] bg-[#E79E7F] flex overflow-hidden'>
+    <div className=' h-[30px] bg-[#082252] flex overflow-hidden'>
       <div className=' h-full flex slide justify-evenly '>
         {items.map((item) => (
           <React.Fragment  key={item}>
