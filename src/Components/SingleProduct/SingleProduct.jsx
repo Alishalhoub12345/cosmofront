@@ -356,54 +356,64 @@ const userId = {
   };
 
   if (isError) return <div>Error fetching data</div>;
+console.log("POPUP INFO:", popUpInfo);
+console.log("IMAGES:", popUpInfo?.images);
 
   return (
     <div className="">
-      {popUpInfo && showPopUp && (
-        <div
-          className={` popup w-[300px] fixed right-[2%] bg-[#FFFFFF] top-[15%] z-[20] h-[200px] ${
-            isArabic ? "flex-row-reverse" : ""
-          }`}
-        >
-          <div className="h-[80%] flex justify-evenly">
-            <div
-              className={`h-[100%] w-[50%] justify-evenly items-center flex ${
-                isArabic ? "flex-row-reverse" : ""
-              }`}
-            >
-              <div className="flex justify-center items-center h-[100%]">
-                <IoIosCheckmark className="text-[30px] rounded-full bg-[#676F98] text-white" />
-              </div>
-              <div className=" w-[80px] flex justify-center items-center">
-                <img
-                  src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.media1}`}
-                  alt={`${popUpInfo.id}`}
-                  className="w-[100%] h-[100%]"
-                />
-              </div>
-            </div>
-            <div className="  flex justify-center flex-col">
-              <p
-                className={` text-[12px] ${
-                  isArabic ? "text-right" : "text-left"
-                }`}
-              >
-                {popUpInfo.productName} {t("addedToCart")}
-              </p>
-              <p></p>
-            </div>
-          </div>
-          <div className=" flex justify-evenly text-[12px]">
-            <button onClick={closePopup} className="hover:text-[#082252]">
-              {" "}
-              {t("continue")}
-            </button>
-            <Link to="/cart" className="hover:text-[#082252]">
-              {t("viewCart")}
-            </Link>
-          </div>
+{popUpInfo && showPopUp && (
+  <div
+    className={`popup w-[300px] fixed right-[2%] bg-[#FFFFFF] top-[15%] z-[20] h-[200px] ${
+      isArabic ? "flex-row-reverse" : ""
+    }`}
+  >
+    <div className="h-[80%] flex justify-evenly">
+      <div
+        className={`h-[100%] w-[50%] justify-evenly items-center flex ${
+          isArabic ? "flex-row-reverse" : ""
+        }`}
+      >
+        <div className="flex justify-center items-center h-[100%]">
+          <IoIosCheckmark className="text-[30px] rounded-full bg-[#676F98] text-white" />
         </div>
-      )}
+<div className="w-[80px] h-[80px] flex justify-center items-center">
+{popUpInfo?.images?.length > 0 ? (
+  <img
+src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.images[0].ImageURL}`}
+    alt={popUpInfo.productName}
+    className="w-full h-full object-contain"
+  />
+) : (
+  <div className="w-full h-full flex items-center justify-center text-gray-400">
+    Loading image...
+  </div>
+)}
+
+
+
+</div>
+
+      </div>
+
+      <div className="flex justify-center flex-col">
+        <p className={`text-[12px] ${isArabic ? "text-right" : "text-left"}`}>
+          {popUpInfo.productName} {t("addedToCart")}
+        </p>
+      </div>
+    </div>
+
+    <div className="flex justify-evenly text-[12px]">
+      <button onClick={closePopup} className="hover:text-[#082252]">
+        {t("continue")}
+      </button>
+      <Link to="/cart" className="hover:text-[#082252]">
+        {t("viewCart")}
+      </Link>
+    </div>
+  </div>
+)}
+
+
 
       {isLoading || loading ? (
         <div className="flex justify-center items-center h-[100vh] lg:h-[auto] w-[100%]">
