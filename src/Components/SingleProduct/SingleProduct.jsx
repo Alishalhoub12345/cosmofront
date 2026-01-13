@@ -518,7 +518,7 @@ src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.images[0].ImageUR
               <div className=" flex flex-col h-[100%] gap-[5px]">
                 <div className={`w-[100%] ${isArabic ? "  text-right" : ""}`}>
                  <h1
-  className={`leading-[1] text-[20px] pb-[2%] sm:text-[19px] ${
+  className={`leading-[1] text-[20px] pb-[2%] sm:text-[19px] text-[#082252] ${
     isArabic ? "flex flex-row-reverse items-center gap-[1%] text-[25px]" : ""
   }`}
 >
@@ -530,7 +530,7 @@ src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.images[0].ImageUR
   </span>
 </h1>
 
-<p className="text-[18px] leading-[1] w-[100%] sm:text-[19px]">
+<p className="text-[18px] text-[#082252] leading-[1] w-[100%] sm:text-[19px]">
   {isArabic
     ? productData.productTitle_ar ?? productData.productTitle
     : productData.productTitle}
@@ -539,7 +539,7 @@ src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.images[0].ImageUR
                   {productData.productSale !== 0 &&
                   productData.productSale !== null ? (
                     <div
-                      className={`flex  gap-[3%] w-[100%]  my-[2%] ${
+                      className={`flex  gap-[3%] w-[100%] text-[#082252] my-[2%] ${
                         isArabic ? "justify-end" : "justify-start"
                       }`}
                     >
@@ -548,7 +548,7 @@ src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.images[0].ImageUR
                         {currencyUsed}
                       </p>
                       {productData.productSale && (
-                        <p className=" text-[18px] sm:text-[17px]  flex justify-center items-center font-[FrutigerLTCom-Roman]">
+                        <p className=" text-[18px] sm:text-[17px] text-[#082252] flex justify-center items-center font-[FrutigerLTCom-Roman]">
                           {(
                             (productData.productPrice -
                               productData.productPrice *
@@ -560,7 +560,7 @@ src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.images[0].ImageUR
                       )}
                     </div>
                   ) : (
-                    <p className="py-[2%]  lg:py-[1%] text-[18px] sm:text-[17px]">
+                    <p className="py-[2%] text-[#082252] lg:py-[1%] text-[18px] sm:text-[17px]">
                       {(productData.productPrice * currencyValue).toFixed(2)}{" "}
                       {currencyUsed}
                     </p>
@@ -569,14 +569,14 @@ src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.images[0].ImageUR
 
                 <div className="">
               <h2
-  className={`text-[12px] xl:text-[12px] text-[#1e335a] ${
+  className={`text-[12px] xl:text-[12px] text-[#082252] ${
     isArabic ? "text-[18px] text-right w-[100%]" : ""
   }`}
 >
   {t("singleProductPage.color")}
 </h2>
 <div
-  className={`flex items-center gap-[1%] ${
+  className={`flex items-center gap-[1%] text-[#082252] ${
     isArabic ? "flex-row-reverse" : ""
   }`}
 >
@@ -597,7 +597,7 @@ src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.images[0].ImageUR
   // 👞👜 Department 3 (Shoes & Bags): Quantity selector
 <div className="mt-[20px]">
   <h2
-    className={`text-[12px] xl:text-[12px] text-[#1e335a] ${
+    className={`text-[12px] xl:text-[12px] text-[#082252] ${
       isArabic ? " text-[18px] text-right w-[100%]" : ""
     }`}
   >
@@ -724,7 +724,7 @@ src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.images[0].ImageUR
                     // Handle case when no size is selected and it's not a bag
                     <button
                       onClick={chooseSize}
-                      className="w-[100%] py-[2.5%] bg-[#676f98] text-white text-[12px]"
+                      className="w-[100%] py-[2.5%] bg-[#082252] text-white text-[12px]"
                     >
                       {t("singleProductPage.cart")}
                     </button>

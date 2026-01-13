@@ -133,27 +133,45 @@ const BurgerIcon = ({ className, onClick }) => (
             onClick={closeSearch}
           />
 
-          <input
-            value={query}
-            onChange={(e) => {
-              setQuery(e.target.value);
-              if (e.target.value.trim()) handleSearch(e.target.value);
-              else {
-                setResults([]);
-                setMessage("");
-              }
-            }}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                navigate(`/products?query=${encodeURIComponent(query)}`);
-                closeSearch();
-              }
-            }}
-            placeholder={t("search")}
-            className={`w-full mt-4 px-4 py-2 rounded text-lg ${
-              isArabic ? "text-right" : ""
-            }`}
-          />
+<div className="relative w-full mt-4">
+  <input
+    value={query}
+    onChange={(e) => {
+      setQuery(e.target.value);
+      if (e.target.value.trim()) handleSearch(e.target.value);
+      else {
+        setResults([]);
+        setMessage("");
+      }
+    }}
+    onKeyDown={(e) => {
+      if (e.key === "Enter") {
+        navigate(`/products?query=${encodeURIComponent(query)}`);
+        closeSearch();
+      }
+    }}
+    placeholder={t("search")}
+    className={`w-full px-4 py-2 pr-12 rounded text-lg focus:outline-none ${
+      isArabic ? "text-right pl-12 pr-4" : ""
+    }`}
+  />
+
+  {/* 🔍 MAGNIFIER = MOBILE ENTER */}
+  <button
+    type="button"
+    onClick={() => {
+      if (!query.trim()) return;
+      navigate(`/products?query=${encodeURIComponent(query)}`);
+      closeSearch();
+    }}
+    className={`absolute top-1/2 -translate-y-1/2 text-xl text-gray-600
+      ${isArabic ? "left-4" : "right-4"}
+    `}
+  >
+    <GrSearch />
+  </button>
+</div>
+
 
           <div className="mt-4 bg-white rounded max-h-[60vh] overflow-auto p-3 text-[#082252]">
             {message && <p>{message}</p>}
@@ -213,7 +231,7 @@ const BurgerIcon = ({ className, onClick }) => (
 
           <Link to="/cart" className="relative">
             {cartLength > 0 && (
-              <span className="absolute -top-2 -right-2 w-4 h-4 bg-[#d98865] text-white text-[10px] flex justify-center items-center rounded-full">
+              <span className="absolute -top-2 -right-2 w-4 h-4 bg-[#082252] text-white text-[10px] flex justify-center items-center rounded-full">
                 {cartLength}
               </span>
             )}
