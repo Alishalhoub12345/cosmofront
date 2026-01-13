@@ -241,7 +241,7 @@ function AllProductsOnSale() {
       ) : (
         <div className="h-[80vh] flex justify-center items-center text-[#082252]">
           <img
-            className="w-[120px] md:w-[30px] sm:w-[20px]"
+            className="w-[120px] md:w-[100px] sm:w-[90px]"
             src={loader}
             alt="loader"
           />

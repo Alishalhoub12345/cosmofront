@@ -166,9 +166,10 @@ useEffect(() => {
                 <>
                   <div className=" flex flex-col justify-between min-h-[20rem] xl:min-h-[5rem] lg:min-h-[10rem] my-[1%]">
 <Link
-  to={`product/${singleProdPerDep.productLink}/${singleProdPerDep.productSKU}`}
+  to={`/single/product/${singleProdPerDep.productLink}/${singleProdPerDep.productSKU}`}
   state={{ scrollY: window.scrollY }}
 >
+
 
 
 
@@ -260,7 +261,7 @@ useEffect(() => {
       ) : (
         <div className="h-[80vh]  flex justify-center items-center text-[#082252]">
           <img
-            className="w-[120px] md:w-[30px] sm:w-[20px]"
+            className="w-[120px] md:w-[100px] sm:w-[90px]"
             src={loader}
             alt="loader"
           />

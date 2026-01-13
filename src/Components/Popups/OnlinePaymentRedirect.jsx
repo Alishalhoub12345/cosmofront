@@ -111,7 +111,7 @@ function OnlinePaymentRedirect() {
   return (
     <div className="text-[18px] md:text-[15px] gap-[5%] h-[70vh] w-[100%] flex  flex-col justify-center items-center">
       <img
-        className="w-[120px] h-[110px]"
+        className="w-[120px] h-[110px] md:w-[100px] sm:w-[90px]"
         src={Loader}
         alt="loader"
       ></img>

@@ -505,7 +505,7 @@ function CartComponent() {
       {loading ? (
         <div className="text-[18px] xl:text-[15px] gap-[5%] h-[100vh] w-[100%] flex  flex-col justify-center items-center">
           <img
-            className="w-[120px] h-[110px]"
+            className="w-[120px] h-[110px] md:w-[100px] sm:w-[90px]"
             src={Loader}
             alt="loader"
           ></img>

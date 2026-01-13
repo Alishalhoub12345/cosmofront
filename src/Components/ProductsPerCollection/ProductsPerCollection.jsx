@@ -313,7 +313,7 @@ useEffect(() => {
         <>
           <div className="h-[80vh] flex justify-center items-center text-[#082252]">
             <img
-              className="w-[120px] md:w-[30px] sm:w-[20px]"
+              className="w-[120px] md:w-[120px] sm:w-[80px]"
               src={loader}
               alt="loader"
             />
