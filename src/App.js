@@ -39,8 +39,12 @@ import StoreLocator from "./Pages/StoreLocator";
 import Navbar from "./Components/Navbar/Navbar";   // ✅ ADD NAVBAR
 import Footer from "./Components/Footer/Footer";   // ✅ ADD FOOTER
 import { CartProvider } from "./Components/Cart/CartContext";
+import { useTranslation } from "react-i18next";
+
 
 function App() {
+    const { i18n } = useTranslation();
+
   return (
     <div className="App">
       <CartProvider>
@@ -61,24 +65,19 @@ function App() {
           />
 
           <Route path="/products/sale" Component={AllProductsOnSalePage} />
-
           <Route
             path="/collection/:collectionLink"
             Component={ProductsPerCollectionPage}
           />
-
           <Route
             path="/subcategory/products/:subcategoryLink"
             Component={ProductsPerSubcategoryPage}
           />
-
           <Route path="/products" Component={AllProductsForSearchPage} />
-
           <Route
             path="/category/products/:categoryLink"
             Component={ProductsPerCategoryPage}
           />
-
           <Route
             path="/sale/products/:saleLink"
             Component={ProductsOnSalePage}
@@ -135,7 +134,7 @@ function App() {
           <Route path="/store-locator" element={<StoreLocator />} />
         </Routes>
 
-        <Footer />
+        <Footer key={i18n.language} />
 
       </CartProvider>
     </div>

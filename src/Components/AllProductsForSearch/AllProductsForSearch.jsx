@@ -232,9 +232,9 @@ function AllProductsForSearch({ searchQuery }) {
       ) : (
         <div className="h-[80vh] flex justify-center items-center text-[black]">
           <img
-            className="w-[50px] md:w-[30px] sm:w-[20px]"
+            className="w-[120px] md:w-[30px] sm:w-[20px]"
             src={loader}
-            alt="parrot-loader"
+            alt="loader"
           />
         </div>
       )}

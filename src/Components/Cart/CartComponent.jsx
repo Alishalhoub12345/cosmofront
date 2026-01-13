@@ -505,9 +505,9 @@ function CartComponent() {
       {loading ? (
         <div className="text-[18px] xl:text-[15px] gap-[5%] h-[100vh] w-[100%] flex  flex-col justify-center items-center">
           <img
-            className="w-[50px] h-[110px]"
+            className="w-[120px] h-[110px]"
             src={Loader}
-            alt="parrot-loader"
+            alt="loader"
           ></img>
         </div>
       ) : (

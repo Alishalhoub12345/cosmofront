@@ -313,9 +313,9 @@ useEffect(() => {
         <>
           <div className="h-[80vh] flex justify-center items-center text-[#082252]">
             <img
-              className="w-[50px] md:w-[30px] sm:w-[20px]"
+              className="w-[120px] md:w-[30px] sm:w-[20px]"
               src={loader}
-              alt="parrot-loader"
+              alt="loader"
             />
           </div>
         </>

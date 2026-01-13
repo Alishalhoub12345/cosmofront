@@ -136,10 +136,10 @@ function SizeChart() {
 
 
     <div className=' px-[2%] py-[4%]'>
-    <h1 className='text-[40px] font-[FahKwang]  lg:text-[40px] md:text-[25px] md:py-[5%]'>TOPS & BOTTOMS</h1>
+    <h1 className='text-[40px] font-[FahKwang]  lg:text-[40px] md:text-[25px] md:py-[5%]'>BODY MEASUREMENTS</h1>
   <div className='border-[1px] text-[16px] h-[auto]'>
     <div className=' h-[50px] text-center flex justify-between items-center'>
-        <p className='border-[1px] border-[#e3e2e2] flex justify-center items-center h-[100%] text-center w-[25%] bg-[#082252] text-white'>USA / French Size</p>
+        <p className='border-[1px] border-[#e3e2e2] flex justify-center items-center h-[100%] text-center w-[25%] bg-[#082252] text-white'>USA / EU</p>
         <p className='border-[1px] border-[#e3e2e2]  flex justify-center items-center h-[100%] text-center w-[25%]  bg-[#082252] text-white'>BUST (CM)</p>
         <p className='border-[1px] border-[#e3e2e2]  flex justify-center items-center h-[100%] text-center w-[25%]  bg-[#082252] text-white'>WAIST (CM)</p>
         <p className='border-[1px] border-[#e3e2e2]  flex justify-center items-center h-[100%] text-center w-[25%]  bg-[#082252] text-white'>HIPS (CM)</p>

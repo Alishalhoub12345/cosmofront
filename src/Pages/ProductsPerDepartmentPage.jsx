@@ -1,17 +1,16 @@
 import React from 'react'
 
 import ProductsPerDepartment from '../Components/ProductsPerDepartment/ProductsPerDepartment';
+import { Outlet } from "react-router-dom";
 
 function ProductsPerDepartmentPage() {
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
 
   return (
     <>
     <ProductsPerDepartment/>
-    
+    <Outlet />
+
     </>
   )
 }

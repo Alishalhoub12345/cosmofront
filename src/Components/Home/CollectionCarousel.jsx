@@ -48,9 +48,9 @@ function CollectionCarousel() {
       {loaderCollection ? (
         <div className="h-[500px] flex justify-center items-center">
           <img
-            className="w-[50px] pt-[5%] pb-[20%]"
+            className="w-[120px] pt-[5%] pb-[20%]"
             src={loaderParrot}
-            alt="loaderParrot"
+            alt="loader"
           />
         </div>
       ) : isError ? (

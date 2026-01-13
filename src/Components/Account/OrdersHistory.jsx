@@ -3,7 +3,7 @@ import DashboardMenu from "./DashboardMenu";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useQuery } from "react-query";
-import Loader from "../../images/Loader/cosmo_website_loader_transparent_Fast.gif";
+// import Loader from "../../images/Loader/cosmo_website_loader_transparent_Fast.gif";
 import { useTranslation } from "react-i18next";
 function OrdersHistory() {
   // const [activeTab, setActiveTab] = useState(() => {

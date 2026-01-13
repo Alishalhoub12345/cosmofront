@@ -5,6 +5,8 @@ import loader from "../../images/Loader/cosmo_website_loader_transparent_Fast.gi
 import saleFlag from "../../images/Products/sales-flag.png";
 import { useQuery } from "react-query";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
+
 import fallout from "../../images/Products/C-image-missing.png";
 
 function ProductsPerDepartment() {
@@ -20,6 +22,23 @@ function ProductsPerDepartment() {
   const [t, i18n] = useTranslation("global");
   const selectedLang = localStorage.getItem("lang");
   const isArabic = localStorage.getItem("lang") === "ar";
+  const location = useLocation();
+
+useEffect(() => {
+  if (!departmentProducts.length) return;
+
+  const scrollY = location.state?.scrollY;
+
+  if (typeof scrollY === "number") {
+    requestAnimationFrame(() => {
+      window.scrollTo({
+        top: scrollY,
+        behavior: "auto",
+      });
+    });
+  }
+}, [departmentProducts]);
+
 useEffect(() => {
   const currency = localStorage.getItem("currencyUsed");
   if (currency) {
@@ -146,9 +165,13 @@ useEffect(() => {
                 )}
                 <>
                   <div className=" flex flex-col justify-between min-h-[20rem] xl:min-h-[5rem] lg:min-h-[10rem] my-[1%]">
-                    <Link
-                      to={`/single/product/${singleProdPerDep.productLink}/${singleProdPerDep.productSKU}`}
-                    >
+<Link
+  to={`product/${singleProdPerDep.productLink}/${singleProdPerDep.productSKU}`}
+  state={{ scrollY: window.scrollY }}
+>
+
+
+
                       <div className="min-h-[20rem] xl:min-h-[5rem] lg:min-h-[10rem] sm:min-h-[5rem] mt-[0.1%] md:mt-[0.5%] ">
                         <img
                           className=" w-[100%] h-[100%] object-cover "
@@ -237,9 +260,9 @@ useEffect(() => {
       ) : (
         <div className="h-[80vh]  flex justify-center items-center text-[#082252]">
           <img
-            className="w-[50px] md:w-[30px] sm:w-[20px]"
+            className="w-[120px] md:w-[30px] sm:w-[20px]"
             src={loader}
-            alt="parrot-loader"
+            alt="loader"
           />
         </div>
       )}

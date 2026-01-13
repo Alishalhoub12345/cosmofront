@@ -8,10 +8,9 @@ import { useTranslation } from "react-i18next";
 
 function Footer() {
   const [emailSub, setEmailSub] = useState("");
-  const [t, i18n] = useTranslation("global");
   const [showPopUpEmail, setShowPopUpEmail] = useState(false);
-  const [lang, setLang] = useState(localStorage.getItem("lang") || "en");
-  const isArabic = i18n.language === "ar";
+const { t, i18n, ready } = useTranslation("global");
+const isArabic = i18n.language === "ar";
 
   const [popUpInfoEmail, setPopUpInfoEmail] = useState({
     message: "",

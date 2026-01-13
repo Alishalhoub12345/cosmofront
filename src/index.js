@@ -14,16 +14,14 @@ import { I18nextProvider } from 'react-i18next';
 
 const queryClient = new QueryClient()
 
+
 i18next.init({
   interpolation: { escapeValue: false },
-  lng: "en",
+  lng: localStorage.getItem("lang") || "en", // ✅ FIX
+  fallbackLng: "en",
   resources: {
-    en: {
-      global: global_en,
-    },
-    ar: {
-      global: global_ar,
-    },
+    en: { global: global_en },
+    ar: { global: global_ar },
   },
 });
 

@@ -140,9 +140,11 @@ function AllProductsForCollection() {
                 )}
                 <>
                   <div className=" flex flex-col justify-between min-h-[20rem] xl:min-h-[5rem] lg:min-h-[10rem] my-[1%]">
-                    <Link
-                      to={`/single/product/${AllProdColl.productLink}/${AllProdColl.productSKU}`}
-                    >
+<Link
+  to={`product/${AllProdColl.productLink}/${AllProdColl.productSKU}`}
+>
+
+
                       <div className="min-h-[20rem] xl:min-h-[5rem] lg:min-h-[10rem] sm:min-h-[5rem] mt-[0.1%] md:mt-[0.5%] ">
                         <img
                           className=" w-[100%] h-[100%] object-cover "
@@ -231,9 +233,9 @@ function AllProductsForCollection() {
       ) : (
         <div className="h-[80vh]  flex justify-center items-center text-[#082252]">
           <img
-            className="w-[50px] md:w-[30px] sm:w-[20px]"
+            className="w-[120px] md:w-[30px] sm:w-[20px]"
             src={loader}
-            alt="parrot-loader"
+            alt="loader"
           />
         </div>
       )}

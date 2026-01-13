@@ -418,9 +418,10 @@ src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.images[0].ImageUR
       {isLoading || loading ? (
         <div className="flex justify-center items-center h-[100vh] lg:h-[auto] w-[100%]">
           <img
-            className="w-[50px] md:w-[25px]"
+            className="w-[120px] md:w-[25px]"
             src={Loader}
             alt="parrot-loader"
+
           ></img>
         </div>
       ) : (

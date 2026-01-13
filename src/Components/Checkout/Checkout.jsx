@@ -523,9 +523,9 @@ const sendConfirmationEmail = async (orderId, cartId) => {
       {orderloading || onlineLoading ? (
         <div className="text-[18px] md:text-[15px] gap-[5%] h-[70vh] w-[100%] flex  flex-col justify-center items-center">
           <img
-            className="w-[50px] h-[110px]"
+            className="w-[120px] h-[110px]"
             src={Loader}
-            alt="parrot-loader"
+            alt="loader"
           ></img>
           <p className="w-[400px] md:w-[100%] md:p-[5%] text-center">
             {t("checkout.redirectTitle")}
