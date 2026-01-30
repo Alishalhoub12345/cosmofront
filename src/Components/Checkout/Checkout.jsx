@@ -6,6 +6,8 @@ import axios from "axios";
 import Loader from "../../images/Loader/cosmo_website_loader_transparent_Fast.gif";
 import { useTranslation } from "react-i18next";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { isValidPhoneNumber } from "react-phone-number-input";
+
 
 function Checkout() {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -55,6 +57,8 @@ function Checkout() {
   const [lang, setLang] = useState(localStorage.getItem("lang") || "en");
   const selectedLang = localStorage.getItem("lang");
   const [isChecked, setIsChecked] = useState(true);
+  const [phoneError, setPhoneError] = useState("");
+
 
   const cartRefNumber = localStorage.getItem("cartNumber");
   useEffect(() => {
@@ -131,6 +135,15 @@ function Checkout() {
   // Function to handle form submission for COD and online payment
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (!phoneNumber || !isValidPhoneNumber(phoneNumber)) {
+  alert(
+    isArabic
+      ? "يرجى إدخال رقم هاتف صحيح قبل إتمام الطلب"
+      : "Please enter a valid phone number before checkout"
+  );
+  return;
+}
+
  if (!Array.isArray(cartItems?.product) || cartItems.product.length === 0) {
     alert("Your cart is empty. Please add products before placing an order.");
     return;
@@ -672,15 +685,16 @@ const sendConfirmationEmail = async (orderId, cartId) => {
                     </label>
                     <div className="">
                       <div className="">
-                        <PhoneInput
-                          className="bg-transparent border-[0.5px] border-[black] px-[2%] rounded-[2px] w-[100%] countryCode"
-                          international
-                          required
-                          countryCallingCodeEditable={false}
-                          defaultCountry="LB"
-                          value={phoneNumber}
-                          onChange={setPhoneNumber}
-                        />
+<PhoneInput
+  className="bg-transparent border-[0.5px] border-[#082252] px-[2%] rounded-[2px] w-[100%] countryCode"
+  international
+  required
+  countryCallingCodeEditable={false}
+  defaultCountry="LB"
+  value={phoneNumber}
+  onChange={setPhoneNumber}
+/>
+
                       </div>
                     </div>
                   </div>

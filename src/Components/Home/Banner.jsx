@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 const API = "https://www.cosmo.global/laravel/api"; // adjust if needed
 
 function Banner() {
+
   const [t, i18n] = useTranslation("global");
   const isArabic = localStorage.getItem("lang") === "ar";
 
@@ -58,8 +59,8 @@ if (main?.image) {
             src={mediaUrl}
             autoPlay
             loop
-            muted
             playsInline
+            controls
           />
         ) : mediaType === "image" ? (
           <img
@@ -76,13 +77,14 @@ if (main?.image) {
           className="w-[190px] md:w-[140px] sm:w-[100px]"
           alt="parrot-icon"
         /> */}
-        <p
-          className={`text-[20px] text-[#082252] font-[FrutigerLTCom-Roman] w-[40%] text-center pb-[5%] lg:pb-[10%] xl:w-[80%] md:text-[18px] md:w-[90%] sm:text-[15px] ${
-            isArabic ? "text-[25px]" : ""
-          }`}
-        >
-          {t("homePage.ourBrands")}
-        </p>
+<p
+  dir={isArabic ? "rtl" : "ltr"}
+  className={`text-[20px] text-[#082252] font-[FrutigerLTCom-Roman] w-[40%] text-center pb-[5%] lg:pb-[10%] xl:w-[80%] md:text-[18px] md:w-[90%] sm:text-[15px] ${
+    isArabic ? "text-[25px] rtl-unicode" : ""
+  }`}
+>
+  {t("homePage.ourBrands")}
+</p>
       </div>
     </div>
   );

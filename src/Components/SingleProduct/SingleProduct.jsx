@@ -159,7 +159,6 @@ const quantity = isInDepartment3 ? customQuantity : 1;
     let sizeInfo;
     let existingItemIndex;
 
-    // Determine size or default to first size for accessories
     if (quantityForAcc == null) {
       sizeInfo = sizes.find((size) => size.id === parseInt(selectedSize, 10));
 
@@ -168,7 +167,7 @@ const quantity = isInDepartment3 ? customQuantity : 1;
           item.productId === productId && item.selectedSize === selectedSize
       );
     } else {
-      sizeInfo = productData.sizes[0]; // Default to the first size for accessories
+      sizeInfo = productData.sizes[0]; 
       existingItemIndex = existingCart.findIndex(
         (item) => item.productId === productId
       );
@@ -176,21 +175,16 @@ const quantity = isInDepartment3 ? customQuantity : 1;
 
     const maxQuantity = sizeInfo ? parseInt(sizeInfo.quantity, 10) : 0;
 
-    // Fetch product details for pop-up display
     const productDetails = await axios.get(
       `https://www.cosmo.global/laravel/api/getAllproductInfo/${productSKU}`,
       { params: { locale: selectedLang } }
     );
 
-    // If the product already exists in the cart
     if (existingItemIndex !== -1) {
       const existingItem = existingCart[existingItemIndex];
-
-      // Check if the quantity can still be increased
       if (existingItem.quantity < maxQuantity) {
         existingItem.quantity += quantity;
 
-        // Ensure that the quantity does not exceed the maximum limit
         if (existingItem.quantity >= maxQuantity) {
           existingItem.quantity = maxQuantity;
           setIsMaxQuantityReached(true);
@@ -217,8 +211,6 @@ const quantity = isInDepartment3 ? customQuantity : 1;
         setIsMaxQuantityReached(quantity === maxQuantity);
       }
     }
-
-    // Store in the user's cart if authenticated
 
 const userId = {
   user_auth_id: user,
@@ -265,10 +257,8 @@ const userId = {
     localStorage.setItem("cartNumber", res.data.cart.uniqueCartId);
     setLoadAddToCart(false);
 
-    // Update localStorage with the new cart state
     localStorage.setItem("cart", JSON.stringify(existingCart));
 
-    // Update cart length in localStorage
     const totalQuantities = existingCart.reduce(
       (total, item) => total + item.quantity,
       0
@@ -339,20 +329,17 @@ const userId = {
     const image = document.getElementById("productImage");
     const { left, top, width, height } = image.getBoundingClientRect();
 
-    // Get mouse position relative to the image
     const x = (e.clientX - left) / width;
     const y = (e.clientY - top) / height;
 
-    // Set the transform origin based on mouse position
     image.style.transformOrigin = `${x * 100}% ${y * 100}%`;
 
-    // Use scale for zoom
-    image.style.transform = "scale(2.2)"; // Set scale for zoom, adjust 2 to your desired zoom level
+    image.style.transform = "scale(2.2)"; 
   };
 
   const resetZoom = () => {
     const image = document.getElementById("productImage");
-    image.style.transform = "scale(1)"; // Reset the zoom
+    image.style.transform = "scale(1)"; 
   };
 
   if (isError) return <div>Error fetching data</div>;
@@ -638,7 +625,6 @@ src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.images[0].ImageUR
 </div>
 
 ) : productData.productQuantity == null ? (
-  // 👚 Original Clothes Size Design
   <div className="">
     <h2
       className={`text-[12px] xl:text-[12px] text-[#1e335a] ${
@@ -681,7 +667,6 @@ src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.images[0].ImageUR
     )}
   </div>
 ) : (
-  // 🎀 Accessories Static Quantity
   <div className="mt-[20px]">
     <h2
       className={`text-[12px] py-[0.5%] xl:text-[12px] text-[#1e335a] ${
@@ -701,9 +686,6 @@ src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.images[0].ImageUR
 )}
 
 
-
-
-
                 {sizetoChoose && selectedSize === "" && (
                   <div className=" w-[100%] pt-[2%]  flex items-center justify-center">
                     <p className=" text-center text-[12px] w-[80%] text-[#082252]">
@@ -721,7 +703,6 @@ src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.images[0].ImageUR
 
                 <div className="md:mt-[2%] py-[2.5%] leading-[1.2] flex justify-center items-center flex-col">
                   {selectedSize === "" && quantityForAcc == null ? (
-                    // Handle case when no size is selected and it's not a bag
                     <button
                       onClick={chooseSize}
                       className="w-[100%] py-[2.5%] bg-[#082252] text-white text-[12px]"
@@ -729,20 +710,19 @@ src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.images[0].ImageUR
                       {t("singleProductPage.cart")}
                     </button>
                   ) : (
-                    // Handle case when size is selected or when it's a bag (handled by quantityForAcc !== null)
                     <button
                       onClick={handleStoreInLS}
-                      disabled={isMaxQuantityReached || loadAddToCart} // Disable if max quantity is reached or loading
+                      disabled={isMaxQuantityReached || loadAddToCart} 
                       className={`w-[100%] py-[2.5%] text-white text-[12px] ${
-                        isMaxQuantityReached || loadAddToCart // Adjust styles based on loading or max quantity reached
+                        isMaxQuantityReached || loadAddToCart 
                           ? "bg-[#082252] cursor-not-allowed hover:bg-[#475164] text-[#c1c1c1] hover:text-[#c1c1c1]"
                           : "bg-[#082252]  hover:bg-[#2f4672]"
                       }`}
                     >
-                      {loadAddToCart ? ( // Show loader if loading
+                      {loadAddToCart ? ( 
                         <p className="text-[#082252]">Loading...</p>
                       ) : (
-                        t("singleProductPage.cart") // Show cart text otherwise
+                        t("singleProductPage.cart") 
                       )}
                     </button>
                   )}
@@ -756,10 +736,8 @@ src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.images[0].ImageUR
 )}
 
 
-          <div className="flex flex-col items-start justify-evenly mt-[5px] bg-[#e6e5e5]">
+<div className="flex flex-col items-start justify-evenly mt-[5px] bg-[#e6e5e5]">
 
-
-  {/* Designer */}
 {(productData.productDesign || productData.productDesign_ar) && (
   <div className="px-[3%] w-full leading-[1.2] flex justify-center items-start flex-col">
     <div className="border-b-[0.5px] md:py-[3%] border-white w-full p-[3%] flex items-start flex-col justify-center">
@@ -784,7 +762,6 @@ src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.images[0].ImageUR
 )}
 
 
-  {/* Country */}
 {(productData.productCountry || productData.productCountry_ar) && (
   <div className="px-[3%] w-full leading-[1.2] flex justify-center items-start flex-col">
     <div className="border-b-[0.5px] md:py-[3%] border-white w-full p-[3%] flex items-start flex-col justify-center">
@@ -852,11 +829,6 @@ src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.images[0].ImageUR
   </div>
 )}
 
-
-
-
-
-  {/* Washing */}
 {!hideSections && productData.productWashing && (
   <div className="px-[3%] w-full leading-[1.2] flex justify-center items-start flex-col">
     <div className="border-b-[0.5px] md:py-[3%] border-white w-full p-[3%] flex items-start flex-col justify-center">
@@ -879,7 +851,6 @@ src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.images[0].ImageUR
 )}
 
 
-  {/* Wearing */}
  {!hideSections && productData.productWearing && (
   <div className="px-[3%] w-full leading-[1.2] flex justify-center items-start flex-col">
     <div className="border-b-[0.5px] md:py-[3%] border-white w-full p-[3%] flex items-start flex-col justify-center">
@@ -901,7 +872,6 @@ src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.images[0].ImageUR
   </div>
 )}
 
-  {/* Size chart */}
  {!hideSections && (
   <div className="px-[3%] w-full leading-[1.2] flex justify-center items-start flex-col">
     <div className="border-b-[0.5px] border-white md:py-[3%] w-full p-[3%] flex items-start flex-col justify-center">
@@ -918,7 +888,6 @@ src={`https://www.cosmo.global/laravel/api/storage/${popUpInfo.images[0].ImageUR
 )}
 
 
-  {/* Shipping */}
   <div className="h-[15%] px-[3%] w-full leading-[1.2] flex justify-center items-center flex-col">
     <div className="h-full w-full p-[3%] md:py-[3%] flex items-start flex-col justify-center">
       <p

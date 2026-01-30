@@ -9,7 +9,7 @@
    
   },
   "homePage":{
-    "ourBrands":"OUR BRANDS STANDS FOR ALL UNIQUE WOMEN WITH A STRONG SENSE OF IDENTITY; THOSE WHO ARE FUNNY, ADVENTUROUS, ROMANTIC AND DO NOT WANT TO CONFORM TO THE TRADITIONAL.",
+    "ourBrands":"OUR BRAND STANDS FOR ALL UNIQUE WOMEN WITH A STRONG SENSE OF IDENTITY; THOSE WHO ARE FUNNY, ADVENTUROUS, ROMANTIC AND DO NOT WANT TO CONFORM TO THE TRADITIONAL.",
     "ourCollection": "OUR COLLECTIONS",
     "shopNow":"SHOP NOW",
     "characteristics":{
@@ -578,8 +578,8 @@
         "answer1": "We can amend your order or change your billing and shipping details only before your purchase has been prepared for dispatch. However, we are unable to combine orders or add new pieces to an existing order; once it has been placed, you will need to place a new order to add changes. If you need to make any amendments, please call customer care on <a href='tel:+961 71 660774' class='underline hover:font-semibold'>+961 71 660774</a> or contact us on <a href='mailto:customercare@cosmo.global' class='underline hover:font-semibold'>customercare@cosmo.global</a>"
       },
       {
-        "question": "9-WHAT IS THE EXCHANGES & RETURNS POLICY?",
-        "answer1": "Please refer to section <a href='/exchange-policy' class='underline hover:font-semibold'>Exchanges & Returns</a> for information."
+        "question": "9-WHAT IS THE EXCHANGES AND RETURN POLICY?",
+        "answer1": "Please refer to section <a href='/exchange-policy' class='underline hover:font-semibold'>Exchanges and Return Policy</a> for information."
       },
       {
         "question": "10-WHAT DO I DO IF I RECEIVE A FAULTY ITEM IN MY ORDER?",
